@@ -1,5 +1,6 @@
 package danger.orespawn;
 
+@Deprecated
 public class OreSpawnConstants {
   public static final int OREBLOCK_START_OFFSET = 0;
   
@@ -1873,7 +1874,7 @@ public class OreSpawnConstants {
 }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.1-deobf.jar!\danger\orespawn\OreSpawnConstants.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.2-deobf.jar!\danger\orespawn\OreSpawnConstants.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */
