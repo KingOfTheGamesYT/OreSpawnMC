@@ -1,0 +1,64 @@
+{
+	"entity.alosaurus.ambient":
+	{
+		"category": "entity",
+		"subtitle": "entity.alosaurus.ambient",
+		"sounds": [{ "name": "orespawn:entity/alosaurus/ambient", "stream": true}]
+	},
+	
+	"entity.alosaurus.hurt":
+	{
+		"category": "entity",
+		"subtitle": "entity.alosaurus.hurt",
+		"sounds": [{ "name": "orespawn:entity/alosaurus/hurt", "stream": true}]
+	},
+	
+	"entity.alosaurus.death":
+	{
+		"category": "entity",
+		"subtitle": "entity.alosaurus.death",
+		"sounds": [{ "name": "orespawn:entity/alosaurus/death", "stream": true}]
+	},
+	
+	"entity.trex.ambient":
+	{
+		"category": "entity",
+		"subtitle": "entity.trex.death",
+		"sounds": [{ "name": "orespawn:entity/trex/death", "stream": true}]
+	},
+	
+	"entity.trex.death":
+	{
+		"category": "entity",
+		"subtitle": "entity.trex.death",
+		"sounds": [{ "name": "orespawn:entity/trex/death", "stream": true}]
+	},
+	
+	"entity.duck.hurt":
+	{
+		"category": "entity",
+		"subtitle": "entity.duck.hurt",
+		"sounds": [{ "name": "orespawn:entity/duck/hurt", "stream": true}]
+	},
+	
+	"entity.cryo.hurt":
+	{
+		"category": "entity",
+		"subtitle": "entity.cryo.hurt",
+		"sounds": [{ "name": "orespawn:entity/cryo/hurt", "stream": true}]
+	},
+	
+	"entity.cryo.death":
+	{
+		"category": "entity",
+		"subtitle": "entity.cryo.death",
+		"sounds": [{ "name": "orespawn:entity/cryo/death", "stream": true}]
+	},
+	
+	"entity.cryo.living":
+	{
+		"category": "entity",
+		"subtitle": "entity.cryo.living",
+		"sounds": [{ "name": "orespawn:entity/cryo/living", "stream": true}]
+	}
+}

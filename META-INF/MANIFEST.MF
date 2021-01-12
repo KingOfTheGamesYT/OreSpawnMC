@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: OreSpawnFinalFinal
+Implementation-Version: 1.0
+Specification-Vendor: examplemodsareus
+Specification-Title: examplemod
+Implementation-Timestamp: 2020-10-20T19:32:17-0500
+Specification-Version: 1
+Implementation-Vendor: examplemodsareus
+
