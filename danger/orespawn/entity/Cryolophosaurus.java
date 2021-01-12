@@ -169,8 +169,8 @@
 /*     */   protected Item getDropItem() {
 /* 170 */     int i = this.world.rand.nextInt(10);
 /* 171 */     if (i == 0) return Items.CHICKEN; 
-/* 172 */     if (i == 1) return ModItems.URANIUMNUGGET; 
-/* 173 */     if (i == 2) return ModItems.TITANIUMNUGGET; 
+/* 172 */     if (i == 1) return ModItems.URANIUM_NUGGET; 
+/* 173 */     if (i == 2) return ModItems.TITANIUM_NUGGET; 
 /* 174 */     return null;
 /*     */   }
 /*     */ 
@@ -212,39 +212,28 @@
 /*     */ 
 /*     */ 
 /*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
 /*     */   
 /*     */   private boolean isSuitableTarget(EntityLivingBase par1EntityLiving, boolean par2) {
-/* 220 */     if (par1EntityLiving == null)
-/*     */     {
-/* 222 */       return false;
+/* 217 */     if (par1EntityLiving == null) {
+/* 218 */       return false;
 /*     */     }
-/* 224 */     if (par1EntityLiving == this)
-/*     */     {
-/* 226 */       return false;
+/* 220 */     if (par1EntityLiving == this) {
+/* 221 */       return false;
 /*     */     }
-/* 228 */     if (!par1EntityLiving.isEntityAlive())
-/*     */     {
+/* 223 */     if (!par1EntityLiving.isEntityAlive()) {
+/* 224 */       return false;
+/*     */     }
+/* 226 */     if (!getEntitySenses().canSee((Entity)par1EntityLiving)) {
+/* 227 */       return false;
+/*     */     }
+/* 229 */     if (par1EntityLiving instanceof Alosaurus) {
 /* 230 */       return false;
 /*     */     }
-/* 232 */     if (!getEntitySenses().canSee((Entity)par1EntityLiving))
-/*     */     {
-/*     */       
-/* 235 */       return false;
+/* 232 */     if (par1EntityLiving instanceof TRex) {
+/* 233 */       return false;
 /*     */     }
-/* 237 */     if (par1EntityLiving instanceof Alosaurus)
-/*     */     {
-/* 239 */       return false;
-/*     */     }
-/* 241 */     if (par1EntityLiving instanceof TRex)
-/*     */     {
-/* 243 */       return false;
-/*     */     }
-/* 245 */     if (par1EntityLiving instanceof Cryolophosaurus)
-/*     */     {
-/* 247 */       return false;
+/* 235 */     if (par1EntityLiving instanceof Cryolophosaurus) {
+/* 236 */       return false;
 /*     */     }
 /*     */ 
 /*     */ 
@@ -263,13 +252,11 @@
 /*     */ 
 /*     */ 
 /*     */     
-/* 266 */     if (par1EntityLiving instanceof Ant)
-/*     */     {
-/* 268 */       return false;
+/* 255 */     if (par1EntityLiving instanceof Ant) {
+/* 256 */       return false;
 /*     */     }
-/* 270 */     if (par1EntityLiving instanceof RedAnt)
-/*     */     {
-/* 272 */       return false;
+/* 258 */     if (par1EntityLiving instanceof RedAnt) {
+/* 259 */       return false;
 /*     */     }
 /*     */ 
 /*     */ 
@@ -287,37 +274,34 @@
 /*     */ 
 /*     */ 
 /*     */     
-/* 290 */     if (par1EntityLiving instanceof EntityPlayer) {
-/*     */       
-/* 292 */       EntityPlayer p = (EntityPlayer)par1EntityLiving;
-/* 293 */       if (p.capabilities.isCreativeMode == true) {
-/* 294 */         return false;
-/*     */       }
+/* 277 */     if (par1EntityLiving instanceof EntityPlayer) {
+/* 278 */       EntityPlayer p = (EntityPlayer)par1EntityLiving;
+/* 279 */       return !p.capabilities.isCreativeMode;
 /*     */     } 
 /*     */     
-/* 298 */     return true;
+/* 282 */     return true;
 /*     */   }
 /*     */ 
 /*     */   
 /*     */   private EntityLivingBase findSomethingToAttack() {
-/* 303 */     if (OreSpawnMain.PlayNicely != 0) return null; 
-/* 304 */     List var5 = this.world.getEntitiesWithinAABB(EntityLivingBase.class, getEntityBoundingBox().expand(9.0D, 2.0D, 9.0D));
+/* 287 */     if (OreSpawnMain.PlayNicely != 0) return null; 
+/* 288 */     List var5 = this.world.getEntitiesWithinAABB(EntityLivingBase.class, getEntityBoundingBox().expand(9.0D, 2.0D, 9.0D));
 /*     */     
-/* 306 */     Iterator<Entity> var2 = var5.iterator();
-/* 307 */     Entity var3 = null;
-/* 308 */     EntityLivingBase var4 = null;
+/* 290 */     Iterator<Entity> var2 = var5.iterator();
+/* 291 */     Entity var3 = null;
+/* 292 */     EntityLivingBase var4 = null;
 /*     */     
-/* 310 */     while (var2.hasNext()) {
+/* 294 */     while (var2.hasNext()) {
 /*     */       
-/* 312 */       var3 = var2.next();
-/* 313 */       var4 = (EntityLivingBase)var3;
+/* 296 */       var3 = var2.next();
+/* 297 */       var4 = (EntityLivingBase)var3;
 /*     */       
-/* 315 */       if (isSuitableTarget(var4, false))
+/* 299 */       if (isSuitableTarget(var4, false))
 /*     */       {
-/* 317 */         return var4;
+/* 301 */         return var4;
 /*     */       }
 /*     */     } 
-/* 320 */     return null;
+/* 304 */     return null;
 /*     */   }
 /*     */ 
 /*     */ 
@@ -327,17 +311,17 @@
 /*     */ 
 /*     */   
 /*     */   public boolean getCanSpawnHere() {
-/* 330 */     if (!isValidLightLevel()) return false; 
-/* 331 */     if (this.world.isDaytime() == true && this.posY > 50.0D) return false;
+/* 314 */     if (!isValidLightLevel()) return false; 
+/* 315 */     if (this.world.isDaytime() && this.posY > 50.0D) return false;
 /*     */ 
 /*     */ 
 /*     */     
-/* 335 */     return true;
+/* 319 */     return true;
 /*     */   }
 /*     */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.2-deobf.jar!\danger\orespawn\entity\Cryolophosaurus.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.3-deobf.jar!\danger\orespawn\entity\Cryolophosaurus.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

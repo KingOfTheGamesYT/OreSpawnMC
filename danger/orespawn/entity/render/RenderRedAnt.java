@@ -1,11 +1,11 @@
 /*    */ package danger.orespawn.entity.render;
+/*    */ 
 /*    */ import danger.orespawn.entity.RedAnt;
 /*    */ import danger.orespawn.entity.model.ModelAnt;
 /*    */ import net.minecraft.client.model.ModelBase;
 /*    */ import net.minecraft.client.renderer.entity.RenderLiving;
 /*    */ import net.minecraft.client.renderer.entity.RenderManager;
 /*    */ import net.minecraft.entity.Entity;
-/*    */ import net.minecraft.entity.EntityLiving;
 /*    */ import net.minecraft.entity.EntityLivingBase;
 /*    */ import net.minecraft.util.ResourceLocation;
 /*    */ 
@@ -15,7 +15,7 @@
 /*    */ 
 /*    */   
 /*    */   public RenderRedAnt(RenderManager manager) {
-/* 18 */     super(manager, (ModelBase)new ModelAnt(), 0.1F);
+/* 18 */     super(manager, (ModelBase)new ModelAnt(), 0.0F);
 /*    */   }
 /*    */ 
 /*    */ 
@@ -31,7 +31,7 @@
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.2-deobf.jar!\danger\orespawn\entity\render\RenderRedAnt.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.3-deobf.jar!\danger\orespawn\entity\render\RenderRedAnt.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

@@ -6,11 +6,11 @@
 /*    */ import net.minecraft.client.renderer.entity.RenderLiving;
 /*    */ import net.minecraft.client.renderer.entity.RenderManager;
 /*    */ import net.minecraft.entity.Entity;
-/*    */ import net.minecraft.entity.EntityLiving;
 /*    */ import net.minecraft.entity.EntityLivingBase;
 /*    */ import net.minecraft.util.ResourceLocation;
 /*    */ 
-/*    */ public class RenderBaryonyx extends RenderLiving<Baryonyx> {
+/*    */ public class RenderBaryonyx
+/*    */   extends RenderLiving<Baryonyx> {
 /* 14 */   public static final ResourceLocation TEXTURES = new ResourceLocation("orespawn:textures/entity/baryonyx.png");
 /*    */ 
 /*    */ 
@@ -32,7 +32,7 @@
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.2-deobf.jar!\danger\orespawn\entity\render\RenderBaryonyx.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.3-deobf.jar!\danger\orespawn\entity\render\RenderBaryonyx.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

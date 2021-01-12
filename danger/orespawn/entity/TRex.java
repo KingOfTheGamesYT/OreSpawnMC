@@ -176,7 +176,7 @@
 /*     */ 
 /*     */   
 /*     */   protected void dropFewItems(boolean par1, int par2) {
-/* 179 */     dropItemRand(ModItems.TREXTOOTH, 1);
+/* 179 */     dropItemRand(ModItems.TREX_TOOTH, 1);
 /* 180 */     dropItemRand(Items.ITEM_FRAME, 1);
 /*     */     int var4;
 /* 182 */     for (var4 = 0; var4 < 7; var4++) {
@@ -184,8 +184,8 @@
 /*     */     }
 /* 185 */     var4 = 2 + this.world.rand.nextInt(4);
 /* 186 */     for (int i = 0; i < var4; i++) {
-/* 187 */       dropItemRand(ModItems.URANIUMNUGGET, 1);
-/* 188 */       dropItemRand(ModItems.TITANIUMNUGGET, 1);
+/* 187 */       dropItemRand(ModItems.URANIUM_NUGGET, 1);
+/* 188 */       dropItemRand(ModItems.TITANIUM_NUGGET, 1);
 /*     */     } 
 /*     */   }
 /*     */ 
@@ -426,7 +426,7 @@
 /*     */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.2-deobf.jar!\danger\orespawn\entity\TRex.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.3-deobf.jar!\danger\orespawn\entity\TRex.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

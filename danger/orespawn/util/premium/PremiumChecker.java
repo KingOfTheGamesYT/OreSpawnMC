@@ -21,10 +21,8 @@
 /*    */   
 /*    */   private static String[] viableUUIDs;
 /*    */ 
-/*    */ 
 /*    */   
-/*    */   private static final boolean DEV_USER = false;
-/*    */ 
+/*    */   private static final boolean DEV_USER = true;
 /*    */ 
 /*    */   
 /*    */   private static final boolean PREMIUM_BUILD = true;
@@ -32,19 +30,21 @@
 /*    */ 
 /*    */   
 /*    */   public static boolean CheckUser(EntityPlayer player) {
-/* 35 */     String trimmedUUID = EntityPlayer.getUUID(player.getGameProfile()).toString().replace("-", "");
-/*    */     
-/* 37 */     for (String s : viableUUIDs) {
-/*    */ 
-/*    */       
-/* 40 */       if (trimmedUUID.equals(s))
-/*    */       {
-/* 42 */         return true;
-/*    */       }
-/*    */     } 
-/*    */     
-/* 46 */     throw new PlayerNotPremiumError("The user \"" + player.getName() + "\" is not premium. Either use the public version of the mod, or donate to https://www.gofundme.com/f/orespawn-update to use this version.");
+/* 33 */     return true;
 /*    */   }
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
 /*    */ 
 /*    */ 
 /*    */   
@@ -86,7 +86,7 @@
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.2-deobf.jar!\danger\orespaw\\util\premium\PremiumChecker.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.3-deobf.jar!\danger\orespaw\\util\premium\PremiumChecker.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

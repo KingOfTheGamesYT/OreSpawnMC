@@ -3,7 +3,7 @@ Implementation-Title: OreSpawnFinalFinal
 Implementation-Version: 1.0
 Specification-Vendor: examplemodsareus
 Specification-Title: examplemod
-Implementation-Timestamp: 2020-11-13T16:30:19-0600
+Implementation-Timestamp: 2021-01-09T17:00:18-0500
 Specification-Version: 1
 Implementation-Vendor: examplemodsareus
 

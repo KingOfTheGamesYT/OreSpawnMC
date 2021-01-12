@@ -1,8 +1,8 @@
 /*    */ package danger.orespawn.world.dimension.mining;
 /*    */ 
-/*    */ import danger.orespawn.init.DimensionInit;
+/*    */ import danger.orespawn.init.ModBiomes;
+/*    */ import danger.orespawn.init.ModDimensions;
 /*    */ import danger.orespawn.util.Reference;
-/*    */ import net.minecraft.init.Biomes;
 /*    */ import net.minecraft.world.DimensionType;
 /*    */ import net.minecraft.world.WorldProvider;
 /*    */ import net.minecraft.world.WorldServer;
@@ -17,60 +17,55 @@
 /*    */ 
 /*    */ 
 /*    */ 
-/*    */ 
-/*    */ 
-/*    */ 
-/*    */ 
-/*    */ 
 /*    */ public class WorldProviderMiningDimension
 /*    */   extends WorldProvider
 /*    */ {
 /*    */   public DimensionType getDimensionType() {
-/* 29 */     return DimensionInit.MINING;
+/* 24 */     return ModDimensions.MINING;
 /*    */   }
 /*    */ 
 /*    */   
 /*    */   public boolean canRespawnHere() {
-/* 34 */     return true;
+/* 29 */     return true;
 /*    */   }
 /*    */ 
 /*    */ 
 /*    */   
 /*    */   public IChunkGenerator createChunkGenerator() {
-/* 40 */     return new ChunkGeneratorMiningDimension(this.world, getSeed(), (BiomeProvider)new BiomeProviderSingle(Biomes.EXTREME_HILLS_WITH_TREES));
+/* 35 */     return new ChunkGeneratorMiningDimension(this.world, getSeed(), (BiomeProvider)new BiomeProviderSingle(ModBiomes.MINING_BIOME));
 /*    */   }
 /*    */ 
 /*    */   
 /*    */   public boolean isSurfaceWorld() {
-/* 45 */     return true;
+/* 40 */     return true;
 /*    */   }
 /*    */ 
 /*    */   
 /*    */   public void setWorldTime(long time) {
-/* 50 */     WorldServer ws = DimensionManager.getWorld(Reference.DimensionMiningID);
-/* 51 */     if (ws != null) {
+/* 45 */     WorldServer ws = DimensionManager.getWorld(Reference.DimensionMiningID);
+/* 46 */     if (ws != null) {
 /*    */       
-/* 53 */       WorldInfo wi = ws.getWorldInfo();
-/* 54 */       if (wi != null)
+/* 48 */       WorldInfo wi = ws.getWorldInfo();
+/* 49 */       if (wi != null)
 /*    */       {
-/* 56 */         if (time % 24000L > 12000L && ws.areAllPlayersAsleep()) {
+/* 51 */         if (time % 24000L > 12000L && ws.areAllPlayersAsleep()) {
 /*    */           
-/* 58 */           long newTime = time + 24000L;
-/* 59 */           newTime -= newTime % 24000L;
-/* 60 */           for (int i = 0; i < (ws.getMinecraftServer()).worlds.length; i++)
+/* 53 */           long newTime = time + 24000L;
+/* 54 */           newTime -= newTime % 24000L;
+/* 55 */           for (int i = 0; i < (ws.getMinecraftServer()).worlds.length; i++)
 /*    */           {
-/* 62 */             (ws.getMinecraftServer()).worlds[i].setWorldTime(newTime);
+/* 57 */             (ws.getMinecraftServer()).worlds[i].setWorldTime(newTime);
 /*    */           }
 /*    */           return;
 /*    */         } 
 /*    */       }
 /*    */     } 
-/* 68 */     super.setWorldTime(time);
+/* 63 */     super.setWorldTime(time);
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.2-deobf.jar!\danger\orespawn\world\dimension\mining\WorldProviderMiningDimension.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.3-deobf.jar!\danger\orespawn\world\dimension\mining\WorldProviderMiningDimension.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

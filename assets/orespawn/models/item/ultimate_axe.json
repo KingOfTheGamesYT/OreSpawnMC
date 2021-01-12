@@ -2,6 +2,6 @@
     "parent": "item/handheld",
     "textures":
     {
-        "layer0": "orespawn:items/ultimateaxe"
+        "layer0": "orespawn:items/ultimate_axe"
     }
 }

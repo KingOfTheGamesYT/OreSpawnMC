@@ -1,8 +1,12 @@
 /*     */ package danger.orespawn.entity;
 /*     */ 
 /*     */ import danger.orespawn.OreSpawnMain;
+/*     */ import danger.orespawn.init.ModDimensions;
+/*     */ import danger.orespawn.util.Teleport;
 /*     */ import danger.orespawn.util.ai.MyEntityAIWanderALot;
+/*     */ import javax.annotation.Nullable;
 /*     */ import net.minecraft.entity.Entity;
+/*     */ import net.minecraft.entity.EntityAgeable;
 /*     */ import net.minecraft.entity.EntityCreature;
 /*     */ import net.minecraft.entity.EntityLivingBase;
 /*     */ import net.minecraft.entity.SharedMonsterAttributes;
@@ -13,41 +17,37 @@
 /*     */ import net.minecraft.entity.player.EntityPlayer;
 /*     */ import net.minecraft.item.ItemStack;
 /*     */ import net.minecraft.util.DamageSource;
+/*     */ import net.minecraft.util.EnumHand;
+/*     */ import net.minecraft.util.math.BlockPos;
+/*     */ import net.minecraft.world.DimensionType;
 /*     */ import net.minecraft.world.EnumDifficulty;
 /*     */ import net.minecraft.world.World;
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
 /*     */ 
 /*     */ public class RedAnt
 /*     */   extends Ant
 /*     */ {
-/*  35 */   int attack_delay = 20;
-/*     */ 
+/*  29 */   int attack_delay = 20;
+/*  30 */   public double moveSpeed = 0.20000000298023224D;
 /*     */   
 /*     */   public RedAnt(World par1World) {
-/*  39 */     super(par1World);
+/*  33 */     super(par1World);
 /*     */     
-/*  41 */     setSize(0.2F, 0.2F);
-/*  42 */     this.moveSpeed = 0.20000000298023224D;
-/*  43 */     this.experienceValue = 1;
+/*  35 */     setSize(0.2F, 0.2F);
 /*     */     
-/*  45 */     this.tasks.addTask(0, (EntityAIBase)new EntityAIPanic((EntityCreature)this, 1.399999976158142D));
-/*  46 */     this.tasks.addTask(1, (EntityAIBase)new EntityAIAttackMelee((EntityCreature)this, 1.0D, false));
-/*  47 */     this.tasks.addTask(2, (EntityAIBase)new MyEntityAIWanderALot((EntityCreature)this, 10, 1.0D));
-/*  48 */     if (OreSpawnMain.PlayNicely == 0) this.targetTasks.addTask(1, (EntityAIBase)new EntityAINearestAttackableTarget((EntityCreature)this, EntityPlayer.class, true));
+/*  37 */     this.experienceValue = 1;
+/*     */     
+/*  39 */     this.tasks.addTask(0, (EntityAIBase)new EntityAIPanic((EntityCreature)this, 1.399999976158142D));
+/*  40 */     this.tasks.addTask(1, (EntityAIBase)new EntityAIAttackMelee((EntityCreature)this, 1.0D, false));
+/*  41 */     this.tasks.addTask(2, (EntityAIBase)new MyEntityAIWanderALot((EntityCreature)this, 10, 1.0D));
+/*  42 */     if (OreSpawnMain.PlayNicely == 0) this.targetTasks.addTask(1, (EntityAIBase)new EntityAINearestAttackableTarget((EntityCreature)this, EntityPlayer.class, true));
 /*     */   
 /*     */   }
+/*     */   
+/*     */   @Nullable
+/*     */   public EntityAgeable createChild(EntityAgeable ageable) {
+/*  48 */     return null;
+/*     */   }
+/*     */ 
 /*     */   
 /*     */   protected void applyEntityAttributes() {
 /*  53 */     super.applyEntityAttributes();
@@ -61,53 +61,32 @@
 /*     */   public int mygetMaxHealth() {
 /*  62 */     return 2;
 /*     */   }
-/*     */ 
-/*     */ 
-/*     */ 
 /*     */   
 /*     */   public boolean attackEntityAsMob(Entity par1Entity) {
-/*  69 */     if (OreSpawnMain.OreSpawnRand.nextInt(15) != 0) return false; 
-/*  70 */     if (this.world.getDifficulty() == EnumDifficulty.PEACEFUL) return false; 
-/*  71 */     boolean var4 = par1Entity.attackEntityFrom(DamageSource.causeMobDamage((EntityLivingBase)this), 1.0F);
-/*  72 */     return var4;
+/*  66 */     if (OreSpawnMain.OreSpawnRand.nextInt(15) != 0) return false; 
+/*  67 */     if (this.world.getDifficulty() == EnumDifficulty.PEACEFUL) return false; 
+/*  68 */     return par1Entity.attackEntityFrom(DamageSource.causeMobDamage((EntityLivingBase)this), 1.0F);
 /*     */   }
 /*     */ 
 /*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
 /*     */   
-/*     */   public boolean interact(EntityPlayer par1EntityPlayer) {
-/*  82 */     if (par1EntityPlayer == null) return false;
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
+/*     */   public boolean processInteract(EntityPlayer player, EnumHand hand) {
+/*  74 */     ItemStack itemstack = player.getHeldItem(hand);
 /*     */     
-/*  88 */     if (!(par1EntityPlayer instanceof net.minecraft.entity.player.EntityPlayerMP)) return false;
-/*     */ 
-/*     */     
-/*  91 */     ItemStack var2 = par1EntityPlayer.inventory.getCurrentItem();
-/*  92 */     if (var2 != null && 
-/*  93 */       var2.getCount() <= 0) {
-/*  94 */       par1EntityPlayer.inventory.setInventorySlotContents(par1EntityPlayer.inventory.currentItem, (ItemStack)null);
-/*  95 */       var2 = null;
-/*     */     } 
-/*     */     
-/*  98 */     if (var2 != null) {
-/*  99 */       return false;
+/*  76 */     if (itemstack.isEmpty())
+/*     */     {
+/*  78 */       if (player.dimension == DimensionType.OVERWORLD.getId()) {
+/*  79 */         BlockPos playerPos = player.getPosition();
+/*  80 */         Teleport.teleportToDimension(player, ModDimensions.MINING.getId(), playerPos.getX(), playerPos.getY(), playerPos.getZ());
+/*  81 */         player.dimension = ModDimensions.MINING.getId();
+/*     */       } else {
+/*  83 */         BlockPos playerPos = player.getPosition();
+/*  84 */         Teleport.teleportToDimension(player, DimensionType.OVERWORLD.getId(), playerPos.getX(), playerPos.getY(), playerPos.getZ());
+/*  85 */         player.dimension = DimensionType.OVERWORLD.getId();
+/*     */       } 
 /*     */     }
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
 /*     */     
-/* 110 */     return true;
+/*  89 */     return super.processInteract(player, hand);
 /*     */   }
 /*     */ 
 /*     */ 
@@ -121,21 +100,21 @@
 /*     */ 
 /*     */   
 /*     */   public void onUpdate() {
-/* 124 */     super.onUpdate();
-/* 125 */     if (this.isDead)
-/* 126 */       return;  if (this.attack_delay > 0) this.attack_delay--; 
-/* 127 */     if (this.attack_delay > 0)
-/* 128 */       return;  this.attack_delay = 20;
-/* 129 */     if (this.world.getDifficulty() == EnumDifficulty.PEACEFUL)
-/* 130 */       return;  if (OreSpawnMain.PlayNicely != 0)
-/* 131 */       return;  EntityPlayer entityPlayer = this.world.getClosestPlayerToEntity((Entity)this, 1.5D);
-/* 132 */     if (entityPlayer != null)
-/* 133 */       attackEntityAsMob((Entity)entityPlayer); 
+/* 103 */     super.onUpdate();
+/* 104 */     if (this.isDead)
+/* 105 */       return;  if (this.attack_delay > 0) this.attack_delay--; 
+/* 106 */     if (this.attack_delay > 0)
+/* 107 */       return;  this.attack_delay = 20;
+/* 108 */     if (this.world.getDifficulty() == EnumDifficulty.PEACEFUL)
+/* 109 */       return;  if (OreSpawnMain.PlayNicely != 0)
+/* 110 */       return;  EntityPlayer entityPlayer = this.world.getClosestPlayerToEntity((Entity)this, 1.5D);
+/* 111 */     if (entityPlayer != null)
+/* 112 */       attackEntityAsMob((Entity)entityPlayer); 
 /*     */   }
 /*     */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.2-deobf.jar!\danger\orespawn\entity\RedAnt.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.3-deobf.jar!\danger\orespawn\entity\RedAnt.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

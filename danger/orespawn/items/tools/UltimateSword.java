@@ -1,33 +1,38 @@
 /*    */ package danger.orespawn.items.tools;
 /*    */ 
+/*    */ import danger.orespawn.OreSpawnMain;
+/*    */ import danger.orespawn.init.ModItems;
+/*    */ import javax.annotation.ParametersAreNonnullByDefault;
 /*    */ import net.minecraft.entity.Entity;
 /*    */ import net.minecraft.init.Enchantments;
 /*    */ import net.minecraft.item.ItemStack;
+/*    */ import net.minecraft.item.ItemSword;
 /*    */ import net.minecraft.world.World;
 /*    */ 
-/*    */ 
 /*    */ public class UltimateSword
-/*    */   extends ToolSwordBase
+/*    */   extends ItemSword
 /*    */ {
 /*    */   public UltimateSword() {
-/* 13 */     super("ultimate_sword", OrespawnToolMaterial.UltimateTools);
+/* 16 */     super(OrespawnToolMaterial.UltimateTools.Material);
+/* 17 */     setUnlocalizedName("ultimate_sword");
+/* 18 */     setRegistryName("ultimate_sword");
+/* 19 */     setCreativeTab(OreSpawnMain.OreSpawnTab);
+/* 20 */     ModItems.ITEMS.add(this);
 /*    */   }
 /*    */ 
-/*    */ 
-/*    */ 
 /*    */   
+/*    */   @ParametersAreNonnullByDefault
 /*    */   public void onUpdate(ItemStack stack, World world, Entity player, int itemSlot, boolean isSelected) {
-/* 20 */     if (!stack.isItemEnchanted()) {
-/*    */       
-/* 22 */       stack.addEnchantment(Enchantments.LOOTING, 6);
-/* 23 */       stack.addEnchantment(Enchantments.UNBREAKING, 6);
+/* 26 */     if (!stack.isItemEnchanted()) {
+/* 27 */       stack.addEnchantment(Enchantments.LOOTING, 6);
+/* 28 */       stack.addEnchantment(Enchantments.UNBREAKING, 6);
 /*    */     } 
-/* 25 */     super.onUpdate(stack, world, player, itemSlot, isSelected);
+/* 30 */     super.onUpdate(stack, world, player, itemSlot, isSelected);
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.2-deobf.jar!\danger\orespawn\items\tools\UltimateSword.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.3-deobf.jar!\danger\orespawn\items\tools\UltimateSword.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

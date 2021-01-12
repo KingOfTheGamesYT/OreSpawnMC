@@ -60,5 +60,168 @@
 		"category": "entity",
 		"subtitle": "entity.cryo.living",
 		"sounds": [{ "name": "orespawn:entity/cryo/living", "stream": true}]
+	},
+
+	"entity.birds.birds1":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds1",
+	"sounds": [{ "name": "orespawn:entity/birds/birds1", "stream": true }]
+	},
+
+	"entity.birds.birds2":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds2",
+	"sounds": [{ "name": "orespawn:entity/birds/birds2", "stream": true }]
+	},
+
+	"entity.birds.birds3":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds3",
+	"sounds": [{ "name": "orespawn:entity/birds/birds3", "stream": true }]
+	},
+
+	"entity.birds.birds4":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds4",
+	"sounds": [{ "name": "orespawn:entity/birds/birds4", "stream": true }]
+	},
+
+	"entity.birds.birds5":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds5",
+	"sounds": [{ "name": "orespawn:entity/birds/birds5", "stream": true }]
+	},
+
+	"entity.birds.birds6":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds6",
+	"sounds": [{ "name": "orespawn:entity/birds/birds6", "stream": true }]
+	},
+
+	"entity.birds.birds7":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds7",
+	"sounds": [{ "name": "orespawn:entity/birds/birds7", "stream": true }]
+	},
+
+	"entity.birds.birds8":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds8",
+	"sounds": [{ "name": "orespawn:entity/birds/birds8", "stream": true }]
+	},
+
+	"entity.birds.birds9":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds9",
+	"sounds": [{ "name": "orespawn:entity/birds/birds9", "stream": true }]
+	},
+
+	"entity.birds.birds10":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds10",
+	"sounds": [{ "name": "orespawn:entity/birds/birds10", "stream": true }]
+	},
+
+	"entity.birds.birds11":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds11",
+	"sounds": [{ "name": "orespawn:entity/birds/birds11", "stream": true }]
+	},
+
+	"entity.birds.birds12":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds12",
+	"sounds": [{ "name": "orespawn:entity/birds/birds12", "stream": true }]
+	},
+
+	"entity.birds.birds13":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds13",
+	"sounds": [{ "name": "orespawn:entity/birds/birds13", "stream": true }]
+	},
+
+	"entity.birds.birds14":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds14",
+	"sounds": [{ "name": "orespawn:entity/birds/birds14", "stream": true }]
+	},
+
+	"entity.birds.birds15":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds15",
+	"sounds": [{ "name": "orespawn:entity/birds/birds15", "stream": true }]
+	},
+
+	"entity.birds.birds16":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds16",
+	"sounds": [{ "name": "orespawn:entity/birds/birds16", "stream": true }]
+	},
+
+	"entity.birds.birds17":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds17",
+	"sounds": [{ "name": "orespawn:entity/birds/birds17", "stream": true }]
+	},
+
+	"entity.birds.birds18":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds18",
+	"sounds": [{ "name": "orespawn:entity/birds/birds18", "stream": true }]
+	},
+
+	"entity.birds.birds19":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds19",
+	"sounds": [{ "name": "orespawn:entity/birds/birds19", "stream": true }]
+	},
+
+	"entity.birds.birds20":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds20",
+	"sounds": [{ "name": "orespawn:entity/birds/birds20", "stream": true }]
+	},
+
+	"entity.birds.birds21":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds21",
+	"sounds": [{ "name": "orespawn:entity/birds/birds21", "stream": true }]
+	},
+
+	"entity.birds.birds22":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds22",
+	"sounds": [{ "name": "orespawn:entity/birds/birds22", "stream": true }]
+	},
+
+
+	"entity.birds.birds23":
+	{
+	"category": "entity",
+	"subtitle": "entity.birds.birds23",
+	"sounds": [{ "name": "orespawn:entity/birds/birds23", "stream": true }]
 	}
+
 }

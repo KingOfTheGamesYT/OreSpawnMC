@@ -27,37 +27,38 @@
 /*     */ 
 /*     */ 
 /*     */ 
+/*     */ 
 /*     */ public class Ant
 /*     */   extends EntityAnimal
 /*     */ {
-/*  33 */   public double moveSpeed = 0.15000000596046448D;
+/*  34 */   public double moveSpeed = 0.15000000596046448D;
 /*     */   
-/*  35 */   private static final ResourceLocation texture2 = new ResourceLocation("orespawn:textures/entity/red_ant.png");
+/*  36 */   private static final ResourceLocation texture2 = new ResourceLocation("orespawn:textures/entity/red_ant.png");
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   public Ant(World par1World) {
-/*  42 */     super(par1World);
-/*  43 */     setSize(0.1F, 0.1F);
-/*  44 */     this.experienceValue = 0;
+/*  43 */     super(par1World);
+/*  44 */     setSize(0.1F, 0.1F);
+/*  45 */     this.experienceValue = 0;
 /*     */     
-/*  46 */     this.tasks.addTask(0, (EntityAIBase)new EntityAIPanic((EntityCreature)this, 1.4D));
-/*  47 */     this.tasks.addTask(1, (EntityAIBase)new MyEntityAIWanderALot((EntityCreature)this, 9, 1.0D));
+/*  47 */     this.tasks.addTask(0, (EntityAIBase)new EntityAIPanic((EntityCreature)this, 1.4D));
+/*  48 */     this.tasks.addTask(1, (EntityAIBase)new MyEntityAIWanderALot((EntityCreature)this, 9, 1.0D));
 /*     */   }
 /*     */ 
 /*     */   
 /*     */   protected void applyEntityAttributes() {
-/*  52 */     super.applyEntityAttributes();
-/*  53 */     getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(mygetMaxHealth());
-/*  54 */     getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(this.moveSpeed);
-/*  55 */     getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-/*  56 */     getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(0.0D);
+/*  53 */     super.applyEntityAttributes();
+/*  54 */     getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(mygetMaxHealth());
+/*  55 */     getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(this.moveSpeed);
+/*  56 */     getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
+/*  57 */     getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(0.0D);
 /*     */   }
 /*     */   
 /*     */   public ResourceLocation getTexture(Ant a) {
-/*  60 */     return texture2;
+/*  61 */     return texture2;
 /*     */   }
 /*     */ 
 /*     */ 
@@ -65,8 +66,8 @@
 /*     */ 
 /*     */   
 /*     */   protected boolean canDespawn() {
-/*  68 */     if (isNoDespawnRequired()) return false; 
-/*  69 */     return true;
+/*  69 */     if (isNoDespawnRequired()) return false; 
+/*  70 */     return true;
 /*     */   }
 /*     */ 
 /*     */ 
@@ -74,35 +75,35 @@
 /*     */ 
 /*     */   
 /*     */   public void onUpdate() {
-/*  77 */     getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(this.moveSpeed);
-/*  78 */     super.onUpdate();
-/*  79 */     updateAITick();
+/*  78 */     getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(this.moveSpeed);
+/*  79 */     super.onUpdate();
+/*  80 */     updateAITick();
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   public boolean interact(EntityPlayer par1EntityPlayer) {
-/*  88 */     if (par1EntityPlayer == null) return false;
+/*  88 */     System.out.println("ANT INTERACTED");
+/*  89 */     if (par1EntityPlayer == null) return false;
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */     
-/*  94 */     if (!(par1EntityPlayer instanceof net.minecraft.entity.player.EntityPlayerMP)) return false;
+/*  95 */     if (!(par1EntityPlayer instanceof net.minecraft.entity.player.EntityPlayerMP)) return false;
 /*     */ 
 /*     */     
-/*  97 */     ItemStack var2 = par1EntityPlayer.inventory.getCurrentItem();
-/*  98 */     if (var2 != null && 
-/*  99 */       var2.getCount() <= 0) {
-/* 100 */       par1EntityPlayer.inventory.setInventorySlotContents(par1EntityPlayer.inventory.currentItem, (ItemStack)null);
-/* 101 */       var2 = null;
+/*  98 */     ItemStack var2 = par1EntityPlayer.inventory.getCurrentItem();
+/*  99 */     if (var2 != null && 
+/* 100 */       var2.getCount() <= 0) {
+/* 101 */       par1EntityPlayer.inventory.setInventorySlotContents(par1EntityPlayer.inventory.currentItem, (ItemStack)null);
+/* 102 */       var2 = null;
 /*     */     } 
 /*     */     
-/* 104 */     if (var2 != null) {
-/* 105 */       return false;
+/* 105 */     if (var2 != null) {
+/* 106 */       return false;
 /*     */     }
 /*     */ 
 /*     */ 
@@ -114,7 +115,7 @@
 /*     */ 
 /*     */ 
 /*     */     
-/* 117 */     return true;
+/* 118 */     return true;
 /*     */   }
 /*     */ 
 /*     */ 
@@ -123,13 +124,13 @@
 /*     */ 
 /*     */   
 /*     */   public boolean isAIEnabled() {
-/* 126 */     return true;
+/* 127 */     return true;
 /*     */   }
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   public int mygetMaxHealth() {
-/* 132 */     return 1;
+/* 133 */     return 1;
 /*     */   }
 /*     */ 
 /*     */ 
@@ -138,7 +139,7 @@
 /*     */ 
 /*     */   
 /*     */   protected SoundEvent getAmbientSound() {
-/* 141 */     return null;
+/* 142 */     return null;
 /*     */   }
 /*     */ 
 /*     */ 
@@ -147,13 +148,13 @@
 /*     */ 
 /*     */   
 /*     */   protected SoundEvent getHurtSound(DamageSource source) {
-/* 150 */     return null;
+/* 151 */     return null;
 /*     */   }
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   protected SoundEvent getDeathSound() {
-/* 156 */     return null;
+/* 157 */     return null;
 /*     */   }
 /*     */ 
 /*     */ 
@@ -162,7 +163,7 @@
 /*     */ 
 /*     */   
 /*     */   protected float getSoundVolume() {
-/* 165 */     return 0.0F;
+/* 166 */     return 0.0F;
 /*     */   }
 /*     */ 
 /*     */ 
@@ -192,14 +193,14 @@
 /*     */ 
 /*     */   
 /*     */   protected boolean canTriggerWalking() {
-/* 195 */     return true;
+/* 196 */     return true;
 /*     */   }
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   public EntityAgeable createChild(EntityAgeable var1) {
-/* 202 */     return null;
+/* 203 */     return null;
 /*     */   }
 /*     */ 
 /*     */ 
@@ -207,25 +208,25 @@
 /*     */ 
 /*     */   
 /*     */   public boolean getCanSpawnHere() {
-/* 210 */     if (this.posY < 50.0D) return false; 
-/* 211 */     if (findBuddies() > 4) return false; 
-/* 212 */     return true;
+/* 211 */     if (this.posY < 50.0D) return false; 
+/* 212 */     if (findBuddies() > 4) return false; 
+/* 213 */     return true;
 /*     */   }
 /*     */ 
 /*     */   
 /*     */   private int findBuddies() {
-/* 217 */     List var5 = this.world.getEntitiesWithinAABB(Ant.class, getEntityBoundingBox().expand(20.0D, 10.0D, 20.0D));
-/* 218 */     return var5.size();
+/* 218 */     List var5 = this.world.getEntitiesWithinAABB(Ant.class, getEntityBoundingBox().expand(20.0D, 10.0D, 20.0D));
+/* 219 */     return var5.size();
 /*     */   }
 /*     */ 
 /*     */   
 /*     */   public void updateAITick() {
-/* 223 */     if (this.world.rand.nextInt(200) == 1) setRevengeTarget(null); 
+/* 224 */     if (this.world.rand.nextInt(200) == 1) setRevengeTarget(null); 
 /*     */   }
 /*     */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.2-deobf.jar!\danger\orespawn\entity\Ant.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.3-deobf.jar!\danger\orespawn\entity\Ant.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

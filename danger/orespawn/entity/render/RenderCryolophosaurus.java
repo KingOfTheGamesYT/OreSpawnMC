@@ -1,11 +1,11 @@
 /*    */ package danger.orespawn.entity.render;
+/*    */ 
 /*    */ import danger.orespawn.entity.Cryolophosaurus;
 /*    */ import danger.orespawn.entity.model.ModelCryolophosaurus;
 /*    */ import net.minecraft.client.model.ModelBase;
 /*    */ import net.minecraft.client.renderer.entity.RenderLiving;
 /*    */ import net.minecraft.client.renderer.entity.RenderManager;
 /*    */ import net.minecraft.entity.Entity;
-/*    */ import net.minecraft.entity.EntityLiving;
 /*    */ import net.minecraft.entity.EntityLivingBase;
 /*    */ import net.minecraft.util.ResourceLocation;
 /*    */ 
@@ -31,7 +31,7 @@
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.2-deobf.jar!\danger\orespawn\entity\render\RenderCryolophosaurus.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.3-deobf.jar!\danger\orespawn\entity\render\RenderCryolophosaurus.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

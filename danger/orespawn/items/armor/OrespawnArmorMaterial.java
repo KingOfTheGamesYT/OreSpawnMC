@@ -37,10 +37,12 @@
 /* 37 */       .addEnchantment(Enchantments.RESPIRATION, 2).addEnchantment(Enchantments.AQUA_AFFINITY, 2).addEnchantment(Enchantments.PROTECTION, 5)
 /* 38 */       .addEnchantment(Enchantments.FIRE_PROTECTION, 5).addEnchantment(Enchantments.PROJECTILE_PROTECTION, 5).addEnchantment(Enchantments.UNBREAKING, 0)
 /* 39 */       .addEnchantment(Enchantments.FEATHER_FALLING, 3));
+/*    */   
+/* 41 */   public static final OrespawnArmorMaterial EmeraldArmor = new OrespawnArmorMaterial("emerald", 100, new int[] { 6, 12, 10, 6 }, 12, 3.0F, new ItemEnchantments());
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.2-deobf.jar!\danger\orespawn\items\armor\OrespawnArmorMaterial.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.3-deobf.jar!\danger\orespawn\items\armor\OrespawnArmorMaterial.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

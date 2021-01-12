@@ -29,7 +29,7 @@
 /* 29 */       dim = Integer.parseInt(args[0]);
 /*    */     }
 /* 31 */     catch (NumberFormatException e) {
-/* 32 */       sender.sendMessage((ITextComponent)new TextComponentString(TextFormatting.RED + "Dimension ID Invalid"));
+/* 32 */       sender.sendMessage((ITextComponent)new TextComponentString(TextFormatting.GRAY + "Dimension ID Invalid"));
 /*    */       return;
 /*    */     } 
 /* 35 */     if (sender instanceof EntityPlayer) {
@@ -59,7 +59,7 @@
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.2-deobf.jar!\danger\orespawn\commands\CommandDimensionTeleport.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.3-deobf.jar!\danger\orespawn\commands\CommandDimensionTeleport.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */
