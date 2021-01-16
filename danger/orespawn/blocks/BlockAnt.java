@@ -24,38 +24,43 @@
 /*    */ 
 /*    */ 
 /*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
 /*    */ public class BlockAnt
 /*    */   extends Block
 /*    */ {
 /*    */   public BlockAnt() {
-/* 31 */     super(Material.GRASS);
-/* 32 */     setUnlocalizedName("ant_block");
-/* 33 */     setRegistryName("ant_block");
-/* 34 */     setTickRandomly(true);
-/* 35 */     setCreativeTab(OreSpawnMain.OreSpawnTab);
-/* 36 */     ModBlocks.BLOCKS.add(this);
-/* 37 */     ModItems.ITEMS.add((new ItemBlock(this)).setRegistryName(Objects.<ResourceLocation>requireNonNull(getRegistryName())));
+/* 35 */     super(Material.GRASS);
+/* 36 */     setUnlocalizedName("ant_block");
+/* 37 */     setRegistryName("ant_block");
+/* 38 */     setTickRandomly(true);
+/* 39 */     setCreativeTab(OreSpawnMain.OreSpawnTab);
+/* 40 */     ModBlocks.BLOCKS.add(this);
+/* 41 */     ModItems.ITEMS.add((new ItemBlock(this)).setRegistryName(Objects.<ResourceLocation>requireNonNull(getRegistryName())));
 /*    */   }
 /*    */ 
 /*    */   
 /*    */   public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-/* 42 */     super.updateTick(worldIn, pos, state, rand);
-/*    */ 
-/*    */     
-/* 45 */     if (worldIn.getBlockState(pos.up(1)).getBlock() == Blocks.AIR && worldIn.isDaytime()) {
-/* 46 */       int howmany = OreSpawnMain.OreSpawnRand.nextInt(6) + 2;
-/* 47 */       for (int i = 0; i < howmany; i++) {
-/* 48 */         Entity ant = EntityList.createEntityByID(EntityList.getID(RedAnt.class), worldIn);
-/* 49 */         ant.setPositionAndRotation(pos.getX(), (pos.getY() + 1), pos.getZ(), rand.nextFloat() * 360.0F, 0.0F);
-/* 50 */         worldIn.spawnEntity(ant);
-/* 51 */         ((EntityLiving)ant).playLivingSound();
+/* 46 */     super.updateTick(worldIn, pos, state, rand);
+/* 47 */     if (worldIn.isRemote) {
+/*    */       return;
+/*    */     }
+/* 50 */     if (worldIn.getBlockState(pos.up(1)).getBlock() == Blocks.AIR && worldIn.isDaytime()) {
+/* 51 */       int howmany = OreSpawnMain.OreSpawnRand.nextInt(6) + 2;
+/* 52 */       for (int i = 0; i < howmany; i++) {
+/* 53 */         Entity ant = EntityList.createEntityByID(EntityList.getID(RedAnt.class), worldIn);
+/* 54 */         ant.setPositionAndRotation(pos.getX(), (pos.getY() + 1), pos.getZ(), rand.nextFloat() * 360.0F, 0.0F);
+/* 55 */         worldIn.spawnEntity(ant);
+/* 56 */         ((EntityLiving)ant).playLivingSound();
 /*    */       } 
 /*    */     } 
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.3a-deobf.jar!\danger\orespawn\blocks\BlockAnt.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.4-deobf.jar!\danger\orespawn\blocks\BlockAnt.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

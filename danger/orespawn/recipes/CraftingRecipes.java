@@ -171,11 +171,36 @@
 /*     */           
 /* 172 */           Character.valueOf('X'), Blocks.AIR, 
 /* 173 */           Character.valueOf('Y'), Items.EMERALD });
+/*     */     
+/* 175 */     GameRegistry.addShapelessRecipe(new ResourceLocation("alosaurus_egg"), null, new ItemStack(ModItems.ALOSAURUS_EGG, 1), new Ingredient[] {
+/* 176 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 177 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.ALOSAURUS_ORE) })
+/*     */         });
+/* 179 */     GameRegistry.addShapelessRecipe(new ResourceLocation("baryonyx_egg"), null, new ItemStack(ModItems.BARYONYX_EGG, 1), new Ingredient[] {
+/* 180 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 181 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.BARYONYX_ORE) })
+/*     */         });
+/* 183 */     GameRegistry.addShapelessRecipe(new ResourceLocation("camarasaurus_egg"), null, new ItemStack(ModItems.CAMARASAURUS_EGG, 1), new Ingredient[] {
+/* 184 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 185 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.CAMARASAURUS_ORE) })
+/*     */         });
+/* 187 */     GameRegistry.addShapelessRecipe(new ResourceLocation("cryolophosaurus_egg"), null, new ItemStack(ModItems.CRYOLOPHOSAURUS_EGG, 1), new Ingredient[] {
+/* 188 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 189 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.CRYOLOPHOSAURUS_ORE) })
+/*     */         });
+/* 191 */     GameRegistry.addShapelessRecipe(new ResourceLocation("pointysaurus_egg"), null, new ItemStack(ModItems.POINTYSAURUS_EGG, 1), new Ingredient[] {
+/* 192 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 193 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.POINTYSAURUS_ORE) })
+/*     */         });
+/* 195 */     GameRegistry.addShapelessRecipe(new ResourceLocation("trex_egg"), null, new ItemStack(ModItems.TREX_EGG, 1), new Ingredient[] {
+/* 196 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 197 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.TREX_ORE) })
+/*     */         });
 /*     */   }
 /*     */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.3a-deobf.jar!\danger\orespawn\recipes\CraftingRecipes.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.4-deobf.jar!\danger\orespawn\recipes\CraftingRecipes.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

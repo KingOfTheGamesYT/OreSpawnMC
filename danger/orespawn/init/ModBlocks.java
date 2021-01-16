@@ -3,7 +3,7 @@
 /*    */ import danger.orespawn.blocks.BlockButterflyPlant;
 /*    */ import danger.orespawn.blocks.BlockCornPlant;
 /*    */ import danger.orespawn.blocks.BlockUranium;
-/*    */ import danger.orespawn.blocks.OreTitanium;
+/*    */ import danger.orespawn.blocks.OreGenericEgg;
 /*    */ import danger.orespawn.blocks.OreUranium;
 /*    */ import java.util.ArrayList;
 /*    */ import java.util.List;
@@ -22,10 +22,17 @@
 /* 22 */   public static final Block TITANIUM_ORE = (Block)new OreTitanium();
 /*    */   
 /* 24 */   public static final Block ANT_BLOCK = (Block)new BlockAnt();
+/*    */   
+/* 26 */   public static final Block ALOSAURUS_ORE = (Block)new OreGenericEgg("alosaurus_ore");
+/* 27 */   public static final Block BARYONYX_ORE = (Block)new OreGenericEgg("baryonyx_ore");
+/* 28 */   public static final Block CAMARASAURUS_ORE = (Block)new OreGenericEgg("camarasaurus_ore");
+/* 29 */   public static final Block CRYOLOPHOSAURUS_ORE = (Block)new OreGenericEgg("cryolophosaurus_ore");
+/* 30 */   public static final Block POINTYSAURUS_ORE = (Block)new OreGenericEgg("pointysaurus_ore");
+/* 31 */   public static final Block TREX_ORE = (Block)new OreGenericEgg("trex_ore");
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.3a-deobf.jar!\danger\orespawn\init\ModBlocks.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.4-deobf.jar!\danger\orespawn\init\ModBlocks.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

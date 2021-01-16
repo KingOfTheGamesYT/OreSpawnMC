@@ -29,36 +29,37 @@
 /*    */   public void applyEntityAttributes() {
 /* 30 */     super.applyEntityAttributes();
 /* 31 */     getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.10000000149011612D);
+/* 32 */     getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(1.0D);
 /*    */   }
 /*    */ 
 /*    */   
 /*    */   public void updateAITasks() {
-/* 36 */     super.updateAITasks();
+/* 37 */     super.updateAITasks();
 /*    */     
-/* 38 */     if (this.spawnPosition != null && (!this.world.isAirBlock(this.spawnPosition) || this.spawnPosition.getY() < 1)) {
-/* 39 */       this.spawnPosition = null;
+/* 39 */     if (this.spawnPosition != null && (!this.world.isAirBlock(this.spawnPosition) || this.spawnPosition.getY() < 1)) {
+/* 40 */       this.spawnPosition = null;
 /*    */     }
 /*    */     
-/* 42 */     if (this.spawnPosition == null || this.rand.nextInt(30) == 0 || this.spawnPosition.distanceSq((int)this.posX, (int)this.posY, (int)this.posZ) < 4.0D) {
-/* 43 */       this.spawnPosition = new BlockPos((int)this.posX + this.rand.nextInt(7) - this.rand.nextInt(7), (int)this.posY + this.rand.nextInt(6) - 2, (int)this.posZ + this.rand.nextInt(7) - this.rand.nextInt(7));
+/* 43 */     if (this.spawnPosition == null || this.rand.nextInt(30) == 0 || this.spawnPosition.distanceSq((int)this.posX, (int)this.posY, (int)this.posZ) < 4.0D) {
+/* 44 */       this.spawnPosition = new BlockPos((int)this.posX + this.rand.nextInt(7) - this.rand.nextInt(7), (int)this.posY + this.rand.nextInt(6) - 2, (int)this.posZ + this.rand.nextInt(7) - this.rand.nextInt(7));
 /*    */     }
 /*    */     
-/* 46 */     double d0 = this.spawnPosition.getX() + 0.5D - this.posX;
-/* 47 */     double d1 = this.spawnPosition.getY() + 0.1D - this.posY;
-/* 48 */     double d2 = this.spawnPosition.getZ() + 0.5D - this.posZ;
-/* 49 */     this.motionX += (Math.signum(d0) * 0.5D - this.motionX) * 0.10000000149011612D;
-/* 50 */     this.motionY += (Math.signum(d1) * 0.699999988079071D - this.motionY) * 0.10000000149011612D;
-/* 51 */     this.motionZ += (Math.signum(d2) * 0.5D - this.motionZ) * 0.10000000149011612D;
-/* 52 */     float f = (float)(MathHelper.atan2(this.motionZ, this.motionX) * 57.29577951308232D) - 90.0F;
-/* 53 */     float f1 = MathHelper.wrapDegrees(f - this.rotationYaw);
-/* 54 */     this.moveForward = 0.5F;
-/* 55 */     this.rotationYaw += f1;
+/* 47 */     double d0 = this.spawnPosition.getX() + 0.5D - this.posX;
+/* 48 */     double d1 = this.spawnPosition.getY() + 0.1D - this.posY;
+/* 49 */     double d2 = this.spawnPosition.getZ() + 0.5D - this.posZ;
+/* 50 */     this.motionX += (Math.signum(d0) * 0.5D - this.motionX) * 0.10000000149011612D;
+/* 51 */     this.motionY += (Math.signum(d1) * 0.699999988079071D - this.motionY) * 0.10000000149011612D;
+/* 52 */     this.motionZ += (Math.signum(d2) * 0.5D - this.motionZ) * 0.10000000149011612D;
+/* 53 */     float f = (float)(MathHelper.atan2(this.motionZ, this.motionX) * 57.29577951308232D) - 90.0F;
+/* 54 */     float f1 = MathHelper.wrapDegrees(f - this.rotationYaw);
+/* 55 */     this.moveForward = 0.5F;
+/* 56 */     this.rotationYaw += f1;
 /*    */   }
 /*    */ 
 /*    */   
 /*    */   public void onUpdate() {
-/* 60 */     super.onUpdate();
-/* 61 */     this.motionY *= 0.6000000238418579D;
+/* 61 */     super.onUpdate();
+/* 62 */     this.motionY *= 0.6000000238418579D;
 /*    */   }
 /*    */   
 /*    */   public void fall(float distance, float damageMultiplier) {}
@@ -67,7 +68,7 @@
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.3a-deobf.jar!\danger\orespawn\entity\Butterfly.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.4-deobf.jar!\danger\orespawn\entity\Butterfly.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

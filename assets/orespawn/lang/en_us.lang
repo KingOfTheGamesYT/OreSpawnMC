@@ -47,6 +47,12 @@ tile.titanium_ore.name=Titanium Ore
 tile.corn_plant.name=Corn Plant
 tile.butterfly_plant.name=Butterfly Plant
 tile.ant_block.name=Ant Nest
+tile.alosaurus_ore.name=Ancient Dried Alosaurus Spawn Egg
+tile.baryonyx_ore.name=Ancient Dried Baryonyx Spawn Egg
+tile.camarasaurus_ore.name=Ancient Dried Camarasaurus Spawn Egg
+tile.cryolophosaurus_ore.name=Ancient Dried Cryolophosaurus Spawn Egg
+tile.pointysaurus_ore.name=Ancient Dried Pointysaurus Spawn Egg
+tile.trex_ore.name=Ancient Dried T-Rex Spawn Egg
 
 category=Entities
 entity.alosaurus.name=Alosaurus
@@ -60,3 +66,11 @@ entity.ant.name=Ant
 entity.cavefisher.name=Cave Fisher
 entity.butterfly.name=Butterfly
 entity.bird.name=Bird
+
+category=Entity Eggs
+item.alosaurus_egg.name=Spawn Alosaurus
+item.baryonyx_egg.name=Spawn Baryonyx
+item.camarasaurus_egg.name=Spawn Camarasaurus
+item.cryolophosaurus_egg.name=Spawn Cryolophosaurus
+item.pointysaurus_egg.name=Spawn Pointysaurus
+item.trex_egg.name=Spawn T-Rex
