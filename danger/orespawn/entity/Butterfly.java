@@ -4,27 +4,27 @@
 /*    */ import net.minecraft.entity.EntityCreature;
 /*    */ import net.minecraft.entity.SharedMonsterAttributes;
 /*    */ import net.minecraft.entity.passive.IAnimals;
-/*    */ import net.minecraft.network.datasync.DataParameter;
-/*    */ import net.minecraft.network.datasync.DataSerializers;
-/*    */ import net.minecraft.network.datasync.EntityDataManager;
 /*    */ import net.minecraft.util.math.BlockPos;
 /*    */ import net.minecraft.util.math.MathHelper;
 /*    */ import net.minecraft.world.World;
+/*    */ 
+/*    */ 
+/*    */ 
 /*    */ 
 /*    */ 
 /*    */ public class Butterfly
 /*    */   extends EntityCreature
 /*    */   implements IAnimals
 /*    */ {
-/* 19 */   protected static final DataParameter<Integer> TYPE = EntityDataManager.createKey(Butterfly.class, DataSerializers.VARINT);
 /*    */   private BlockPos spawnPosition;
+/*    */   public int butterflyType;
 /*    */   
 /*    */   public Butterfly(World worldIn) {
 /* 23 */     super(worldIn);
 /* 24 */     setSize(0.4F, 0.4F);
 /* 25 */     this.butterflyType = this.rand.nextInt(4) + 1;
 /*    */   }
-/*    */   public int butterflyType;
+/*    */ 
 /*    */   
 /*    */   public void applyEntityAttributes() {
 /* 30 */     super.applyEntityAttributes();
@@ -60,6 +60,8 @@
 /*    */   public void onUpdate() {
 /* 61 */     super.onUpdate();
 /* 62 */     this.motionY *= 0.6000000238418579D;
+/* 63 */     if (this.world.getSkylightSubtracted() > 7)
+/* 64 */       setDead(); 
 /*    */   }
 /*    */   
 /*    */   public void fall(float distance, float damageMultiplier) {}
@@ -68,7 +70,7 @@
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.4-deobf.jar!\danger\orespawn\entity\Butterfly.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\entity\Butterfly.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

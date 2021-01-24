@@ -63,7 +63,7 @@
 /*  63 */           Character.valueOf('U'), ModItems.URANIUM_INGOT, 
 /*  64 */           Character.valueOf('T'), ModItems.TITANIUM_INGOT });
 /*     */     
-/*  66 */     GameRegistry.addShapedRecipe(new ResourceLocation("ultimate_helmet"), new ResourceLocation("orespawn"), new ItemStack(ModItems.ULTIMATE_HELMET, 1), new Object[] { "XXX", "TIT", "UXU", 
+/*  66 */     GameRegistry.addShapedRecipe(new ResourceLocation("ultimate_shovel"), new ResourceLocation("orespawn"), new ItemStack(ModItems.ULTIMATE_SHOVEL, 1), new Object[] { "XUX", "XTX", "XIX", 
 /*     */ 
 /*     */ 
 /*     */ 
@@ -74,7 +74,7 @@
 /*  74 */           Character.valueOf('U'), ModItems.URANIUM_INGOT, 
 /*  75 */           Character.valueOf('T'), ModItems.TITANIUM_INGOT });
 /*     */     
-/*  77 */     GameRegistry.addShapedRecipe(new ResourceLocation("ultimate_chestplate"), new ResourceLocation("orespawn"), new ItemStack(ModItems.ULTIMATE_CHESTPLATE, 1), new Object[] { "IXI", "TTT", "UUU", 
+/*  77 */     GameRegistry.addShapedRecipe(new ResourceLocation("ultimate_hoe"), new ResourceLocation("orespawn"), new ItemStack(ModItems.ULTIMATE_HOE, 1), new Object[] { "TUX", "XIX", "XIX", 
 /*     */ 
 /*     */ 
 /*     */ 
@@ -85,7 +85,7 @@
 /*  85 */           Character.valueOf('U'), ModItems.URANIUM_INGOT, 
 /*  86 */           Character.valueOf('T'), ModItems.TITANIUM_INGOT });
 /*     */     
-/*  88 */     GameRegistry.addShapedRecipe(new ResourceLocation("ultimate_leggings"), new ResourceLocation("orespawn"), new ItemStack(ModItems.ULTIMATE_LEGGINGS, 1), new Object[] { "III", "TXT", "UXU", 
+/*  88 */     GameRegistry.addShapedRecipe(new ResourceLocation("ultimate_helmet"), new ResourceLocation("orespawn"), new ItemStack(ModItems.ULTIMATE_HELMET, 1), new Object[] { "XXX", "TIT", "UXU", 
 /*     */ 
 /*     */ 
 /*     */ 
@@ -96,111 +96,157 @@
 /*  96 */           Character.valueOf('U'), ModItems.URANIUM_INGOT, 
 /*  97 */           Character.valueOf('T'), ModItems.TITANIUM_INGOT });
 /*     */     
-/*  99 */     GameRegistry.addShapedRecipe(new ResourceLocation("ultimate_boots"), new ResourceLocation("orespawn"), new ItemStack(ModItems.ULTIMATE_BOOTS, 1), new Object[] { "XXX", "TXT", "UXU", 
+/*  99 */     GameRegistry.addShapedRecipe(new ResourceLocation("ultimate_chestplate"), new ResourceLocation("orespawn"), new ItemStack(ModItems.ULTIMATE_CHESTPLATE, 1), new Object[] { "IXI", "TTT", "UUU", 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */           
 /* 105 */           Character.valueOf('X'), Blocks.AIR, 
-/* 106 */           Character.valueOf('U'), ModItems.URANIUM_INGOT, 
-/* 107 */           Character.valueOf('T'), ModItems.TITANIUM_INGOT });
+/* 106 */           Character.valueOf('I'), Items.IRON_INGOT, 
+/* 107 */           Character.valueOf('U'), ModItems.URANIUM_INGOT, 
+/* 108 */           Character.valueOf('T'), ModItems.TITANIUM_INGOT });
 /*     */     
-/* 109 */     GameRegistry.addShapedRecipe(new ResourceLocation("emerald_sword"), new ResourceLocation("orespawn"), new ItemStack(ModItems.EMERALD_SWORD, 1), new Object[] { "XYX", "XYX", "XZX", 
+/* 110 */     GameRegistry.addShapedRecipe(new ResourceLocation("ultimate_leggings"), new ResourceLocation("orespawn"), new ItemStack(ModItems.ULTIMATE_LEGGINGS, 1), new Object[] { "III", "TXT", "UXU", 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */           
-/* 115 */           Character.valueOf('X'), Blocks.AIR, 
-/* 116 */           Character.valueOf('Y'), Items.EMERALD, 
-/* 117 */           Character.valueOf('Z'), Items.STICK });
+/* 116 */           Character.valueOf('X'), Blocks.AIR, 
+/* 117 */           Character.valueOf('I'), Items.IRON_INGOT, 
+/* 118 */           Character.valueOf('U'), ModItems.URANIUM_INGOT, 
+/* 119 */           Character.valueOf('T'), ModItems.TITANIUM_INGOT });
 /*     */     
-/* 119 */     GameRegistry.addShapedRecipe(new ResourceLocation("emerald_pickaxe"), new ResourceLocation("orespawn"), new ItemStack(ModItems.EMERALD_PICKAXE, 1), new Object[] { "YYY", "XZX", "XZX", 
+/* 121 */     GameRegistry.addShapedRecipe(new ResourceLocation("ultimate_boots"), new ResourceLocation("orespawn"), new ItemStack(ModItems.ULTIMATE_BOOTS, 1), new Object[] { "XXX", "TXT", "UXU", 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */           
-/* 125 */           Character.valueOf('X'), Blocks.AIR, 
-/* 126 */           Character.valueOf('Y'), Items.EMERALD, 
-/* 127 */           Character.valueOf('Z'), Items.STICK });
+/* 127 */           Character.valueOf('X'), Blocks.AIR, 
+/* 128 */           Character.valueOf('U'), ModItems.URANIUM_INGOT, 
+/* 129 */           Character.valueOf('T'), ModItems.TITANIUM_INGOT });
 /*     */     
-/* 129 */     GameRegistry.addShapedRecipe(new ResourceLocation("emerald_axe"), new ResourceLocation("orespawn"), new ItemStack(ModItems.EMERALD_AXE, 1), new Object[] { "YYX", "YZX", "XZX", 
+/* 131 */     GameRegistry.addShapedRecipe(new ResourceLocation("emerald_sword"), new ResourceLocation("orespawn"), new ItemStack(ModItems.EMERALD_SWORD, 1), new Object[] { "XYX", "XYX", "XZX", 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */           
-/* 135 */           Character.valueOf('X'), Blocks.AIR, 
-/* 136 */           Character.valueOf('Y'), Items.EMERALD, 
-/* 137 */           Character.valueOf('Z'), Items.STICK });
+/* 137 */           Character.valueOf('X'), Blocks.AIR, 
+/* 138 */           Character.valueOf('Y'), Items.EMERALD, 
+/* 139 */           Character.valueOf('Z'), Items.STICK });
 /*     */     
-/* 139 */     GameRegistry.addShapedRecipe(new ResourceLocation("emerald_helmet"), new ResourceLocation("orespawn"), new ItemStack(ModItems.EMERALD_HELMET, 1), new Object[] { "XXX", "YYY", "YXY", 
+/* 141 */     GameRegistry.addShapedRecipe(new ResourceLocation("emerald_pickaxe"), new ResourceLocation("orespawn"), new ItemStack(ModItems.EMERALD_PICKAXE, 1), new Object[] { "YYY", "XZX", "XZX", 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */           
-/* 145 */           Character.valueOf('X'), Blocks.AIR, 
-/* 146 */           Character.valueOf('Y'), Items.EMERALD });
+/* 147 */           Character.valueOf('X'), Blocks.AIR, 
+/* 148 */           Character.valueOf('Y'), Items.EMERALD, 
+/* 149 */           Character.valueOf('Z'), Items.STICK });
 /*     */     
-/* 148 */     GameRegistry.addShapedRecipe(new ResourceLocation("emerald_chestplate"), new ResourceLocation("orespawn"), new ItemStack(ModItems.EMERALD_CHESTPLATE, 1), new Object[] { "YXY", "YYY", "YYY", 
+/* 151 */     GameRegistry.addShapedRecipe(new ResourceLocation("emerald_axe"), new ResourceLocation("orespawn"), new ItemStack(ModItems.EMERALD_AXE, 1), new Object[] { "YYX", "YZX", "XZX", 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */           
-/* 154 */           Character.valueOf('X'), Blocks.AIR, 
-/* 155 */           Character.valueOf('Y'), Items.EMERALD });
+/* 157 */           Character.valueOf('X'), Blocks.AIR, 
+/* 158 */           Character.valueOf('Y'), Items.EMERALD, 
+/* 159 */           Character.valueOf('Z'), Items.STICK });
 /*     */     
-/* 157 */     GameRegistry.addShapedRecipe(new ResourceLocation("emerald_leggings"), new ResourceLocation("orespawn"), new ItemStack(ModItems.EMERALD_LEGGINGS, 1), new Object[] { "YYY", "YXY", "YXY", 
+/* 161 */     GameRegistry.addShapedRecipe(new ResourceLocation("emerald_shovel"), new ResourceLocation("orespawn"), new ItemStack(ModItems.EMERALD_SHOVEL, 1), new Object[] { "XYX", "XZX", "XZX", 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */           
-/* 163 */           Character.valueOf('X'), Blocks.AIR, 
-/* 164 */           Character.valueOf('Y'), Items.EMERALD });
+/* 167 */           Character.valueOf('X'), Blocks.AIR, 
+/* 168 */           Character.valueOf('Y'), Items.EMERALD, 
+/* 169 */           Character.valueOf('Z'), Items.STICK });
 /*     */     
-/* 166 */     GameRegistry.addShapedRecipe(new ResourceLocation("emerald_boots"), new ResourceLocation("orespawn"), new ItemStack(ModItems.EMERALD_BOOTS, 1), new Object[] { "XXX", "YXY", "YXY", 
+/* 171 */     GameRegistry.addShapedRecipe(new ResourceLocation("emerald_hoe"), new ResourceLocation("orespawn"), new ItemStack(ModItems.EMERALD_HOE, 1), new Object[] { "YYX", "XZX", "XZX", 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */           
-/* 172 */           Character.valueOf('X'), Blocks.AIR, 
-/* 173 */           Character.valueOf('Y'), Items.EMERALD });
+/* 177 */           Character.valueOf('X'), Blocks.AIR, 
+/* 178 */           Character.valueOf('Y'), Items.EMERALD, 
+/* 179 */           Character.valueOf('Z'), Items.STICK });
 /*     */     
-/* 175 */     GameRegistry.addShapelessRecipe(new ResourceLocation("alosaurus_egg"), null, new ItemStack(ModItems.ALOSAURUS_EGG, 1), new Ingredient[] {
-/* 176 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
-/* 177 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.ALOSAURUS_ORE) })
+/* 181 */     GameRegistry.addShapedRecipe(new ResourceLocation("emerald_helmet"), new ResourceLocation("orespawn"), new ItemStack(ModItems.EMERALD_HELMET, 1), new Object[] { "XXX", "YYY", "YXY", 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */           
+/* 187 */           Character.valueOf('X'), Blocks.AIR, 
+/* 188 */           Character.valueOf('Y'), Items.EMERALD });
+/*     */     
+/* 190 */     GameRegistry.addShapedRecipe(new ResourceLocation("emerald_chestplate"), new ResourceLocation("orespawn"), new ItemStack(ModItems.EMERALD_CHESTPLATE, 1), new Object[] { "YXY", "YYY", "YYY", 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */           
+/* 196 */           Character.valueOf('X'), Blocks.AIR, 
+/* 197 */           Character.valueOf('Y'), Items.EMERALD });
+/*     */     
+/* 199 */     GameRegistry.addShapedRecipe(new ResourceLocation("emerald_leggings"), new ResourceLocation("orespawn"), new ItemStack(ModItems.EMERALD_LEGGINGS, 1), new Object[] { "YYY", "YXY", "YXY", 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */           
+/* 205 */           Character.valueOf('X'), Blocks.AIR, 
+/* 206 */           Character.valueOf('Y'), Items.EMERALD });
+/*     */     
+/* 208 */     GameRegistry.addShapedRecipe(new ResourceLocation("emerald_boots"), new ResourceLocation("orespawn"), new ItemStack(ModItems.EMERALD_BOOTS, 1), new Object[] { "XXX", "YXY", "YXY", 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */           
+/* 214 */           Character.valueOf('X'), Blocks.AIR, 
+/* 215 */           Character.valueOf('Y'), Items.EMERALD });
+/*     */     
+/* 217 */     GameRegistry.addShapelessRecipe(new ResourceLocation("alosaurus_egg"), null, new ItemStack(ModItems.ALOSAURUS_EGG, 1), new Ingredient[] {
+/* 218 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 219 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.ALOSAURUS_ORE) })
 /*     */         });
-/* 179 */     GameRegistry.addShapelessRecipe(new ResourceLocation("baryonyx_egg"), null, new ItemStack(ModItems.BARYONYX_EGG, 1), new Ingredient[] {
-/* 180 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
-/* 181 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.BARYONYX_ORE) })
+/* 221 */     GameRegistry.addShapelessRecipe(new ResourceLocation("baryonyx_egg"), null, new ItemStack(ModItems.BARYONYX_EGG, 1), new Ingredient[] {
+/* 222 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 223 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.BARYONYX_ORE) })
 /*     */         });
-/* 183 */     GameRegistry.addShapelessRecipe(new ResourceLocation("camarasaurus_egg"), null, new ItemStack(ModItems.CAMARASAURUS_EGG, 1), new Ingredient[] {
-/* 184 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
-/* 185 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.CAMARASAURUS_ORE) })
+/* 225 */     GameRegistry.addShapelessRecipe(new ResourceLocation("camarasaurus_egg"), null, new ItemStack(ModItems.CAMARASAURUS_EGG, 1), new Ingredient[] {
+/* 226 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 227 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.CAMARASAURUS_ORE) })
 /*     */         });
-/* 187 */     GameRegistry.addShapelessRecipe(new ResourceLocation("cryolophosaurus_egg"), null, new ItemStack(ModItems.CRYOLOPHOSAURUS_EGG, 1), new Ingredient[] {
-/* 188 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
-/* 189 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.CRYOLOPHOSAURUS_ORE) })
+/* 229 */     GameRegistry.addShapelessRecipe(new ResourceLocation("cryolophosaurus_egg"), null, new ItemStack(ModItems.CRYOLOPHOSAURUS_EGG, 1), new Ingredient[] {
+/* 230 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 231 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.CRYOLOPHOSAURUS_ORE) })
 /*     */         });
-/* 191 */     GameRegistry.addShapelessRecipe(new ResourceLocation("pointysaurus_egg"), null, new ItemStack(ModItems.POINTYSAURUS_EGG, 1), new Ingredient[] {
-/* 192 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
-/* 193 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.POINTYSAURUS_ORE) })
+/* 233 */     GameRegistry.addShapelessRecipe(new ResourceLocation("pointysaurus_egg"), null, new ItemStack(ModItems.POINTYSAURUS_EGG, 1), new Ingredient[] {
+/* 234 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 235 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.POINTYSAURUS_ORE) })
 /*     */         });
-/* 195 */     GameRegistry.addShapelessRecipe(new ResourceLocation("trex_egg"), null, new ItemStack(ModItems.TREX_EGG, 1), new Ingredient[] {
-/* 196 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
-/* 197 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.TREX_ORE) })
+/* 237 */     GameRegistry.addShapelessRecipe(new ResourceLocation("trex_egg"), null, new ItemStack(ModItems.TREX_EGG, 1), new Ingredient[] {
+/* 238 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 239 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.TREX_ORE) })
+/*     */         });
+/* 241 */     GameRegistry.addShapelessRecipe(new ResourceLocation("bird_egg"), null, new ItemStack(ModItems.BIRD_EGG, 1), new Ingredient[] {
+/* 242 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 243 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.BIRD_ORE) })
 /*     */         });
 /*     */   }
 /*     */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.4-deobf.jar!\danger\orespawn\recipes\CraftingRecipes.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\recipes\CraftingRecipes.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

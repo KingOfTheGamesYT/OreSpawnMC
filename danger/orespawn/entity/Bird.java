@@ -25,7 +25,7 @@
 /*     */   public void applyEntityAttributes() {
 /*  26 */     super.applyEntityAttributes();
 /*  27 */     getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.10000000149011612D);
-/*  28 */     getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(1.0D);
+/*  28 */     getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2.0D);
 /*     */   }
 /*     */ 
 /*     */   
@@ -57,6 +57,9 @@
 /*     */   public void onUpdate() {
 /*  58 */     super.onUpdate();
 /*  59 */     this.motionY *= 0.6000000238418579D;
+/*  60 */     if (this.world.getSkylightSubtracted() > 7) {
+/*  61 */       setDead();
+/*     */     }
 /*     */   }
 /*     */ 
 /*     */   
@@ -67,50 +70,50 @@
 /*     */ 
 /*     */   
 /*     */   protected float getSoundVolume() {
-/*  70 */     return 0.55F;
+/*  73 */     return 0.55F;
 /*     */   }
 /*     */ 
 /*     */   
 /*     */   protected float getSoundPitch() {
-/*  75 */     return 1.0F;
+/*  78 */     return 1.0F;
 /*     */   }
 /*     */ 
 /*     */   
 /*     */   protected SoundEvent getAmbientSound() {
-/*  80 */     if (this.rand.nextInt(4) == 0) {
-/*  81 */       switch (this.rand.nextInt(23) + 1) { case 1:
-/*  82 */           return SoundsHandler.ENTITY_BIRD_BIRD1;
-/*  83 */         case 2: return SoundsHandler.ENTITY_BIRD_BIRD2;
-/*  84 */         case 3: return SoundsHandler.ENTITY_BIRD_BIRD3;
-/*  85 */         case 4: return SoundsHandler.ENTITY_BIRD_BIRD4;
-/*  86 */         case 5: return SoundsHandler.ENTITY_BIRD_BIRD5;
-/*  87 */         case 6: return SoundsHandler.ENTITY_BIRD_BIRD6;
-/*  88 */         case 7: return SoundsHandler.ENTITY_BIRD_BIRD7;
-/*  89 */         case 8: return SoundsHandler.ENTITY_BIRD_BIRD8;
-/*  90 */         case 9: return SoundsHandler.ENTITY_BIRD_BIRD9;
-/*  91 */         case 10: return SoundsHandler.ENTITY_BIRD_BIRD10;
-/*  92 */         case 11: return SoundsHandler.ENTITY_BIRD_BIRD11;
-/*  93 */         case 12: return SoundsHandler.ENTITY_BIRD_BIRD12;
-/*  94 */         case 13: return SoundsHandler.ENTITY_BIRD_BIRD13;
-/*  95 */         case 14: return SoundsHandler.ENTITY_BIRD_BIRD14;
-/*  96 */         case 15: return SoundsHandler.ENTITY_BIRD_BIRD15;
-/*  97 */         case 16: return SoundsHandler.ENTITY_BIRD_BIRD16;
-/*  98 */         case 17: return SoundsHandler.ENTITY_BIRD_BIRD17;
-/*  99 */         case 18: return SoundsHandler.ENTITY_BIRD_BIRD18;
-/* 100 */         case 19: return SoundsHandler.ENTITY_BIRD_BIRD19;
-/* 101 */         case 20: return SoundsHandler.ENTITY_BIRD_BIRD20;
-/* 102 */         case 21: return SoundsHandler.ENTITY_BIRD_BIRD21;
-/* 103 */         case 22: return SoundsHandler.ENTITY_BIRD_BIRD22; }
-/* 104 */        return SoundsHandler.ENTITY_BIRD_BIRD23;
+/*  83 */     if (this.rand.nextInt(4) == 0) {
+/*  84 */       switch (this.rand.nextInt(23) + 1) { case 1:
+/*  85 */           return SoundsHandler.ENTITY_BIRD_BIRD1;
+/*  86 */         case 2: return SoundsHandler.ENTITY_BIRD_BIRD2;
+/*  87 */         case 3: return SoundsHandler.ENTITY_BIRD_BIRD3;
+/*  88 */         case 4: return SoundsHandler.ENTITY_BIRD_BIRD4;
+/*  89 */         case 5: return SoundsHandler.ENTITY_BIRD_BIRD5;
+/*  90 */         case 6: return SoundsHandler.ENTITY_BIRD_BIRD6;
+/*  91 */         case 7: return SoundsHandler.ENTITY_BIRD_BIRD7;
+/*  92 */         case 8: return SoundsHandler.ENTITY_BIRD_BIRD8;
+/*  93 */         case 9: return SoundsHandler.ENTITY_BIRD_BIRD9;
+/*  94 */         case 10: return SoundsHandler.ENTITY_BIRD_BIRD10;
+/*  95 */         case 11: return SoundsHandler.ENTITY_BIRD_BIRD11;
+/*  96 */         case 12: return SoundsHandler.ENTITY_BIRD_BIRD12;
+/*  97 */         case 13: return SoundsHandler.ENTITY_BIRD_BIRD13;
+/*  98 */         case 14: return SoundsHandler.ENTITY_BIRD_BIRD14;
+/*  99 */         case 15: return SoundsHandler.ENTITY_BIRD_BIRD15;
+/* 100 */         case 16: return SoundsHandler.ENTITY_BIRD_BIRD16;
+/* 101 */         case 17: return SoundsHandler.ENTITY_BIRD_BIRD17;
+/* 102 */         case 18: return SoundsHandler.ENTITY_BIRD_BIRD18;
+/* 103 */         case 19: return SoundsHandler.ENTITY_BIRD_BIRD19;
+/* 104 */         case 20: return SoundsHandler.ENTITY_BIRD_BIRD20;
+/* 105 */         case 21: return SoundsHandler.ENTITY_BIRD_BIRD21;
+/* 106 */         case 22: return SoundsHandler.ENTITY_BIRD_BIRD22; }
+/* 107 */        return SoundsHandler.ENTITY_BIRD_BIRD23;
 /*     */     } 
 /*     */ 
 /*     */     
-/* 108 */     return null;
+/* 111 */     return null;
 /*     */   }
 /*     */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.4-deobf.jar!\danger\orespawn\entity\Bird.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\entity\Bird.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

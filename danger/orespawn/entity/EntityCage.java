@@ -31,7 +31,7 @@
 /*     */ public class EntityCage
 /*     */   extends EntityThrowable
 /*     */ {
-/*  34 */   public int my_index = 0;
+/*     */   public Class<? extends Entity> my_class;
 /*     */   public String customName;
 /*  36 */   private World throwerWorld = null;
 /*  37 */   private EntityPlayer thrower = null;
@@ -41,19 +41,19 @@
 /*  41 */     this.throwerWorld = world;
 /*     */   }
 /*     */   
-/*     */   public EntityCage(World par1World, EntityPlayer par2EntityLiving, int index, @Nullable String customName) {
+/*     */   public EntityCage(World par1World, EntityPlayer par2EntityLiving, Class<? extends Entity> my_class, @Nullable String customName) {
 /*  45 */     super(par1World, (EntityLivingBase)par2EntityLiving);
 /*  46 */     this.throwerWorld = par1World;
 /*  47 */     this.thrower = par2EntityLiving;
-/*  48 */     this.my_index = index;
+/*  48 */     this.my_class = my_class;
 /*  49 */     this.customName = customName;
 /*  50 */     if (this.thrower.world != null) this.throwerWorld = this.thrower.world;
 /*     */   
 /*     */   }
-/*     */   
-/*     */   public int getCageIndex() {
-/*  55 */     return this.my_index;
-/*     */   }
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
@@ -63,7 +63,7 @@
 /*     */   
 /*     */   @ParametersAreNonnullByDefault
 /*     */   protected void onImpact(RayTraceResult result) {
-/*  66 */     if (this.my_index == 0) {
+/*  66 */     if (this.my_class == null) {
 /*  67 */       if (result.entityHit != null && this.rand.nextInt(10) >= 2) {
 /*  68 */         if (this.throwerWorld != null) {
 /*     */ 
@@ -108,37 +108,38 @@
 /* 108 */         this.world.spawnParticle(EnumParticleTypes.REDSTONE, (position.getX() + 0.5F), (position.getY() + 1.25F), (position.getZ() + 0.5F), 0.0D, 0.0D, 0.0D, new int[] { 0 });
 /*     */       } 
 /* 110 */       this.world.playSound(this.posX, this.posY, this.posZ, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.PLAYERS, 1.0F, 1.5F, true);
-/* 111 */       Entity summon = EntityList.createEntityByID(this.my_index - 10, this.world);
-/* 112 */       System.out.println(summon);
 /*     */       
-/* 114 */       summon.setPosition(position.getX(), (position.getY() + 1), position.getZ());
-/* 115 */       this.world.spawnEntity(summon);
+/* 112 */       Entity summon = EntityList.newEntity(this.my_class, this.world);
+/* 113 */       System.out.println(summon);
+/*     */       
+/* 115 */       summon.setPosition(position.getX(), (position.getY() + 1), position.getZ());
+/* 116 */       this.world.spawnEntity(summon);
 /*     */ 
 /*     */       
-/* 118 */       EntityItem empty = new EntityItem(this.world);
-/* 119 */       empty.setItem(new ItemStack(ModItems.EMPTY_CAGE));
-/* 120 */       empty.setPosition(position.getX(), position.getY(), position.getZ());
-/* 121 */       this.world.spawnEntity((Entity)empty);
+/* 119 */       EntityItem empty = new EntityItem(this.world);
+/* 120 */       empty.setItem(new ItemStack(ModItems.EMPTY_CAGE));
+/* 121 */       empty.setPosition(position.getX(), position.getY(), position.getZ());
+/* 122 */       this.world.spawnEntity((Entity)empty);
 /*     */       
-/* 123 */       if (summon instanceof EntityLiving && this.customName != null) {
-/* 124 */         summon.setCustomNameTag(this.customName);
+/* 124 */       if (summon instanceof EntityLiving && this.customName != null) {
+/* 125 */         summon.setCustomNameTag(this.customName);
 /*     */       }
 /*     */     } 
-/* 127 */     if (!this.world.isRemote) {
-/* 128 */       setDead();
+/* 128 */     if (!this.world.isRemote) {
+/* 129 */       setDead();
 /*     */     }
 /*     */   }
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   public void onUpdate() {
-/* 135 */     super.onUpdate();
-/* 136 */     this.throwerWorld.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 136 */     super.onUpdate();
+/* 137 */     this.throwerWorld.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D, new int[0]);
 /*     */   }
 /*     */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.4-deobf.jar!\danger\orespawn\entity\EntityCage.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\entity\EntityCage.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

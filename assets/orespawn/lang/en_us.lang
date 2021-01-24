@@ -53,6 +53,7 @@ tile.camarasaurus_ore.name=Ancient Dried Camarasaurus Spawn Egg
 tile.cryolophosaurus_ore.name=Ancient Dried Cryolophosaurus Spawn Egg
 tile.pointysaurus_ore.name=Ancient Dried Pointysaurus Spawn Egg
 tile.trex_ore.name=Ancient Dried T-Rex Spawn Egg
+tile.bird_ore.name=Ancient Dried Bird Spawn Egg
 
 category=Entities
 entity.alosaurus.name=Alosaurus
@@ -74,3 +75,6 @@ item.camarasaurus_egg.name=Spawn Camarasaurus
 item.cryolophosaurus_egg.name=Spawn Cryolophosaurus
 item.pointysaurus_egg.name=Spawn Pointysaurus
 item.trex_egg.name=Spawn T-Rex
+item.butterfly_egg.name=Spawn Butterfly
+item.bird_egg.name=Spawn Bird
+item.red_ant_egg.name=Spawn Red Ant

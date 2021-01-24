@@ -24,7 +24,7 @@
 	{
 		"category": "entity",
 		"subtitle": "entity.trex.death",
-		"sounds": [{ "name": "orespawn:entity/trex/death", "stream": true}]
+		"sounds": [{ "name": "orespawn:entity/trex/ambient", "stream": true}]
 	},
 	
 	"entity.trex.death":

@@ -1,7 +1,7 @@
 /*    */ package danger.orespawn.world.biome;
-/*    */ 
 /*    */ import danger.orespawn.entity.Alosaurus;
 /*    */ import danger.orespawn.entity.Baryonyx;
+/*    */ import danger.orespawn.entity.Bird;
 /*    */ import danger.orespawn.entity.Camarasaurus;
 /*    */ import danger.orespawn.entity.Cryolophosaurus;
 /*    */ import danger.orespawn.entity.Pointysaurus;
@@ -20,11 +20,13 @@
 /* 20 */     this.spawnableCreatureList.clear();
 /* 21 */     this.spawnableCreatureList.add(new Biome.SpawnListEntry(Baryonyx.class, 200, 1, 1));
 /* 22 */     this.spawnableCreatureList.add(new Biome.SpawnListEntry(Camarasaurus.class, 250, 1, 1));
+/* 23 */     this.spawnableCreatureList.add(new Biome.SpawnListEntry(Bird.class, 255, 1, 2));
+/* 24 */     this.spawnableCreatureList.add(new Biome.SpawnListEntry(Bird.class, 100, 1, 1));
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.4-deobf.jar!\danger\orespawn\world\biome\BiomeMiningDimension.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\world\biome\BiomeMiningDimension.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

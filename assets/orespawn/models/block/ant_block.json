@@ -1,8 +1,9 @@
 {
-  "parent": "block/cube_bottom_top",
+  "parent": "orespawn:block/ant_block_parent",
   "textures": {
-    "side": "orespawn:blocks/antnest_side",
+    "particle": "blocks/dirt",
+    "bottom": "orespawn:blocks/antnest_bottom",
     "top": "orespawn:blocks/antnest_top",
-    "bottom": "orespawn:blocks/antnest_bottom"
+    "side": "orespawn:blocks/antnest_side"
   }
 }

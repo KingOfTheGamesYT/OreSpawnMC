@@ -15,7 +15,7 @@
 /*    */   public static SoundEvent ENTITY_BIRD_BIRD7;
 /*    */   
 /*    */   public static void registerSounds() {
-/* 18 */     ENTITY_ALOSAURUS_LIVING = registerSound("entity.alo.living");
+/* 18 */     ENTITY_ALOSAURUS_LIVING = registerSound("entity.alosaurus.living");
 /* 19 */     ENTITY_ALOSAURUS_HURT = registerSound("entity.alosaurus.hurt");
 /* 20 */     ENTITY_ALOSAURUS_DEATH = registerSound("entity.alosaurus.death");
 /*    */     
@@ -63,7 +63,7 @@
 /*    */   } }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.4-deobf.jar!\danger\orespaw\\util\handlers\SoundsHandler.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespaw\\util\handlers\SoundsHandler.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

@@ -2,7 +2,6 @@
 /*    */ 
 /*    */ import danger.orespawn.proxy.CommonProxy;
 /*    */ import danger.orespawn.tabs.OrespawnTab;
-/*    */ import danger.orespawn.util.handlers.AntBlockColorizer;
 /*    */ import danger.orespawn.util.handlers.RegistryHandler;
 /*    */ import danger.orespawn.util.premium.PremiumChecker;
 /*    */ import danger.orespawn.world.ButterflyPlantGenerator;
@@ -24,6 +23,7 @@
 /*    */ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 /*    */ import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 /*    */ import net.minecraftforge.fml.common.registry.GameRegistry;
+/*    */ 
 /*    */ 
 /*    */ 
 /*    */ 
@@ -66,8 +66,8 @@
 /* 66 */     MinecraftForge.TERRAIN_GEN_BUS.register(new CornPlantGenerator());
 /* 67 */     MinecraftForge.TERRAIN_GEN_BUS.register(new ButterflyPlantGenerator());
 /* 68 */     MinecraftForge.TERRAIN_GEN_BUS.register(new AntHillGenerator());
-/* 69 */     MinecraftForge.EVENT_BUS.register(AntBlockColorizer.class);
 /*    */   }
+/*    */ 
 /*    */ 
 /*    */   
 /*    */   @EventHandler
@@ -90,7 +90,7 @@
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.4-deobf.jar!\danger\orespawn\OreSpawnMain.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\OreSpawnMain.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

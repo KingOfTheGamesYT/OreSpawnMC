@@ -116,39 +116,38 @@
 /* 116 */     return SoundsHandler.ENTITY_ALOSAURUS_HURT;
 /*     */   }
 /*     */ 
-/*     */ 
 /*     */   
 /*     */   protected SoundEvent getDeathSound() {
-/* 122 */     return SoundsHandler.ENTITY_ALOSAURUS_DEATH;
+/* 121 */     return SoundsHandler.ENTITY_ALOSAURUS_DEATH;
 /*     */   }
 /*     */   
 /*     */   protected float getSoundVolume() {
-/* 126 */     return 1.5F;
+/* 125 */     return 1.5F;
 /*     */   }
 /*     */   
 /*     */   protected float getSoundPitch() {
-/* 130 */     return 1.0F;
+/* 129 */     return 1.0F;
 /*     */   }
 /*     */ 
 /*     */   
 /*     */   protected Item getDropItem() {
-/* 135 */     return Items.BEEF;
+/* 134 */     return Items.BEEF;
 /*     */   }
 /*     */ 
 /*     */   
 /*     */   private void dropItemRand(Item index, int par1) {
-/* 140 */     EntityItem var3 = new EntityItem(this.world, this.posX + OreSpawnMain.OreSpawnRand.nextInt(4) - OreSpawnMain.OreSpawnRand.nextInt(4), this.posY + 1.0D, this.posZ + OreSpawnMain.OreSpawnRand.nextInt(4) - OreSpawnMain.OreSpawnRand.nextInt(4), new ItemStack(index, par1, 0));
-/* 141 */     this.world.spawnEntity((Entity)var3);
+/* 139 */     EntityItem var3 = new EntityItem(this.world, this.posX + OreSpawnMain.OreSpawnRand.nextInt(4) - OreSpawnMain.OreSpawnRand.nextInt(4), this.posY + 1.0D, this.posZ + OreSpawnMain.OreSpawnRand.nextInt(4) - OreSpawnMain.OreSpawnRand.nextInt(4), new ItemStack(index, par1, 0));
+/* 140 */     this.world.spawnEntity((Entity)var3);
 /*     */   }
 /*     */ 
 /*     */   
 /*     */   protected void dropFewItems(boolean par1, int par2) {
 /*     */     int var4;
-/* 147 */     for (var4 = 0; var4 < 10; var4++) {
-/* 148 */       dropItemRand(Items.GOLD_NUGGET, 1);
+/* 146 */     for (var4 = 0; var4 < 10; var4++) {
+/* 147 */       dropItemRand(Items.GOLD_NUGGET, 1);
 /*     */     }
-/* 150 */     for (var4 = 0; var4 < 6; var4++) {
-/* 151 */       dropItemRand(Items.BEEF, 1);
+/* 149 */     for (var4 = 0; var4 < 6; var4++) {
+/* 150 */       dropItemRand(Items.BEEF, 1);
 /*     */     }
 /*     */   }
 /*     */ 
@@ -156,47 +155,47 @@
 /*     */   public void initCreature() {}
 /*     */   
 /*     */   public boolean interact(EntityPlayer par1EntityPlayer) {
-/* 159 */     return false;
+/* 158 */     return false;
 /*     */   }
 /*     */   
 /*     */   public boolean attackEntityAsMob(Entity par1Entity) {
-/* 163 */     if (super.attackEntityAsMob(par1Entity)) {
+/* 162 */     if (super.attackEntityAsMob(par1Entity)) {
 /*     */       
-/* 165 */       if (par1Entity instanceof EntityLivingBase) {
+/* 164 */       if (par1Entity instanceof EntityLivingBase) {
 /*     */         
-/* 167 */         double ks = 1.2D;
-/* 168 */         double inair = 0.1D;
-/* 169 */         float f3 = (float)Math.atan2(par1Entity.posZ - this.posZ, par1Entity.posX - this.posX);
-/* 170 */         if (par1Entity.isDead || par1Entity instanceof EntityPlayer) inair *= 2.0D; 
-/* 171 */         par1Entity.addVelocity(Math.cos(f3) * ks, inair, Math.sin(f3) * ks);
+/* 166 */         double ks = 1.2D;
+/* 167 */         double inair = 0.1D;
+/* 168 */         float f3 = (float)Math.atan2(par1Entity.posZ - this.posZ, par1Entity.posX - this.posX);
+/* 169 */         if (par1Entity.isDead || par1Entity instanceof EntityPlayer) inair *= 2.0D; 
+/* 170 */         par1Entity.addVelocity(Math.cos(f3) * ks, inair, Math.sin(f3) * ks);
 /*     */       } 
-/* 173 */       return true;
+/* 172 */       return true;
 /*     */     } 
 /*     */ 
 /*     */     
-/* 177 */     return false;
+/* 176 */     return false;
 /*     */   }
 /*     */ 
 /*     */   
 /*     */   protected void updateAITasks() {
-/* 182 */     if (this.isDead)
-/* 183 */       return;  super.updateAITasks();
-/* 184 */     if (this.world.rand.nextInt(5) == 0) {
-/* 185 */       EntityLivingBase e = findSomethingToAttack();
-/* 186 */       if (e != null) {
-/* 187 */         faceEntity((Entity)e, 10.0F, 10.0F);
-/* 188 */         if (getDistanceSq((Entity)e) < ((4.0F + e.width / 2.0F) * (4.0F + e.width / 2.0F))) {
-/* 189 */           setAttacking(1);
+/* 181 */     if (this.isDead)
+/* 182 */       return;  super.updateAITasks();
+/* 183 */     if (this.world.rand.nextInt(5) == 0) {
+/* 184 */       EntityLivingBase e = findSomethingToAttack();
+/* 185 */       if (e != null) {
+/* 186 */         faceEntity((Entity)e, 10.0F, 10.0F);
+/* 187 */         if (getDistanceSq((Entity)e) < ((4.0F + e.width / 2.0F) * (4.0F + e.width / 2.0F))) {
+/* 188 */           setAttacking(1);
 /*     */           
-/* 191 */           if (this.world.rand.nextInt(4) == 0 || this.world.rand.nextInt(5) == 1)
+/* 190 */           if (this.world.rand.nextInt(4) == 0 || this.world.rand.nextInt(5) == 1)
 /*     */           {
-/* 193 */             attackEntityAsMob((Entity)e);
+/* 192 */             attackEntityAsMob((Entity)e);
 /*     */           }
 /*     */         } else {
-/* 196 */           getNavigator().tryMoveToEntityLiving((Entity)e, 1.25D);
+/* 195 */           getNavigator().tryMoveToEntityLiving((Entity)e, 1.25D);
 /*     */         } 
 /*     */       } else {
-/* 199 */         setAttacking(0);
+/* 198 */         setAttacking(0);
 /*     */       } 
 /*     */     } 
 /*     */   }
@@ -205,29 +204,29 @@
 /*     */ 
 /*     */   
 /*     */   private boolean isSuitableTarget(EntityLivingBase par1EntityLiving, boolean par2) {
-/* 208 */     if (par1EntityLiving == null)
+/* 207 */     if (par1EntityLiving == null)
 /*     */     {
-/* 210 */       return false;
+/* 209 */       return false;
 /*     */     }
-/* 212 */     if (par1EntityLiving == this)
+/* 211 */     if (par1EntityLiving == this)
 /*     */     {
-/* 214 */       return false;
+/* 213 */       return false;
 /*     */     }
-/* 216 */     if (!par1EntityLiving.isEntityAlive())
+/* 215 */     if (!par1EntityLiving.isEntityAlive())
 /*     */     {
-/* 218 */       return false;
+/* 217 */       return false;
 /*     */     }
 /*     */ 
 /*     */ 
 /*     */     
-/* 223 */     if (par1EntityLiving instanceof Alosaurus)
+/* 222 */     if (par1EntityLiving instanceof Alosaurus)
 /*     */     {
-/* 225 */       return false;
+/* 224 */       return false;
 /*     */     }
 /*     */     
-/* 228 */     if (par1EntityLiving instanceof Cryolophosaurus)
+/* 227 */     if (par1EntityLiving instanceof Cryolophosaurus)
 /*     */     {
-/* 230 */       return false;
+/* 229 */       return false;
 /*     */     }
 /*     */ 
 /*     */ 
@@ -235,51 +234,51 @@
 /*     */ 
 /*     */ 
 /*     */     
-/* 238 */     if (!getEntitySenses().canSee((Entity)par1EntityLiving))
+/* 237 */     if (!getEntitySenses().canSee((Entity)par1EntityLiving))
 /*     */     {
 /*     */       
-/* 241 */       return false;
+/* 240 */       return false;
 /*     */     }
 /*     */     
-/* 244 */     if (par1EntityLiving instanceof EntityPlayer) {
+/* 243 */     if (par1EntityLiving instanceof EntityPlayer) {
 /*     */       
-/* 246 */       EntityPlayer p = (EntityPlayer)par1EntityLiving;
-/* 247 */       return !p.capabilities.isCreativeMode;
+/* 245 */       EntityPlayer p = (EntityPlayer)par1EntityLiving;
+/* 246 */       return !p.capabilities.isCreativeMode;
 /*     */     } 
 /*     */     
-/* 250 */     return true;
+/* 249 */     return true;
 /*     */   }
 /*     */ 
 /*     */   
 /*     */   private EntityLivingBase findSomethingToAttack() {
-/* 255 */     if (OreSpawnMain.PlayNicely != 0) return null; 
-/* 256 */     List var5 = this.world.getEntitiesWithinAABB(EntityLivingBase.class, getEntityBoundingBox().expand(12.0D, 5.0D, 12.0D));
+/* 254 */     if (OreSpawnMain.PlayNicely != 0) return null; 
+/* 255 */     List var5 = this.world.getEntitiesWithinAABB(EntityLivingBase.class, getEntityBoundingBox().expand(12.0D, 5.0D, 12.0D));
 /*     */     
-/* 258 */     Iterator<Entity> var2 = var5.iterator();
-/* 259 */     Entity var3 = null;
-/* 260 */     EntityLivingBase var4 = null;
+/* 257 */     Iterator<Entity> var2 = var5.iterator();
+/* 258 */     Entity var3 = null;
+/* 259 */     EntityLivingBase var4 = null;
 /*     */     
-/* 262 */     while (var2.hasNext()) {
+/* 261 */     while (var2.hasNext()) {
 /*     */       
-/* 264 */       var3 = var2.next();
-/* 265 */       var4 = (EntityLivingBase)var3;
+/* 263 */       var3 = var2.next();
+/* 264 */       var4 = (EntityLivingBase)var3;
 /*     */       
-/* 267 */       if (isSuitableTarget(var4, false))
+/* 266 */       if (isSuitableTarget(var4, false))
 /*     */       {
-/* 269 */         return var4;
+/* 268 */         return var4;
 /*     */       }
 /*     */     } 
-/* 272 */     return null;
+/* 271 */     return null;
 /*     */   }
 /*     */ 
 /*     */   
 /*     */   public int getAttacking() {
-/* 277 */     return ((Byte)this.dataManager.get(ATTACKING)).byteValue();
+/* 276 */     return ((Byte)this.dataManager.get(ATTACKING)).byteValue();
 /*     */   }
 /*     */ 
 /*     */   
 /*     */   public void setAttacking(int par1) {
-/* 282 */     this.dataManager.set(ATTACKING, Byte.valueOf((byte)par1));
+/* 281 */     this.dataManager.set(ATTACKING, Byte.valueOf((byte)par1));
 /*     */   }
 /*     */ 
 /*     */ 
@@ -288,51 +287,51 @@
 /*     */   
 /*     */   public boolean getCanSpawnHere() {
 /*     */     int k;
-/* 291 */     for (k = -3; k < 3; k++) {
+/* 290 */     for (k = -3; k < 3; k++) {
 /*     */       
-/* 293 */       for (int j = -3; j < 3; j++) {
+/* 292 */       for (int j = -3; j < 3; j++) {
 /*     */         
-/* 295 */         for (int i = 0; i < 5; i++) {
+/* 294 */         for (int i = 0; i < 5; i++) {
 /*     */           
-/* 297 */           Block bid = this.world.getBlockState(new BlockPos((int)this.posX + j, (int)this.posY + i, (int)this.posZ + k)).getBlock();
-/* 298 */           if (bid == Blocks.MOB_SPAWNER) {
-/* 299 */             TileEntityMobSpawner tileentitymobspawner = null;
-/* 300 */             tileentitymobspawner = (TileEntityMobSpawner)this.world.getTileEntity(new BlockPos((int)this.posX + j, (int)this.posY + i, (int)this.posZ + k));
-/* 301 */             String s = tileentitymobspawner.getSpawnerBaseLogic().getSpawnerEntity().getName();
-/* 302 */             if (s != null && 
-/* 303 */               s.equals("Alosaurus")) return true;
+/* 296 */           Block bid = this.world.getBlockState(new BlockPos((int)this.posX + j, (int)this.posY + i, (int)this.posZ + k)).getBlock();
+/* 297 */           if (bid == Blocks.MOB_SPAWNER) {
+/* 298 */             TileEntityMobSpawner tileentitymobspawner = null;
+/* 299 */             tileentitymobspawner = (TileEntityMobSpawner)this.world.getTileEntity(new BlockPos((int)this.posX + j, (int)this.posY + i, (int)this.posZ + k));
+/* 300 */             String s = tileentitymobspawner.getSpawnerBaseLogic().getSpawnerEntity().getName();
+/* 301 */             if (s != null && 
+/* 302 */               s.equals("Alosaurus")) return true;
 /*     */           
 /*     */           } 
 /*     */         } 
 /*     */       } 
 /*     */     } 
-/* 309 */     if (!isValidLightLevel()) return false; 
-/* 310 */     if (this.posY < 50.0D) return false; 
-/* 311 */     if (this.world.isDaytime()) return false;
+/* 308 */     if (!isValidLightLevel()) return false; 
+/* 309 */     if (this.posY < 50.0D) return false; 
+/* 310 */     if (this.world.isDaytime()) return false;
 /*     */ 
 /*     */ 
 /*     */     
-/* 315 */     for (k = -1; k < 1; k++) {
+/* 314 */     for (k = -1; k < 1; k++) {
 /*     */       
-/* 317 */       for (int j = -1; j < 1; j++) {
+/* 316 */       for (int j = -1; j < 1; j++) {
 /*     */         
-/* 319 */         for (int i = 1; i < 6; i++) {
+/* 318 */         for (int i = 1; i < 6; i++) {
 /*     */           
-/* 321 */           Block bid = this.world.getBlockState(new BlockPos((int)this.posX + j, (int)this.posY + i, (int)this.posZ + k)).getBlock();
-/* 322 */           if (bid != Blocks.AIR) return false;
+/* 320 */           Block bid = this.world.getBlockState(new BlockPos((int)this.posX + j, (int)this.posY + i, (int)this.posZ + k)).getBlock();
+/* 321 */           if (bid != Blocks.AIR) return false;
 /*     */         
 /*     */         } 
 /*     */       } 
 /*     */     } 
 /*     */     
-/* 328 */     Alosaurus target = null;
-/* 329 */     target = (Alosaurus)this.world.findNearestEntityWithinAABB(Alosaurus.class, getEntityBoundingBox().expand(16.0D, 8.0D, 16.0D), (Entity)this);
-/* 330 */     return (target == null);
+/* 327 */     Alosaurus target = null;
+/* 328 */     target = (Alosaurus)this.world.findNearestEntityWithinAABB(Alosaurus.class, getEntityBoundingBox().expand(16.0D, 8.0D, 16.0D), (Entity)this);
+/* 329 */     return (target == null);
 /*     */   }
 /*     */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.4-deobf.jar!\danger\orespawn\entity\Alosaurus.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\entity\Alosaurus.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

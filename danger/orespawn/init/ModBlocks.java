@@ -29,10 +29,12 @@
 /* 29 */   public static final Block CRYOLOPHOSAURUS_ORE = (Block)new OreGenericEgg("cryolophosaurus_ore");
 /* 30 */   public static final Block POINTYSAURUS_ORE = (Block)new OreGenericEgg("pointysaurus_ore");
 /* 31 */   public static final Block TREX_ORE = (Block)new OreGenericEgg("trex_ore");
+/*    */   
+/* 33 */   public static final Block BIRD_ORE = (Block)new OreGenericEgg("bird_ore");
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.4-deobf.jar!\danger\orespawn\init\ModBlocks.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\init\ModBlocks.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

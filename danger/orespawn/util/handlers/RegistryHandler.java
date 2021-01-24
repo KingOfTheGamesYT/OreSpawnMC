@@ -19,7 +19,10 @@
 /*    */ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 /*    */ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 /*    */ import net.minecraftforge.fml.common.registry.GameRegistry;
+/*    */ import net.minecraftforge.fml.relauncher.Side;
+/*    */ import net.minecraftforge.fml.relauncher.SideOnly;
 /*    */ import net.minecraftforge.registries.IForgeRegistryEntry;
+/*    */ 
 /*    */ 
 /*    */ 
 /*    */ @EventBusSubscriber
@@ -27,47 +30,48 @@
 /*    */ {
 /*    */   @SubscribeEvent
 /*    */   public static void onItemRegister(RegistryEvent.Register<Item> event) {
-/* 30 */     event.getRegistry().registerAll((IForgeRegistryEntry[])ModItems.ITEMS.toArray((Object[])new Item[0]));
+/* 33 */     event.getRegistry().registerAll((IForgeRegistryEntry[])ModItems.ITEMS.toArray((Object[])new Item[0]));
 /*    */   }
 /*    */   
 /*    */   @SubscribeEvent
 /*    */   public static void onBlockRegister(RegistryEvent.Register<Block> event) {
-/* 35 */     event.getRegistry().registerAll((IForgeRegistryEntry[])ModBlocks.BLOCKS.toArray((Object[])new Block[0]));
+/* 38 */     event.getRegistry().registerAll((IForgeRegistryEntry[])ModBlocks.BLOCKS.toArray((Object[])new Block[0]));
 /*    */   }
 /*    */   
 /*    */   @SubscribeEvent
+/*    */   @SideOnly(Side.CLIENT)
 /*    */   public static void onModelRegister(ModelRegistryEvent event) {
-/* 40 */     for (Item item : ModItems.ITEMS) {
-/* 41 */       OreSpawnMain.proxy.registerItemRenderer(item, 0, "inventory");
+/* 44 */     RenderHandler.registerEntityRenders();
+/* 45 */     for (Item item : ModItems.ITEMS) {
+/* 46 */       OreSpawnMain.proxy.registerItemRenderer(item, 0, "inventory");
 /*    */     }
 /*    */     
-/* 44 */     for (Block block : ModBlocks.BLOCKS) {
-/* 45 */       OreSpawnMain.proxy.registerItemRenderer(Item.getItemFromBlock(block), 0, "inventory");
+/* 49 */     for (Block block : ModBlocks.BLOCKS) {
+/* 50 */       OreSpawnMain.proxy.registerItemRenderer(Item.getItemFromBlock(block), 0, "inventory");
 /*    */     }
 /*    */   }
 /*    */   
 /*    */   public static void preInitRegistries() {
-/* 50 */     ModEntities.registerEntities();
-/* 51 */     RenderHandler.registerEntityRenders();
-/* 52 */     ModDimensions.registerDimensions();
-/* 53 */     ModBiomes.registerBiomes();
+/* 55 */     ModEntities.registerEntities();
+/* 56 */     ModDimensions.registerDimensions();
+/* 57 */     ModBiomes.registerBiomes();
 /*    */   }
 /*    */   
 /*    */   public static void initRegistries() {
-/* 57 */     SoundsHandler.registerSounds();
-/* 58 */     SmeltingRecipes.init();
-/* 59 */     CraftingRecipes.init();
-/* 60 */     GameRegistry.registerTileEntity(TileEntityPlant.class, TileEntityPlant.class.getName());
+/* 61 */     SoundsHandler.registerSounds();
+/* 62 */     SmeltingRecipes.init();
+/* 63 */     CraftingRecipes.init();
+/* 64 */     GameRegistry.registerTileEntity(TileEntityPlant.class, TileEntityPlant.class.getName());
 /*    */   }
 /*    */ 
 /*    */   
 /*    */   public static void serverRegistries(FMLServerStartingEvent event) {
-/* 65 */     event.registerServerCommand((ICommand)new CommandDimensionTeleport());
+/* 69 */     event.registerServerCommand((ICommand)new CommandDimensionTeleport());
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.4-deobf.jar!\danger\orespaw\\util\handlers\RegistryHandler.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespaw\\util\handlers\RegistryHandler.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */
