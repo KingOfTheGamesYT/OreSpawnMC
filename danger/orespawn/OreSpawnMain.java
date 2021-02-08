@@ -4,8 +4,8 @@
 /*    */ import danger.orespawn.tabs.OrespawnTab;
 /*    */ import danger.orespawn.util.handlers.RegistryHandler;
 /*    */ import danger.orespawn.util.premium.PremiumChecker;
-/*    */ import danger.orespawn.world.ButterflyPlantGenerator;
 /*    */ import danger.orespawn.world.CornPlantGenerator;
+/*    */ import danger.orespawn.world.PlantGenerator;
 /*    */ import danger.orespawn.world.gen.ores.AntHillGenerator;
 /*    */ import danger.orespawn.world.gen.ores.WorldGenOres;
 /*    */ import java.util.Random;
@@ -33,11 +33,12 @@
 /*    */ 
 /*    */ 
 /*    */ 
+/*    */ 
 /*    */ @Mod(modid = "orespawn", name = "OreSpawn", version = "1.0.0")
 /*    */ public class OreSpawnMain
 /*    */ {
-/* 39 */   public static Random OreSpawnRand = new Random(151L);
-/* 40 */   public static int PlayNicely = 0;
+/* 40 */   public static Random OreSpawnRand = new Random(151L);
+/* 41 */   public static int PlayNicely = 0;
 /*    */   
 /*    */   @Instance
 /*    */   public static OreSpawnMain instance;
@@ -45,8 +46,7 @@
 /*    */   @SidedProxy(clientSide = "danger.orespawn.proxy.ClientProxy", serverSide = "danger.orespawn.proxy.CommonProxy")
 /*    */   public static CommonProxy proxy;
 /*    */   
-/* 48 */   public static final CreativeTabs OreSpawnTab = (CreativeTabs)new OrespawnTab();
-/*    */ 
+/* 49 */   public static final CreativeTabs OreSpawnTab = (CreativeTabs)new OrespawnTab();
 /*    */   
 /*    */   @EventHandler
 /*    */   public static void PreInit(FMLPreInitializationEvent event) {
@@ -57,40 +57,36 @@
 /* 57 */     GameRegistry.registerWorldGenerator((IWorldGenerator)new WorldGenOres(), 3);
 /*    */   }
 /*    */ 
-/*    */ 
 /*    */   
 /*    */   @EventHandler
 /*    */   public static void init(FMLInitializationEvent event) {
-/* 64 */     RegistryHandler.initRegistries();
-/* 65 */     proxy.init(event);
-/* 66 */     MinecraftForge.TERRAIN_GEN_BUS.register(new CornPlantGenerator());
-/* 67 */     MinecraftForge.TERRAIN_GEN_BUS.register(new ButterflyPlantGenerator());
-/* 68 */     MinecraftForge.TERRAIN_GEN_BUS.register(new AntHillGenerator());
+/* 63 */     RegistryHandler.initRegistries();
+/* 64 */     proxy.init(event);
+/* 65 */     MinecraftForge.TERRAIN_GEN_BUS.register(new CornPlantGenerator());
+/* 66 */     MinecraftForge.TERRAIN_GEN_BUS.register(new PlantGenerator());
+/* 67 */     MinecraftForge.TERRAIN_GEN_BUS.register(new AntHillGenerator());
 /*    */   }
-/*    */ 
 /*    */ 
 /*    */   
 /*    */   @EventHandler
 /*    */   public static void PostInit(FMLPostInitializationEvent event) {
-/* 75 */     proxy.postInit(event);
+/* 73 */     proxy.postInit(event);
 /*    */   }
-/*    */ 
 /*    */   
 /*    */   @EventHandler
 /*    */   public static void serverInit(FMLServerStartingEvent event) {
-/* 81 */     RegistryHandler.serverRegistries(event);
+/* 78 */     RegistryHandler.serverRegistries(event);
 /*    */   }
-/*    */ 
 /*    */   
 /*    */   @SubscribeEvent
 /*    */   public static void playerJoin(PlayerEvent.PlayerLoggedInEvent event) {
-/* 87 */     System.out.println("---------------------------------------------------------------------- PLAYER JOINED");
-/* 88 */     PremiumChecker.CheckUser(event.player);
+/* 83 */     System.out.println("---------------------------------------------------------------------- PLAYER JOINED");
+/* 84 */     PremiumChecker.CheckUser(event.player);
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\OreSpawnMain.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\OreSpawnMain.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

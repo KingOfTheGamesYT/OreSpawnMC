@@ -44,28 +44,24 @@
 /*    */   public void setWorldTime(long time) {
 /* 45 */     WorldServer ws = DimensionManager.getWorld(Reference.DimensionMiningID);
 /* 46 */     if (ws != null) {
-/*    */       
-/* 48 */       WorldInfo wi = ws.getWorldInfo();
-/* 49 */       if (wi != null)
-/*    */       {
-/* 51 */         if (time % 24000L > 12000L && ws.areAllPlayersAsleep()) {
-/*    */           
-/* 53 */           long newTime = time + 24000L;
-/* 54 */           newTime -= newTime % 24000L;
-/* 55 */           for (int i = 0; i < (ws.getMinecraftServer()).worlds.length; i++)
-/*    */           {
-/* 57 */             (ws.getMinecraftServer()).worlds[i].setWorldTime(newTime);
-/*    */           }
-/*    */           return;
-/*    */         } 
-/*    */       }
+/* 47 */       WorldInfo wi = ws.getWorldInfo();
+/* 48 */       if (wi != null && 
+/* 49 */         time % 24000L > 12000L && ws.areAllPlayersAsleep()) {
+/* 50 */         long newTime = time + 24000L;
+/* 51 */         newTime -= newTime % 24000L;
+/* 52 */         for (int i = 0; i < (ws.getMinecraftServer()).worlds.length; i++) {
+/* 53 */           (ws.getMinecraftServer()).worlds[i].setWorldTime(newTime);
+/*    */         }
+/*    */         
+/*    */         return;
+/*    */       } 
 /*    */     } 
-/* 63 */     super.setWorldTime(time);
+/* 59 */     super.setWorldTime(time);
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\world\dimension\mining\WorldProviderMiningDimension.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\world\dimension\mining\WorldProviderMiningDimension.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

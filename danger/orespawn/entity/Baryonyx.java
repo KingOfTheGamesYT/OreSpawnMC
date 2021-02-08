@@ -51,21 +51,7 @@
 /*  51 */   private float moveSpeed = 0.25F;
 /*     */   private int closest;
 /*     */   private int tx;
-/*     */   private int ty; private int tz; protected void applyEntityAttributes() { super.applyEntityAttributes(); getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(mygetMaxHealth()); getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(this.moveSpeed); getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE); getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D); } protected void entityInit() { super.entityInit(); } public boolean getCanSpawnHere() { if (this.posY < 50.0D) return false;  if (!this.world.isDaytime()) return false;  if (findBuddies() > 8)
-/*  55 */       return false;  return true; } public Baryonyx(World par1World) { super(par1World);
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
+/*  54 */   private int ty; private int tz; protected void applyEntityAttributes() { super.applyEntityAttributes(); getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(mygetMaxHealth()); getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(this.moveSpeed); getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE); getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D); } protected void entityInit() { super.entityInit(); } public boolean getCanSpawnHere() { if (this.posY < 50.0D) return false;  if (!this.world.isDaytime()) return false;  if (findBuddies() > 8) return false;  return true; } public Baryonyx(World par1World) { super(par1World);
 /*     */ 
 /*     */ 
 /*     */ 
@@ -182,120 +168,131 @@
 /*     */ 
 /*     */ 
 /*     */     
-/* 185 */     this.closest = 99999;
-/* 186 */     this.tx = 0; this.ty = 0; this.tz = 0; setSize(1.5F, 2.8F); this.moveSpeed = 0.25F; this.experienceValue = 5; this.tasks.addTask(0, (EntityAIBase)new EntityAISwimming((EntityLiving)this)); this.tasks.addTask(1, (EntityAIBase)new EntityAIMate(this, 1.0D)); this.tasks.addTask(2, (EntityAIBase)new EntityAIAvoidEntity((EntityCreature)this, EntityMob.class, 8.0F, 1.0D, 1.399999976158142D)); this.tasks.addTask(4, (EntityAIBase)new EntityAIPanic((EntityCreature)this, 1.5D)); this.tasks.addTask(5, (EntityAIBase)new EntityAIWatchClosest((EntityLiving)this, EntityPlayer.class, 12.0F)); this.tasks.addTask(6, (EntityAIBase)new MyEntityAIWander((EntityCreature)this, 1.0F)); this.tasks.addTask(7, (EntityAIBase)new EntityAILookIdle((EntityLiving)this)); }
+/* 171 */     this.closest = 99999;
+/* 172 */     this.tx = 0; this.ty = 0; this.tz = 0; setSize(1.5F, 2.8F); this.moveSpeed = 0.25F; this.experienceValue = 5; this.tasks.addTask(0, (EntityAIBase)new EntityAISwimming((EntityLiving)this)); this.tasks.addTask(1, (EntityAIBase)new EntityAIMate(this, 1.0D)); this.tasks.addTask(2, (EntityAIBase)new EntityAIAvoidEntity((EntityCreature)this, EntityMob.class, 8.0F, 1.0D, 1.399999976158142D)); this.tasks.addTask(4, (EntityAIBase)new EntityAIPanic((EntityCreature)this, 1.5D)); this.tasks.addTask(5, (EntityAIBase)new EntityAIWatchClosest((EntityLiving)this, EntityPlayer.class, 12.0F)); this.tasks.addTask(6, (EntityAIBase)new MyEntityAIWander((EntityCreature)this, 1.0F)); this.tasks.addTask(7, (EntityAIBase)new EntityAILookIdle((EntityLiving)this)); }
 /*     */   public void onUpdate() { getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(this.moveSpeed); updateAITick(); super.onUpdate(); }
 /*     */   public boolean isAIEnabled() { return true; }
-/* 189 */   public boolean canBreatheUnderwater() { return false; } private boolean scan_it(int x, int y, int z, int dx, int dy, int dz) { int found = 0;
+/* 175 */   public boolean canBreatheUnderwater() { return false; } private boolean scan_it(int x, int y, int z, int dx, int dy, int dz) { int found = 0;
 /*     */ 
 /*     */     
 /*     */     int i;
 /*     */     
-/* 194 */     for (i = -dy; i <= dy; i++) {
-/* 195 */       for (int j = -dz; j <= dz; j++) {
-/* 196 */         Block bid = this.world.getBlockState(new BlockPos(x + dx, y + i, z + j)).getBlock();
-/* 197 */         if (bid == Blocks.GRASS) {
-/* 198 */           int d = dx * dx + j * j + i * i;
-/* 199 */           if (d < this.closest) {
-/* 200 */             this.closest = d;
-/* 201 */             this.tx = x + dx; this.ty = y + i; this.tz = z + j;
-/* 202 */             found++;
+/* 180 */     for (i = -dy; i <= dy; i++) {
+/* 181 */       for (int j = -dz; j <= dz; j++) {
+/* 182 */         Block bid = this.world.getBlockState(new BlockPos(x + dx, y + i, z + j)).getBlock();
+/* 183 */         if (bid == Blocks.GRASS) {
+/* 184 */           int d = dx * dx + j * j + i * i;
+/* 185 */           if (d < this.closest) {
+/* 186 */             this.closest = d;
+/* 187 */             this.tx = x + dx;
+/* 188 */             this.ty = y + i;
+/* 189 */             this.tz = z + j;
+/* 190 */             found++;
 /*     */           } 
 /*     */         } 
-/* 205 */         bid = this.world.getBlockState(new BlockPos(x - dx, y + i, z + j)).getBlock();
-/* 206 */         if (bid == Blocks.GRASS) {
-/* 207 */           int d = dx * dx + j * j + i * i;
-/* 208 */           if (d < this.closest) {
-/* 209 */             this.closest = d;
-/* 210 */             this.tx = x - dx; this.ty = y + i; this.tz = z + j;
-/* 211 */             found++;
-/*     */           } 
-/*     */         } 
-/*     */       } 
-/*     */     } 
-/*     */     
-/* 217 */     for (i = -dx; i <= dx; i++) {
-/* 218 */       for (int j = -dz; j <= dz; j++) {
-/* 219 */         Block bid = this.world.getBlockState(new BlockPos(x + i, y + dy, z + j)).getBlock();
-/* 220 */         if (bid == Blocks.GRASS) {
-/* 221 */           int d = dy * dy + j * j + i * i;
-/* 222 */           if (d < this.closest) {
-/* 223 */             this.closest = d;
-/* 224 */             this.tx = x + i; this.ty = y + dy; this.tz = z + j;
-/* 225 */             found++;
-/*     */           } 
-/*     */         } 
-/* 228 */         bid = this.world.getBlockState(new BlockPos(x + i, y - dy, z + j)).getBlock();
-/* 229 */         if (bid == Blocks.GRASS) {
-/* 230 */           int d = dy * dy + j * j + i * i;
-/* 231 */           if (d < this.closest) {
-/* 232 */             this.closest = d;
-/* 233 */             this.tx = x + i; this.ty = y - dy; this.tz = z + j;
-/* 234 */             found++;
+/* 193 */         bid = this.world.getBlockState(new BlockPos(x - dx, y + i, z + j)).getBlock();
+/* 194 */         if (bid == Blocks.GRASS) {
+/* 195 */           int d = dx * dx + j * j + i * i;
+/* 196 */           if (d < this.closest) {
+/* 197 */             this.closest = d;
+/* 198 */             this.tx = x - dx;
+/* 199 */             this.ty = y + i;
+/* 200 */             this.tz = z + j;
+/* 201 */             found++;
 /*     */           } 
 /*     */         } 
 /*     */       } 
 /*     */     } 
 /*     */     
-/* 240 */     for (i = -dx; i <= dx; i++) {
-/* 241 */       for (int j = -dy; j <= dy; j++) {
-/* 242 */         Block bid = this.world.getBlockState(new BlockPos(x + i, y + j, z + dz)).getBlock();
-/* 243 */         if (bid == Blocks.GRASS) {
-/* 244 */           int d = dz * dz + j * j + i * i;
-/* 245 */           if (d < this.closest) {
-/* 246 */             this.closest = d;
-/* 247 */             this.tx = x + i; this.ty = y + j; this.tz = z + dz;
-/* 248 */             found++;
+/* 207 */     for (i = -dx; i <= dx; i++) {
+/* 208 */       for (int j = -dz; j <= dz; j++) {
+/* 209 */         Block bid = this.world.getBlockState(new BlockPos(x + i, y + dy, z + j)).getBlock();
+/* 210 */         if (bid == Blocks.GRASS) {
+/* 211 */           int d = dy * dy + j * j + i * i;
+/* 212 */           if (d < this.closest) {
+/* 213 */             this.closest = d;
+/* 214 */             this.tx = x + i;
+/* 215 */             this.ty = y + dy;
+/* 216 */             this.tz = z + j;
+/* 217 */             found++;
 /*     */           } 
 /*     */         } 
-/* 251 */         bid = this.world.getBlockState(new BlockPos(x + i, y + j, z - dz)).getBlock();
-/* 252 */         if (bid == Blocks.GRASS) {
-/* 253 */           int d = dz * dz + j * j + i * i;
-/* 254 */           if (d < this.closest) {
-/* 255 */             this.closest = d;
-/* 256 */             this.tx = x + i; this.ty = y + j; this.tz = z - dz;
-/* 257 */             found++;
+/* 220 */         bid = this.world.getBlockState(new BlockPos(x + i, y - dy, z + j)).getBlock();
+/* 221 */         if (bid == Blocks.GRASS) {
+/* 222 */           int d = dy * dy + j * j + i * i;
+/* 223 */           if (d < this.closest) {
+/* 224 */             this.closest = d;
+/* 225 */             this.tx = x + i;
+/* 226 */             this.ty = y - dy;
+/* 227 */             this.tz = z + j;
+/* 228 */             found++;
 /*     */           } 
 /*     */         } 
 /*     */       } 
 /*     */     } 
 /*     */     
-/* 263 */     if (found != 0) return true; 
-/* 264 */     return false; } public int mygetMaxHealth() { return 40; }
+/* 234 */     for (i = -dx; i <= dx; i++) {
+/* 235 */       for (int j = -dy; j <= dy; j++) {
+/* 236 */         Block bid = this.world.getBlockState(new BlockPos(x + i, y + j, z + dz)).getBlock();
+/* 237 */         if (bid == Blocks.GRASS) {
+/* 238 */           int d = dz * dz + j * j + i * i;
+/* 239 */           if (d < this.closest) {
+/* 240 */             this.closest = d;
+/* 241 */             this.tx = x + i;
+/* 242 */             this.ty = y + j;
+/* 243 */             this.tz = z + dz;
+/* 244 */             found++;
+/*     */           } 
+/*     */         } 
+/* 247 */         bid = this.world.getBlockState(new BlockPos(x + i, y + j, z - dz)).getBlock();
+/* 248 */         if (bid == Blocks.GRASS) {
+/* 249 */           int d = dz * dz + j * j + i * i;
+/* 250 */           if (d < this.closest) {
+/* 251 */             this.closest = d;
+/* 252 */             this.tx = x + i;
+/* 253 */             this.ty = y + j;
+/* 254 */             this.tz = z - dz;
+/* 255 */             found++;
+/*     */           } 
+/*     */         } 
+/*     */       } 
+/*     */     } 
+/*     */     
+/* 261 */     if (found != 0) return true; 
+/* 262 */     return false; } public int mygetMaxHealth() { return 40; }
 /*     */   protected SoundEvent getAmbientSound() { return null; }
 /*     */   protected SoundEvent getHurtSound(DamageSource source) { return SoundsHandler.ENTITY_DUCK_HURT; }
 /*     */   protected SoundEvent getDeathSound() { return SoundsHandler.ENTITY_DUCK_HURT; }
 /*     */   protected float getSoundVolume() { return 0.4F; }
 /*     */   protected Item getDropItem() { return Items.BEEF; }
-/*     */   protected void dropFewItems(boolean par1, int par2) { int var3 = 0;
-/*     */     var3 = this.rand.nextInt(5);
+/*     */   protected void dropFewItems(boolean par1, int par2) { int var3 = 0; var3 = this.rand.nextInt(5);
 /*     */     var3 += 2;
 /*     */     for (int var4 = 0; var4 < var3; var4++)
 /*     */       dropItem(Items.BEEF, 1);  }
-/* 275 */   protected void updateAITick() { if (this.isDead)
-/* 276 */       return;  if (this.world.rand.nextInt(200) == 1) setRevengeTarget(null);
+/* 272 */   protected void updateAITick() { if (this.isDead)
+/* 273 */       return;  if (this.world.rand.nextInt(200) == 1) setRevengeTarget(null);
 /*     */     
-/* 278 */     if (this.world.rand.nextInt(60) == 0 && OreSpawnMain.PlayNicely == 0) {
-/*     */ 
+/* 275 */     if (this.world.rand.nextInt(60) == 0 && OreSpawnMain.PlayNicely == 0) {
 /*     */ 
 /*     */       
-/* 282 */       this.closest = 99999;
-/* 283 */       this.tx = this.ty = this.tz = 0;
-/* 284 */       for (int i = 1; i < 11; i++) {
-/* 285 */         int j = i;
-/* 286 */         if (j > 2) j = 2; 
-/* 287 */         if (scan_it((int)this.posX, (int)this.posY + 1, (int)this.posZ, i, j, i) == true)
-/* 288 */           break;  if (i >= 6) i++;
+/* 278 */       this.closest = 99999;
+/* 279 */       this.tx = this.ty = this.tz = 0;
+/* 280 */       for (int i = 1; i < 11; i++) {
+/* 281 */         int j = i;
+/* 282 */         if (j > 2) j = 2; 
+/* 283 */         if (scan_it((int)this.posX, (int)this.posY + 1, (int)this.posZ, i, j, i) == true)
+/* 284 */           break;  if (i >= 6) i++;
 /*     */       
 /*     */       } 
-/* 291 */       if (this.closest < 99999) {
+/* 287 */       if (this.closest < 99999) {
 /*     */         
-/* 293 */         getNavigator().tryMoveToXYZ(this.tx, this.ty, this.tz, 1.0D);
-/* 294 */         if (this.closest < 12) {
+/* 289 */         getNavigator().tryMoveToXYZ(this.tx, this.ty, this.tz, 1.0D);
+/* 290 */         if (this.closest < 12) {
 /*     */           
-/* 296 */           if (this.world.getGameRules().getBoolean("mobGriefing")) this.world.setBlockState(new BlockPos(this.tx, this.ty, this.tz), Blocks.DIRT.getDefaultState()); 
-/* 297 */           heal(1.0F);
-/* 298 */           playSound(SoundEvents.ENTITY_PLAYER_BURP, 1.0F, this.world.rand.nextFloat() * 0.2F + 0.9F);
+/* 292 */           if (this.world.getGameRules().getBoolean("mobGriefing"))
+/* 293 */             this.world.setBlockState(new BlockPos(this.tx, this.ty, this.tz), Blocks.DIRT.getDefaultState()); 
+/* 294 */           heal(1.0F);
+/* 295 */           playSound(SoundEvents.ENTITY_PLAYER_BURP, 1.0F, this.world.rand.nextFloat() * 0.2F + 0.9F);
 /*     */         } 
 /*     */       } 
 /*     */     }  }
@@ -305,70 +302,59 @@
 /*     */ 
 /*     */ 
 /*     */ 
-/*     */ 
 /*     */   
 /*     */   protected boolean canDespawn() {
-/* 311 */     if (isChild())
+/* 307 */     if (isChild())
 /*     */     {
-/* 313 */       return false;
+/* 309 */       return false;
 /*     */     }
-/* 315 */     if (isNoDespawnRequired()) return false; 
-/* 316 */     return true;
+/* 311 */     if (isNoDespawnRequired()) return false; 
+/* 312 */     return true;
 /*     */   }
 /*     */ 
 /*     */   
 /*     */   public EntityAgeable createChild(EntityAgeable entityageable) {
-/* 321 */     return (EntityAgeable)spawnBabyAnimal(entityageable);
+/* 317 */     return (EntityAgeable)spawnBabyAnimal(entityageable);
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */   
 /*     */   public Baryonyx spawnBabyAnimal(EntityAgeable par1EntityAgeable) {
-/* 327 */     return new Baryonyx(this.world);
+/* 322 */     return new Baryonyx(this.world);
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   public boolean isWheat(ItemStack par1ItemStack) {
-/* 335 */     return (par1ItemStack != null && par1ItemStack.getItem() == Items.APPLE);
+/* 329 */     return (par1ItemStack != null && par1ItemStack.getItem() == Items.APPLE);
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   public boolean isBreedingItem(ItemStack par1ItemStack) {
-/* 344 */     return (par1ItemStack.getItem() == Items.GOLDEN_APPLE);
+/* 337 */     return (par1ItemStack.getItem() == Items.GOLDEN_APPLE);
 /*     */   }
-/*     */ 
 /*     */   
 /*     */   private int findBuddies() {
-/* 349 */     List var5 = this.world.getEntitiesWithinAABB(Baryonyx.class, getEntityBoundingBox().expand(20.0D, 10.0D, 20.0D));
-/* 350 */     return var5.size();
+/* 341 */     List var5 = this.world.getEntitiesWithinAABB(Baryonyx.class, getEntityBoundingBox().expand(20.0D, 10.0D, 20.0D));
+/* 342 */     return var5.size();
 /*     */   }
-/*     */ 
 /*     */   
 /*     */   public boolean canMateWith(EntityAnimal otherAnimal) {
-/* 355 */     if (otherAnimal == this)
-/*     */     {
-/* 357 */       return false;
+/* 346 */     if (otherAnimal == this)
+/* 347 */       return false; 
+/* 348 */     if (!(otherAnimal instanceof Baryonyx)) {
+/* 349 */       return false;
 /*     */     }
-/* 359 */     if (!(otherAnimal instanceof Baryonyx))
-/*     */     {
-/* 361 */       return false;
-/*     */     }
-/*     */ 
-/*     */     
-/* 365 */     Baryonyx baryonyx = (Baryonyx)otherAnimal;
-/* 366 */     return (isInLove() && baryonyx.isInLove());
+/* 351 */     Baryonyx baryonyx = (Baryonyx)otherAnimal;
+/* 352 */     return (isInLove() && baryonyx.isInLove());
 /*     */   }
 /*     */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\entity\Baryonyx.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\entity\Baryonyx.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

@@ -1,5 +1,7 @@
 {
   "variants": {
-    "normal": { "model": "orespawn:camarasaurus_ore" }
+    "normal": {
+      "model": "orespawn:camarasaurus_ore"
+    }
   }
 }

@@ -23,7 +23,6 @@
 /*     */ 
 /*     */ 
 /*     */ 
-/*     */ 
 /*     */ public abstract class MyEntityAITarget
 /*     */   extends EntityAIBase
 /*     */ {
@@ -36,212 +35,175 @@
 /*     */   private int targetUnseenTicks;
 /*     */   
 /*     */   public MyEntityAITarget(EntityLiving par1EntityLiving, float par2, boolean par3) {
-/*  39 */     this(par1EntityLiving, par2, par3, false);
+/*  38 */     this(par1EntityLiving, par2, par3, false);
 /*     */   }
-/*     */ 
 /*     */   
 /*     */   public MyEntityAITarget(EntityLiving par1EntityLiving, float par2, boolean par3, boolean par4) {
-/*  44 */     this.targetSearchStatus = 0;
-/*  45 */     this.targetSearchDelay = 0;
-/*  46 */     this.targetUnseenTicks = 0;
-/*  47 */     this.taskOwner = par1EntityLiving;
-/*  48 */     this.targetDistance = par2;
-/*  49 */     this.shouldCheckSight = par3;
-/*  50 */     this.nearbyOnly = par4;
+/*  42 */     this.targetSearchStatus = 0;
+/*  43 */     this.targetSearchDelay = 0;
+/*  44 */     this.targetUnseenTicks = 0;
+/*  45 */     this.taskOwner = par1EntityLiving;
+/*  46 */     this.targetDistance = par2;
+/*  47 */     this.shouldCheckSight = par3;
+/*  48 */     this.nearbyOnly = par4;
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   public boolean continueExecuting() {
-/*  58 */     EntityLivingBase var1 = this.taskOwner.getAttackTarget();
+/*  55 */     EntityLivingBase var1 = this.taskOwner.getAttackTarget();
 /*     */     
-/*  60 */     if (var1 == null)
-/*     */     {
-/*  62 */       return false;
+/*  57 */     if (var1 == null) {
+/*  58 */       return false;
 /*     */     }
-/*  64 */     if (!var1.isEntityAlive()) {
+/*  60 */     if (!var1.isEntityAlive()) {
 /*     */       
-/*  66 */       this.taskOwner.setAttackTarget(null);
-/*  67 */       return false;
+/*  62 */       this.taskOwner.setAttackTarget(null);
+/*  63 */       return false;
 /*     */     } 
-/*  69 */     if (this.taskOwner.getDistanceSq((Entity)var1) > (this.targetDistance * this.targetDistance))
-/*     */     {
-/*  71 */       return false;
+/*  65 */     if (this.taskOwner.getDistanceSq((Entity)var1) > (this.targetDistance * this.targetDistance)) {
+/*  66 */       return false;
 /*     */     }
 /*     */     
-/*  74 */     if (this.taskOwner instanceof EntityTameable && ((EntityTameable)this.taskOwner).isTamed())
+/*  69 */     if (this.taskOwner instanceof EntityTameable && ((EntityTameable)this.taskOwner).isTamed() && 
+/*  70 */       var1 instanceof EntityTameable && ((EntityTameable)var1).isTamed())
 /*     */     {
-/*  76 */       if (var1 instanceof EntityTameable && ((EntityTameable)var1).isTamed())
-/*     */       {
-/*     */         
-/*  79 */         return false;
-/*     */       }
+/*  72 */       return false;
 /*     */     }
+/*     */ 
 /*     */     
-/*  83 */     if (this.shouldCheckSight)
-/*     */     {
-/*  85 */       if (this.taskOwner.getEntitySenses().canSee((Entity)var1)) {
-/*     */         
-/*  87 */         this.targetUnseenTicks = 0;
-/*     */       }
-/*  89 */       else if (++this.targetUnseenTicks > 60) {
-/*     */         
-/*  91 */         return false;
+/*  76 */     if (this.shouldCheckSight) {
+/*  77 */       if (this.taskOwner.getEntitySenses().canSee((Entity)var1)) {
+/*  78 */         this.targetUnseenTicks = 0;
+/*  79 */       } else if (++this.targetUnseenTicks > 60) {
+/*  80 */         return false;
 /*     */       } 
 /*     */     }
 /*     */     
-/*  95 */     return true;
+/*  84 */     return true;
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   public void startExecuting() {
-/* 104 */     this.targetSearchStatus = 0;
-/* 105 */     this.targetSearchDelay = 0;
-/* 106 */     this.targetUnseenTicks = 0;
+/*  92 */     this.targetSearchStatus = 0;
+/*  93 */     this.targetSearchDelay = 0;
+/*  94 */     this.targetUnseenTicks = 0;
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   public void resetTask() {
-/* 114 */     this.taskOwner.setAttackTarget((EntityLivingBase)null);
+/* 101 */     this.taskOwner.setAttackTarget((EntityLivingBase)null);
 /*     */   }
-/*     */ 
-/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   protected boolean isSuitableTarget(EntityLivingBase par1EntityLiving, boolean par2) {
-/* 124 */     if (par1EntityLiving == null)
+/* 109 */     if (par1EntityLiving == null)
 /*     */     {
-/*     */       
-/* 127 */       return false;
+/* 111 */       return false;
 /*     */     }
 /*     */     
-/* 130 */     if (par1EntityLiving == this.taskOwner)
+/* 114 */     if (par1EntityLiving == this.taskOwner)
 /*     */     {
-/*     */       
-/* 133 */       return false;
+/* 116 */       return false;
 /*     */     }
 /*     */ 
 /*     */ 
 /*     */     
-/* 138 */     if (!par1EntityLiving.isEntityAlive())
+/* 121 */     if (!par1EntityLiving.isEntityAlive())
 /*     */     {
-/*     */       
-/* 141 */       return false;
+/* 123 */       return false;
 /*     */     }
 /*     */     
-/* 144 */     if (this.taskOwner instanceof EntityTameable && ((EntityTameable)this.taskOwner).isTamed()) {
-/*     */       
-/* 146 */       if (par1EntityLiving instanceof EntityTameable && ((EntityTameable)par1EntityLiving).isTamed())
+/* 126 */     if (this.taskOwner instanceof EntityTameable && ((EntityTameable)this.taskOwner).isTamed()) {
+/* 127 */       if (par1EntityLiving instanceof EntityTameable && ((EntityTameable)par1EntityLiving).isTamed())
 /*     */       {
-/*     */         
-/* 149 */         return false;
+/* 129 */         return false;
 /*     */       }
-/* 151 */       if (par1EntityLiving == ((EntityTameable)this.taskOwner).getOwner())
+/* 131 */       if (par1EntityLiving == ((EntityTameable)this.taskOwner).getOwner())
 /*     */       {
-/*     */         
-/* 154 */         return false;
+/* 133 */         return false;
 /*     */       }
 /*     */     } 
 /*     */     
-/* 158 */     if (par1EntityLiving instanceof net.minecraft.entity.player.EntityPlayer)
+/* 137 */     if (par1EntityLiving instanceof net.minecraft.entity.player.EntityPlayer)
 /*     */     {
-/*     */ 
 /*     */       
-/* 162 */       return false;
+/* 140 */       return false;
 /*     */     }
 /*     */     
-/* 165 */     if (par1EntityLiving instanceof net.minecraft.entity.monster.EntityPigZombie)
+/* 143 */     if (par1EntityLiving instanceof net.minecraft.entity.monster.EntityPigZombie)
 /*     */     {
-/*     */       
-/* 168 */       return false;
+/* 145 */       return false;
 /*     */     }
-/* 170 */     if (par1EntityLiving instanceof net.minecraft.entity.monster.EntityEnderman)
+/* 147 */     if (par1EntityLiving instanceof net.minecraft.entity.monster.EntityEnderman)
 /*     */     {
-/*     */       
-/* 173 */       return false;
+/* 149 */       return false;
 /*     */     }
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */     
-/* 180 */     if (this.shouldCheckSight && !this.taskOwner.getEntitySenses().canSee((Entity)par1EntityLiving))
+/* 156 */     if (this.shouldCheckSight && !this.taskOwner.getEntitySenses().canSee((Entity)par1EntityLiving))
 /*     */     {
-/*     */       
-/* 183 */       return false;
+/* 158 */       return false;
 /*     */     }
-/* 185 */     if (par1EntityLiving instanceof net.minecraft.entity.monster.EntityCreeper)
+/* 160 */     if (par1EntityLiving instanceof net.minecraft.entity.monster.EntityCreeper)
 /*     */     {
-/*     */       
-/* 188 */       return true;
+/* 162 */       return true;
 /*     */     }
 /*     */     
-/* 191 */     if (par1EntityLiving instanceof net.minecraft.entity.monster.EntityGhast)
+/* 165 */     if (par1EntityLiving instanceof net.minecraft.entity.monster.EntityGhast)
 /*     */     {
-/*     */       
-/* 194 */       return true;
+/* 167 */       return true;
 /*     */     }
-/* 196 */     if (this.nearbyOnly) {
-/*     */       
-/* 198 */       if (--this.targetSearchDelay <= 0)
-/*     */       {
-/* 200 */         this.targetSearchStatus = 0;
+/* 169 */     if (this.nearbyOnly) {
+/* 170 */       if (--this.targetSearchDelay <= 0) {
+/* 171 */         this.targetSearchStatus = 0;
 /*     */       }
 /*     */       
-/* 203 */       if (this.targetSearchStatus == 0)
-/*     */       {
-/* 205 */         this.targetSearchStatus = canEasilyReach(par1EntityLiving) ? 1 : 2;
+/* 174 */       if (this.targetSearchStatus == 0) {
+/* 175 */         this.targetSearchStatus = canEasilyReach(par1EntityLiving) ? 1 : 2;
 /*     */       }
 /*     */       
-/* 208 */       if (this.targetSearchStatus == 2)
+/* 178 */       if (this.targetSearchStatus == 2)
 /*     */       {
-/*     */         
-/* 211 */         return false;
+/* 180 */         return false;
 /*     */       }
 /*     */     } 
 /*     */     
-/* 215 */     return true;
+/* 184 */     return true;
 /*     */   }
-/*     */ 
 /*     */   
 /*     */   private boolean canEasilyReach(EntityLivingBase par1EntityLiving) {
-/* 220 */     this.targetSearchDelay = 10 + this.taskOwner.getRNG().nextInt(5);
-/* 221 */     Path var2 = this.taskOwner.getNavigator().getPathToEntityLiving((Entity)par1EntityLiving);
+/* 188 */     this.targetSearchDelay = 10 + this.taskOwner.getRNG().nextInt(5);
+/* 189 */     Path var2 = this.taskOwner.getNavigator().getPathToEntityLiving((Entity)par1EntityLiving);
 /*     */     
-/* 223 */     if (var2 == null)
-/*     */     {
-/* 225 */       return false;
+/* 191 */     if (var2 == null) {
+/* 192 */       return false;
 /*     */     }
-/*     */ 
+/* 194 */     PathPoint var3 = var2.getFinalPathPoint();
 /*     */     
-/* 229 */     PathPoint var3 = var2.getFinalPathPoint();
-/*     */     
-/* 231 */     if (var3 == null)
-/*     */     {
-/* 233 */       return false;
+/* 196 */     if (var3 == null) {
+/* 197 */       return false;
 /*     */     }
-/*     */ 
-/*     */     
-/* 237 */     int var4 = var3.x - MathHelper.floor(par1EntityLiving.posX);
-/* 238 */     int var5 = var3.z - MathHelper.floor(par1EntityLiving.posZ);
-/* 239 */     return ((var4 * var4 + var5 * var5) <= 2.25D);
+/* 199 */     int var4 = var3.x - MathHelper.floor(par1EntityLiving.posX);
+/* 200 */     int var5 = var3.z - MathHelper.floor(par1EntityLiving.posZ);
+/* 201 */     return ((var4 * var4 + var5 * var5) <= 2.25D);
 /*     */   }
 /*     */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespaw\\util\ai\MyEntityAITarget.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespaw\\util\ai\MyEntityAITarget.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

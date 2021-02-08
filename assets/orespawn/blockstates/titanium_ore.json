@@ -1,5 +1,7 @@
 {
   "variants": {
-    "normal": { "model": "orespawn:titanium_ore" }
+    "normal": {
+      "model": "orespawn:titanium_ore"
+    }
   }
 }

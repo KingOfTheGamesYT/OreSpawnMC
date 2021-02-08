@@ -22,10 +22,9 @@
 /* 22 */     setUnlocalizedName(name);
 /* 23 */     setRegistryName(name);
 /* 24 */     setSoundType(SoundType.GROUND);
-/*    */     
-/* 26 */     setCreativeTab(OreSpawnMain.OreSpawnTab);
-/* 27 */     ModBlocks.BLOCKS.add(this);
-/* 28 */     ModItems.ITEMS.add((new ItemBlock(this)).setRegistryName(Objects.<ResourceLocation>requireNonNull(getRegistryName())));
+/* 25 */     setCreativeTab(OreSpawnMain.OreSpawnTab);
+/* 26 */     ModBlocks.BLOCKS.add(this);
+/* 27 */     ModItems.ITEMS.add((new ItemBlock(this)).setRegistryName(Objects.<ResourceLocation>requireNonNull(getRegistryName())));
 /*    */   }
 /*    */ 
 /*    */ 
@@ -33,15 +32,15 @@
 /*    */ 
 /*    */   
 /*    */   public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state, float chance, int fortune) {
-/* 36 */     super.dropBlockAsItemWithChance(worldIn, pos, state, chance, fortune);
-/* 37 */     int dropAmount = 5 + worldIn.rand.nextInt(3) + worldIn.rand.nextInt(3);
-/* 38 */     if (worldIn.rand.nextInt(2) == 1)
-/* 39 */       dropXpOnBlockBreak(worldIn, pos, dropAmount); 
+/* 35 */     super.dropBlockAsItemWithChance(worldIn, pos, state, chance, fortune);
+/* 36 */     int dropAmount = 5 + worldIn.rand.nextInt(3) + worldIn.rand.nextInt(3);
+/* 37 */     if (worldIn.rand.nextInt(2) == 1)
+/* 38 */       dropXpOnBlockBreak(worldIn, pos, dropAmount); 
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\blocks\OreGenericEgg.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\blocks\OreGenericEgg.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

@@ -1,5 +1,7 @@
 {
   "variants": {
-    "normal": { "model": "orespawn:titanium_block" }
+    "normal": {
+      "model": "orespawn:titanium_block"
+    }
   }
 }

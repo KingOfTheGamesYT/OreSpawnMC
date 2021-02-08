@@ -12,26 +12,25 @@
 /*    */ public class RenderRedAnt extends RenderLiving<RedAnt> {
 /* 13 */   public static final ResourceLocation TEXTURES = new ResourceLocation("orespawn:textures/entity/red_ant.png");
 /*    */ 
-/*    */ 
 /*    */   
 /*    */   public RenderRedAnt(RenderManager manager) {
-/* 18 */     super(manager, (ModelBase)new ModelAnt(), 0.0F);
+/* 17 */     super(manager, (ModelBase)new ModelAnt(), 0.0F);
 /*    */   }
 /*    */ 
 /*    */ 
 /*    */   
 /*    */   protected ResourceLocation getEntityTexture(RedAnt entity) {
-/* 24 */     return TEXTURES;
+/* 23 */     return TEXTURES;
 /*    */   }
 /*    */ 
 /*    */   
 /*    */   protected void applyRotations(RedAnt entityLiving, float p_77043_2_, float rotationYaw, float partialTicks) {
-/* 29 */     super.applyRotations((EntityLivingBase)entityLiving, p_77043_2_, rotationYaw, partialTicks);
+/* 28 */     super.applyRotations((EntityLivingBase)entityLiving, p_77043_2_, rotationYaw, partialTicks);
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\entity\render\RenderRedAnt.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\entity\render\RenderRedAnt.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

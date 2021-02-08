@@ -1,5 +1,7 @@
 {
   "variants": {
-    "normal": { "model": "orespawn:cryolophosaurus_ore" }
+    "normal": {
+      "model": "orespawn:cryolophosaurus_ore"
+    }
   }
 }

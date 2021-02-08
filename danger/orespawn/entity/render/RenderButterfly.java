@@ -39,23 +39,27 @@
 /*    */   
 /*    */   @Nullable
 /*    */   protected ResourceLocation getEntityTexture(Butterfly entity) {
-/* 42 */     switch (entity.butterflyType) { case 1:
-/* 43 */         return TEXTURE1;
-/* 44 */       case 2: return TEXTURE2;
-/* 45 */       case 3: return TEXTURE3; }
-/* 46 */      return TEXTURE4;
+/* 42 */     switch (entity.butterflyType) {
+/*    */       case 1:
+/* 44 */         return TEXTURE1;
+/*    */       case 2:
+/* 46 */         return TEXTURE2;
+/*    */       case 3:
+/* 48 */         return TEXTURE3;
+/*    */     } 
+/* 50 */     return TEXTURE4;
 /*    */   }
 /*    */ 
 /*    */ 
 /*    */   
 /*    */   protected void applyRotations(Butterfly entityLiving, float p_77043_2_, float rotationYaw, float partialTicks) {
-/* 52 */     GlStateManager.translate(0.0F, MathHelper.cos(p_77043_2_ * 0.3F) * 0.1F, 0.0F);
-/* 53 */     super.applyRotations((EntityLivingBase)entityLiving, p_77043_2_, rotationYaw, partialTicks);
+/* 56 */     GlStateManager.translate(0.0F, MathHelper.cos(p_77043_2_ * 0.3F) * 0.1F, 0.0F);
+/* 57 */     super.applyRotations((EntityLivingBase)entityLiving, p_77043_2_, rotationYaw, partialTicks);
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\entity\render\RenderButterfly.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\entity\render\RenderButterfly.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

@@ -1,5 +1,7 @@
 {
   "variants": {
-    "normal": { "model": "orespawn:pointysaurus_ore" }
+    "normal": {
+      "model": "orespawn:pointysaurus_ore"
+    }
   }
 }

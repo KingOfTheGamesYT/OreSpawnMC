@@ -9,8 +9,6 @@
 /*    */ 
 /*    */ 
 /*    */ 
-/*    */ 
-/*    */ 
 /*    */ public class OrespawnArmorMaterial
 /*    */ {
 /*    */   public final String Name;
@@ -22,27 +20,27 @@
 /*    */   public final ItemArmor.ArmorMaterial Material;
 /*    */   
 /*    */   public OrespawnArmorMaterial(String name, int durability, int[] protections, int enchantability, float toughness, ItemEnchantments enchantments) {
-/* 25 */     this.Name = name;
-/* 26 */     this.Durability = durability;
-/* 27 */     this.Protections = protections;
-/* 28 */     this.Enchantability = enchantability;
-/* 29 */     this.Toughness = toughness;
-/* 30 */     this.EnchantmentLevels = enchantments;
+/* 23 */     this.Name = name;
+/* 24 */     this.Durability = durability;
+/* 25 */     this.Protections = protections;
+/* 26 */     this.Enchantability = enchantability;
+/* 27 */     this.Toughness = toughness;
+/* 28 */     this.EnchantmentLevels = enchantments;
 /*    */     
-/* 32 */     this.Material = EnumHelper.addArmorMaterial(this.Name, "orespawn:" + this.Name, this.Durability, this.Protections, this.Enchantability, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, this.Toughness);
+/* 30 */     this.Material = EnumHelper.addArmorMaterial(this.Name, "orespawn:" + this.Name, this.Durability, this.Protections, this.Enchantability, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, this.Toughness);
 /*    */   }
 /*    */ 
 /*    */   
-/* 36 */   public static final OrespawnArmorMaterial UltimateArmor = new OrespawnArmorMaterial("ultimate", 200, new int[] { 6, 12, 10, 6 }, 100, 3.0F, (new ItemEnchantments())
-/* 37 */       .addEnchantment(Enchantments.RESPIRATION, 2).addEnchantment(Enchantments.AQUA_AFFINITY, 2).addEnchantment(Enchantments.PROTECTION, 5)
-/* 38 */       .addEnchantment(Enchantments.FIRE_PROTECTION, 5).addEnchantment(Enchantments.PROJECTILE_PROTECTION, 5).addEnchantment(Enchantments.UNBREAKING, 0)
-/* 39 */       .addEnchantment(Enchantments.FEATHER_FALLING, 3));
+/* 34 */   public static final OrespawnArmorMaterial UltimateArmor = new OrespawnArmorMaterial("ultimate", 200, new int[] { 6, 12, 10, 6 }, 100, 3.0F, (new ItemEnchantments())
+/* 35 */       .addEnchantment(Enchantments.RESPIRATION, 2).addEnchantment(Enchantments.AQUA_AFFINITY, 2).addEnchantment(Enchantments.PROTECTION, 5)
+/* 36 */       .addEnchantment(Enchantments.FIRE_PROTECTION, 5).addEnchantment(Enchantments.PROJECTILE_PROTECTION, 5).addEnchantment(Enchantments.UNBREAKING, 0)
+/* 37 */       .addEnchantment(Enchantments.FEATHER_FALLING, 3));
 /*    */   
-/* 41 */   public static final OrespawnArmorMaterial EmeraldArmor = new OrespawnArmorMaterial("emerald", 100, new int[] { 6, 12, 10, 6 }, 12, 3.0F, new ItemEnchantments());
+/* 39 */   public static final OrespawnArmorMaterial EmeraldArmor = new OrespawnArmorMaterial("emerald", 100, new int[] { 6, 12, 10, 6 }, 12, 3.0F, new ItemEnchantments());
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\items\armor\OrespawnArmorMaterial.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\items\armor\OrespawnArmorMaterial.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

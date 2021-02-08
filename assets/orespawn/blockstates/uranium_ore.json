@@ -1,5 +1,7 @@
 {
   "variants": {
-    "normal": { "model": "orespawn:uranium_ore" }
+    "normal": {
+      "model": "orespawn:uranium_ore"
+    }
   }
 }

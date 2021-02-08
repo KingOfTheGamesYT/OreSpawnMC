@@ -1,82 +1,42 @@
 /*    */ package danger.orespawn.util.handlers;
-/*    */ import danger.orespawn.entity.Baryonyx;
-/*    */ import danger.orespawn.entity.Bird;
-/*    */ import danger.orespawn.entity.Butterfly;
-/*    */ import danger.orespawn.entity.Camarasaurus;
-/*    */ import danger.orespawn.entity.CaveFisher;
-/*    */ import net.minecraft.client.renderer.entity.Render;
-/*    */ import net.minecraft.client.renderer.entity.RenderManager;
+/*    */ import danger.orespawn.entity.Alien;
+/*    */ import danger.orespawn.entity.Cryolophosaurus;
+/*    */ import danger.orespawn.entity.Dragonfly;
+/*    */ import danger.orespawn.entity.Firefly;
+/*    */ import danger.orespawn.entity.Mosquito;
+/*    */ import danger.orespawn.entity.Nastysaurus;
+/*    */ import danger.orespawn.entity.Pointysaurus;
 /*    */ import net.minecraftforge.fml.client.registry.IRenderFactory;
 /*    */ import net.minecraftforge.fml.client.registry.RenderingRegistry;
+/*    */ import net.minecraftforge.fml.relauncher.Side;
+/*    */ import net.minecraftforge.fml.relauncher.SideOnly;
 /*    */ 
 /*    */ @SideOnly(Side.CLIENT)
 /*    */ public class RenderHandler {
 /*    */   public static void registerEntityRenders() {
-/* 15 */     RenderingRegistry.registerEntityRenderingHandler(Alosaurus.class, new IRenderFactory<Alosaurus>()
-/*    */         {
-/*    */           public Render<? super Alosaurus> createRenderFor(RenderManager manager) {
-/* 18 */             return (Render<? super Alosaurus>)new RenderAlosaurus(manager);
-/*    */           }
-/*    */         });
-/* 21 */     RenderingRegistry.registerEntityRenderingHandler(TRex.class, new IRenderFactory<TRex>()
-/*    */         {
-/*    */           public Render<? super TRex> createRenderFor(RenderManager manager) {
-/* 24 */             return (Render<? super TRex>)new RenderTRex(manager);
-/*    */           }
-/*    */         });
-/* 27 */     RenderingRegistry.registerEntityRenderingHandler(Baryonyx.class, new IRenderFactory<Baryonyx>()
-/*    */         {
-/*    */           public Render<? super Baryonyx> createRenderFor(RenderManager manager) {
-/* 30 */             return (Render<? super Baryonyx>)new RenderBaryonyx(manager);
-/*    */           }
-/*    */         });
-/* 33 */     RenderingRegistry.registerEntityRenderingHandler(Camarasaurus.class, new IRenderFactory<Camarasaurus>()
-/*    */         {
-/*    */           public Render<? super Camarasaurus> createRenderFor(RenderManager manager) {
-/* 36 */             return (Render<? super Camarasaurus>)new RenderCamarasaurus(manager);
-/*    */           }
-/*    */         });
-/* 39 */     RenderingRegistry.registerEntityRenderingHandler(RedAnt.class, new IRenderFactory<RedAnt>()
-/*    */         {
-/*    */           public Render<? super RedAnt> createRenderFor(RenderManager manager) {
-/* 42 */             return (Render<? super RedAnt>)new RenderRedAnt(manager);
-/*    */           }
-/*    */         });
-/* 45 */     RenderingRegistry.registerEntityRenderingHandler(Cryolophosaurus.class, new IRenderFactory<Cryolophosaurus>()
-/*    */         {
-/*    */           public Render<? super Cryolophosaurus> createRenderFor(RenderManager manager) {
-/* 48 */             return (Render<? super Cryolophosaurus>)new RenderCryolophosaurus(manager);
-/*    */           }
-/*    */         });
-/* 51 */     RenderingRegistry.registerEntityRenderingHandler(Pointysaurus.class, new IRenderFactory<Pointysaurus>()
-/*    */         {
-/*    */           public Render<? super Pointysaurus> createRenderFor(RenderManager manager) {
-/* 54 */             return (Render<? super Pointysaurus>)new RenderPointysaurus(manager);
-/*    */           }
-/*    */         });
-/* 57 */     RenderingRegistry.registerEntityRenderingHandler(CaveFisher.class, new IRenderFactory<CaveFisher>()
-/*    */         {
-/*    */           public Render<? super CaveFisher> createRenderFor(RenderManager manager) {
-/* 60 */             return (Render<? super CaveFisher>)new RenderCaveFisher(manager);
-/*    */           }
-/*    */         });
-/* 63 */     RenderingRegistry.registerEntityRenderingHandler(Butterfly.class, new IRenderFactory<Butterfly>()
-/*    */         {
-/*    */           public Render<? super Butterfly> createRenderFor(RenderManager manager) {
-/* 66 */             return (Render<? super Butterfly>)new RenderButterfly(manager);
-/*    */           }
-/*    */         });
-/* 69 */     RenderingRegistry.registerEntityRenderingHandler(Bird.class, new IRenderFactory<Bird>()
-/*    */         {
-/*    */           public Render<? super Bird> createRenderFor(RenderManager manager) {
-/* 72 */             return (Render<? super Bird>)new RenderBird(manager);
-/*    */           }
-/*    */         });
+/* 17 */     RenderingRegistry.registerEntityRenderingHandler(Alosaurus.class, danger.orespawn.entity.render.RenderAlosaurus::new);
+/* 18 */     RenderingRegistry.registerEntityRenderingHandler(TRex.class, danger.orespawn.entity.render.RenderTRex::new);
+/* 19 */     RenderingRegistry.registerEntityRenderingHandler(Baryonyx.class, danger.orespawn.entity.render.RenderBaryonyx::new);
+/* 20 */     RenderingRegistry.registerEntityRenderingHandler(Camarasaurus.class, danger.orespawn.entity.render.RenderCamarasaurus::new);
+/* 21 */     RenderingRegistry.registerEntityRenderingHandler(RedAnt.class, danger.orespawn.entity.render.RenderRedAnt::new);
+/* 22 */     RenderingRegistry.registerEntityRenderingHandler(Cryolophosaurus.class, danger.orespawn.entity.render.RenderCryolophosaurus::new);
+/* 23 */     RenderingRegistry.registerEntityRenderingHandler(Pointysaurus.class, danger.orespawn.entity.render.RenderPointysaurus::new);
+/* 24 */     RenderingRegistry.registerEntityRenderingHandler(CaveFisher.class, danger.orespawn.entity.render.RenderCaveFisher::new);
+/* 25 */     RenderingRegistry.registerEntityRenderingHandler(Butterfly.class, danger.orespawn.entity.render.RenderButterfly::new);
+/* 26 */     RenderingRegistry.registerEntityRenderingHandler(Bird.class, danger.orespawn.entity.render.RenderBird::new);
+/* 27 */     RenderingRegistry.registerEntityRenderingHandler(GammaMetroid.class, danger.orespawn.entity.render.RenderGammaMetroid::new);
+/* 28 */     RenderingRegistry.registerEntityRenderingHandler(Spyro.class, danger.orespawn.entity.render.RenderSpyro::new);
+/* 29 */     RenderingRegistry.registerEntityRenderingHandler(Dragonfly.class, danger.orespawn.entity.render.RenderDragonfly::new);
+/* 30 */     RenderingRegistry.registerEntityRenderingHandler(Firefly.class, danger.orespawn.entity.render.RenderFirefly::new);
+/* 31 */     RenderingRegistry.registerEntityRenderingHandler(Mosquito.class, danger.orespawn.entity.render.RenderMosquito::new);
+/* 32 */     RenderingRegistry.registerEntityRenderingHandler(Nastysaurus.class, danger.orespawn.entity.render.RenderNastysaurus::new);
+/* 33 */     RenderingRegistry.registerEntityRenderingHandler(Alien.class, danger.orespawn.entity.render.RenderAlien::new);
+/* 34 */     RenderingRegistry.registerEntityRenderingHandler(VelocityRaptor.class, danger.orespawn.entity.render.RenderVelocityRaptor::new);
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespaw\\util\handlers\RenderHandler.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespaw\\util\handlers\RenderHandler.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

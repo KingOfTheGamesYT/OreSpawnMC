@@ -11,40 +11,58 @@
 /*    */ import net.minecraftforge.fml.common.IWorldGenerator;
 /*    */ 
 /*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
 /*    */ public class WorldGenOres
 /*    */   implements IWorldGenerator
 /*    */ {
 /*    */   public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-/* 18 */     generateOverworld(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
+/* 21 */     generateOverworld(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
 /*    */   }
 /*    */   
 /*    */   private void generateOverworld(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-/* 22 */     generateOre(ModBlocks.URANIUM_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 3, 20, random.nextInt(5) + 9, 4);
-/* 23 */     generateOre(ModBlocks.TITANIUM_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 3, 20, random.nextInt(5) + 9, 4);
+/* 25 */     generateOre(ModBlocks.URANIUM_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 3, 20, random.nextInt(5) + 5, 3);
+/* 26 */     generateOre(ModBlocks.TITANIUM_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 3, 20, random.nextInt(5) + 5, 3);
 /*    */     
-/* 25 */     generateOre(ModBlocks.ALOSAURUS_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 9, 4);
-/* 26 */     generateOre(ModBlocks.BARYONYX_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 9, 4);
-/* 27 */     generateOre(ModBlocks.CAMARASAURUS_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 9, 4);
-/* 28 */     generateOre(ModBlocks.CRYOLOPHOSAURUS_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 9, 4);
-/* 29 */     generateOre(ModBlocks.POINTYSAURUS_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 9, 4);
-/* 30 */     generateOre(ModBlocks.TREX_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 9, 4);
-/* 31 */     generateOre(ModBlocks.BIRD_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 9, 4);
+/* 28 */     generateOre(ModBlocks.ALOSAURUS_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/* 29 */     generateOre(ModBlocks.BARYONYX_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/* 30 */     generateOre(ModBlocks.CAMARASAURUS_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/* 31 */     generateOre(ModBlocks.CRYOLOPHOSAURUS_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/* 32 */     generateOre(ModBlocks.POINTYSAURUS_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/* 33 */     generateOre(ModBlocks.TREX_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/* 34 */     generateOre(ModBlocks.BIRD_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/*    */     
+/* 36 */     generateOre(ModBlocks.COW_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/* 37 */     generateOre(ModBlocks.CREEPER_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/* 38 */     generateOre(ModBlocks.GHAST_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/* 39 */     generateOre(ModBlocks.HORSE_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/* 40 */     generateOre(ModBlocks.PIG_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/* 41 */     generateOre(ModBlocks.ZOMBIE_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/*    */     
+/* 43 */     generateOre(ModBlocks.ALIEN_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/* 44 */     generateOre(ModBlocks.CAVEFISHER_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/* 45 */     generateOre(ModBlocks.NASTYSAURUS_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/* 46 */     generateOre(ModBlocks.VELOCITYRAPTOR_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/* 47 */     generateOre(ModBlocks.WTF_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/* 48 */     generateOre(ModBlocks.SPYRO_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
+/* 49 */     generateOre(ModBlocks.DRAGONFLY_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 40, 80, random.nextInt(5) + 5, 3);
 /*    */   }
 /*    */   
 /*    */   private void generateOre(IBlockState blockState, World world, Random random, int x, int z, int minY, int maxY, int size, int chances) {
-/* 35 */     int deltaY = maxY - minY;
+/* 53 */     int deltaY = maxY - minY;
 /*    */     
-/* 37 */     for (int i = 0; i < chances; i++) {
-/* 38 */       BlockPos pos = new BlockPos(x + random.nextInt(16), minY + random.nextInt(deltaY), z + random.nextInt(16));
+/* 55 */     for (int i = 0; i < chances; i++) {
+/* 56 */       BlockPos pos = new BlockPos(x + random.nextInt(16), minY + random.nextInt(deltaY), z + random.nextInt(16));
 /*    */       
-/* 40 */       WorldGenMinable generator = new WorldGenMinable(blockState, size);
-/* 41 */       generator.generate(world, random, pos);
+/* 58 */       WorldGenMinable generator = new WorldGenMinable(blockState, size);
+/* 59 */       generator.generate(world, random, pos);
 /*    */     } 
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\world\gen\ores\WorldGenOres.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\world\gen\ores\WorldGenOres.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

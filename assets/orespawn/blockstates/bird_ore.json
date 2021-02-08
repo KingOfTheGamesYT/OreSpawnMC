@@ -1,5 +1,7 @@
 {
   "variants": {
-    "normal": { "model": "orespawn:bird_ore" }
+    "normal": {
+      "model": "orespawn:bird_ore"
+    }
   }
 }

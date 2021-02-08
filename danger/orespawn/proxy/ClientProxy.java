@@ -28,18 +28,17 @@
 /* 28 */     RenderHandler.registerEntityRenders();
 /*    */   }
 /*    */ 
-/*    */ 
 /*    */   
 /*    */   public void postInit(FMLPostInitializationEvent event) {
-/* 34 */     super.postInit(event);
-/* 35 */     MinecraftForge.EVENT_BUS.register(new ClientEvents());
+/* 33 */     super.postInit(event);
+/* 34 */     MinecraftForge.EVENT_BUS.register(new ClientEvents());
 /*    */   }
 /*    */   
 /*    */   public void render() {}
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\proxy\ClientProxy.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\proxy\ClientProxy.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

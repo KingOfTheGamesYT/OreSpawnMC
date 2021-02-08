@@ -1,5 +1,7 @@
 {
   "variants": {
-    "normal": { "model": "orespawn:baryonyx_ore" }
+    "normal": {
+      "model": "orespawn:baryonyx_ore"
+    }
   }
 }

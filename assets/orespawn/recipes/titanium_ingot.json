@@ -1,25 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-
-  "pattern":
-  [
+  "pattern": [
     "III",
     "III",
     "III"
   ],
-
-  "key":
-  {
-    "I":
-    {
+  "key": {
+    "I": {
       "item": "orespawn:titanium_nugget"
     }
   },
-
-  "result":
-  {
+  "result": {
     "item": "orespawn:titanium_ingot",
     "count": 1
   }
-
 }

@@ -29,47 +29,47 @@
 /*    */ 
 /*    */ 
 /*    */ 
+/*    */ 
 /*    */ public class BlockButterflyPlant
 /*    */   extends BlockCrops
 /*    */ {
 /*    */   private boolean shouldSpawn = true;
 /*    */   
 /*    */   public BlockButterflyPlant() {
-/* 38 */     setUnlocalizedName("butterfly_plant");
-/* 39 */     setRegistryName("butterfly_plant");
-/* 40 */     setDefaultState(getDefaultState().withProperty((IProperty)AGE, Integer.valueOf(0)));
-/* 41 */     setCreativeTab(OreSpawnMain.OreSpawnTab);
-/* 42 */     ModBlocks.BLOCKS.add(this);
+/* 39 */     setUnlocalizedName("butterfly_plant");
+/* 40 */     setRegistryName("butterfly_plant");
+/* 41 */     setDefaultState(getDefaultState().withProperty((IProperty)AGE, Integer.valueOf(0)));
+/* 42 */     setCreativeTab(OreSpawnMain.OreSpawnTab);
+/* 43 */     ModBlocks.BLOCKS.add(this);
 /*    */   }
 /*    */ 
 /*    */   
 /*    */   public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-/* 47 */     super.updateTick(worldIn, pos, state, rand);
+/* 48 */     super.updateTick(worldIn, pos, state, rand);
 /*    */     
-/* 49 */     if (worldIn.isRaining())
+/* 50 */     if (worldIn.isRaining())
 /*    */       return; 
-/* 51 */     Chunk chunk = worldIn.getChunkFromBlockCoords(pos);
-/* 52 */     float radius = 50.0F;
-/* 53 */     AxisAlignedBB aabb = new AxisAlignedBB((pos.getX() - radius), 0.0D, (pos.getZ() - radius), (pos.getX() + radius), 200.0D, (pos.getZ() + radius));
-/* 54 */     List<Butterfly> butterflyList = new ArrayList<>();
-/* 55 */     chunk.getEntitiesOfTypeWithinAABB(Butterfly.class, aabb, butterflyList, e -> true);
-/* 56 */     if (butterflyList.size() > 15)
+/* 52 */     Chunk chunk = worldIn.getChunkFromBlockCoords(pos);
+/* 53 */     float radius = 50.0F;
+/* 54 */     AxisAlignedBB aabb = new AxisAlignedBB((pos.getX() - radius), 0.0D, (pos.getZ() - radius), (pos.getX() + radius), 200.0D, (pos.getZ() + radius));
+/* 55 */     List<Butterfly> butterflyList = new ArrayList<>();
+/* 56 */     chunk.getEntitiesOfTypeWithinAABB(Butterfly.class, aabb, butterflyList, e -> true);
+/* 57 */     if (butterflyList.size() > 15)
 /*    */       return; 
-/* 58 */     IBlockState st = worldIn.getBlockState(pos);
-/* 59 */     int rate = st.getBlock().getMetaFromState(st);
-/* 60 */     rate &= 0x7;
-/* 61 */     rate = 7 - rate;
-/* 62 */     if (rate > 1 && 
-/* 63 */       OreSpawnMain.OreSpawnRand.nextInt(rate) != 0)
+/* 59 */     IBlockState st = worldIn.getBlockState(pos);
+/* 60 */     int rate = st.getBlock().getMetaFromState(st);
+/* 61 */     rate &= 0x7;
+/* 62 */     rate = 7 - rate;
+/* 63 */     if (rate > 1 && 
+/* 64 */       OreSpawnMain.OreSpawnRand.nextInt(rate) != 0)
 /*    */       return; 
-/* 65 */     if (worldIn.getBlockState(pos.up(1)).getBlock() == Blocks.AIR && worldIn.isDaytime()) {
-/* 66 */       Entity butterfly = EntityList.newEntity(Butterfly.class, worldIn);
+/* 66 */     if (worldIn.getBlockState(pos.up(1)).getBlock() == Blocks.AIR && worldIn.isDaytime()) {
+/* 67 */       Entity butterfly = EntityList.newEntity(Butterfly.class, worldIn);
 /*    */       
-/* 68 */       butterfly.setPosition(pos.getX(), (pos.getY() + 1), pos.getZ());
-/* 69 */       worldIn.spawnEntity(butterfly);
+/* 69 */       butterfly.setPosition(pos.getX(), (pos.getY() + 1), pos.getZ());
+/* 70 */       worldIn.spawnEntity(butterfly);
 /*    */     } 
 /*    */   }
-/*    */ 
 /*    */ 
 /*    */ 
 /*    */   
@@ -77,21 +77,19 @@
 /* 77 */     return ModItems.BUTTERFLY_SEED;
 /*    */   }
 /*    */ 
-/*    */ 
 /*    */   
 /*    */   protected Item getSeed() {
-/* 83 */     return ModItems.BUTTERFLY_SEED;
+/* 82 */     return ModItems.BUTTERFLY_SEED;
 /*    */   }
-/*    */ 
 /*    */ 
 /*    */   
 /*    */   protected Item getCrop() {
-/* 89 */     return ModItems.BUTTERFLY_SEED;
+/* 87 */     return ModItems.BUTTERFLY_SEED;
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\blocks\BlockButterflyPlant.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\blocks\BlockButterflyPlant.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

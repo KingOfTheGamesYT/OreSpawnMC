@@ -1,5 +1,7 @@
 {
   "variants": {
-    "normal": { "model": "orespawn:uranium_block" }
+    "normal": {
+      "model": "orespawn:uranium_block"
+    }
   }
 }

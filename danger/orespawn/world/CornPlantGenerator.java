@@ -18,48 +18,49 @@
 /*    */   extends WorldGenerator {
 /* 19 */   private BlockCornPlant plant = (BlockCornPlant)ModBlocks.CORN_PLANT;
 /* 20 */   private IBlockState state = this.plant.getDefaultState();
+/*    */ 
 /*    */   
 /*    */   public boolean generate(World worldIn, Random rand, BlockPos position) {
-/* 23 */     for (int i = 0; i < 32; i++) {
-/* 24 */       BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
-/* 25 */       if (!worldIn.provider.isNether() && worldIn.isAirBlock(blockpos) && 
-/* 26 */         !this.plant.isBlockUnderCorn(worldIn, blockpos) && !this.plant.isBlockUnderAir(worldIn, blockpos) && this.plant.isBlockUnderGrass(worldIn, blockpos)) {
+/* 24 */     for (int i = 0; i < 32; i++) {
+/* 25 */       BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
+/* 26 */       if (!worldIn.provider.isNether() && worldIn.isAirBlock(blockpos) && 
+/* 27 */         !this.plant.isBlockUnderCorn(worldIn, blockpos) && !this.plant.isBlockUnderAir(worldIn, blockpos) && this.plant.isBlockUnderGrass(worldIn, blockpos)) {
 /*    */         
-/* 28 */         int height = 0;
-/* 29 */         int maxHeight = 21;
+/* 29 */         int height = 0;
+/* 30 */         int maxHeight = 21;
 /*    */         
-/* 31 */         while (height < maxHeight && (worldIn.isAirBlock(blockpos) || worldIn.getBlockState(blockpos).getBlock() == Blocks.TALLGRASS) && blockpos.getY() < 255 && this.plant.canBlockStay(worldIn, blockpos)) {
-/* 32 */           worldIn.setBlockState(blockpos, this.state.withProperty((IProperty)BlockCornPlant.STAGE, Integer.valueOf(3)), 2);
-/* 33 */           TileEntityPlant tileEntityPlant = (TileEntityPlant)worldIn.getTileEntity(blockpos);
-/* 34 */           int heightContribution = tileEntityPlant.getHeightContribution();
-/* 35 */           height += heightContribution;
-/* 36 */           blockpos = new BlockPos(blockpos.getX(), blockpos.getY() + 1, blockpos.getZ());
+/* 32 */         while (height < maxHeight && (worldIn.isAirBlock(blockpos) || worldIn.getBlockState(blockpos).getBlock() == Blocks.TALLGRASS) && blockpos.getY() < 255 && this.plant.canBlockStay(worldIn, blockpos)) {
+/* 33 */           worldIn.setBlockState(blockpos, this.state.withProperty((IProperty)BlockCornPlant.STAGE, Integer.valueOf(3)), 2);
+/* 34 */           TileEntityPlant tileEntityPlant = (TileEntityPlant)worldIn.getTileEntity(blockpos);
+/* 35 */           int heightContribution = tileEntityPlant.getHeightContribution();
+/* 36 */           height += heightContribution;
+/* 37 */           blockpos = new BlockPos(blockpos.getX(), blockpos.getY() + 1, blockpos.getZ());
 /*    */         } 
-/* 38 */         worldIn.setBlockState(blockpos, this.state, 2);
+/* 39 */         worldIn.setBlockState(blockpos, this.state, 2);
 /*    */       } 
 /*    */     } 
 /*    */ 
 /*    */     
-/* 43 */     return true;
+/* 44 */     return true;
 /*    */   }
 /*    */   
 /*    */   @SubscribeEvent
 /*    */   public void decorate(DecorateBiomeEvent.Decorate event) {
-/* 48 */     World world = event.getWorld();
-/* 49 */     Biome biome = world.getBiomeForCoordsBody(event.getPos());
-/* 50 */     Random rand = event.getRand();
-/* 51 */     if (event.getType() == DecorateBiomeEvent.Decorate.EventType.GRASS) {
-/* 52 */       if (rand.nextDouble() > 0.01D)
-/* 53 */         return;  int x = rand.nextInt(16) + 8;
-/* 54 */       int y = rand.nextInt(16) + 8;
-/* 55 */       CornPlantGenerator gen = new CornPlantGenerator();
-/* 56 */       gen.generate(world, rand, world.getHeight(event.getPos().add(x, 0, y)));
+/* 49 */     World world = event.getWorld();
+/* 50 */     Biome biome = world.getBiomeForCoordsBody(event.getPos());
+/* 51 */     Random rand = event.getRand();
+/* 52 */     if (event.getType() == DecorateBiomeEvent.Decorate.EventType.GRASS) {
+/* 53 */       if (rand.nextDouble() > 0.01D)
+/* 54 */         return;  int x = rand.nextInt(16) + 8;
+/* 55 */       int y = rand.nextInt(16) + 8;
+/* 56 */       CornPlantGenerator gen = new CornPlantGenerator();
+/* 57 */       gen.generate(world, rand, world.getHeight(event.getPos().add(x, 0, y)));
 /*    */     } 
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\world\CornPlantGenerator.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\world\CornPlantGenerator.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

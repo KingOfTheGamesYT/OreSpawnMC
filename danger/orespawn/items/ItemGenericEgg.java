@@ -32,35 +32,36 @@
 /*    */ 
 /*    */ 
 /*    */ 
+/*    */ 
 /*    */ public class ItemGenericEgg
 /*    */   extends Item
 /*    */ {
 /*    */   Class<? extends Entity> entityClass;
 /*    */   
 /*    */   public ItemGenericEgg(String name, Class<? extends Entity> entityClass) {
-/* 41 */     setUnlocalizedName(name);
-/* 42 */     setRegistryName(name);
-/* 43 */     setCreativeTab(OreSpawnMain.OreSpawnTab);
-/* 44 */     this.entityClass = entityClass;
-/* 45 */     ModItems.ITEMS.add(this);
+/* 42 */     setUnlocalizedName(name);
+/* 43 */     setRegistryName(name);
+/* 44 */     setCreativeTab(OreSpawnMain.OreSpawnTab);
+/* 45 */     this.entityClass = entityClass;
+/* 46 */     ModItems.ITEMS.add(this);
 /*    */   }
 /*    */   
 /*    */   public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-/* 49 */     if (worldIn.isRemote) return EnumActionResult.SUCCESS; 
-/* 50 */     Entity entity = EntityList.newEntity(this.entityClass, worldIn);
+/* 50 */     if (worldIn.isRemote) return EnumActionResult.SUCCESS; 
+/* 51 */     Entity entity = EntityList.newEntity(this.entityClass, worldIn);
 /*    */     
-/* 52 */     entity.setPosition(pos.getX(), (pos.getY() + 1), pos.getZ());
-/* 53 */     worldIn.spawnEntity(entity);
-/* 54 */     ((EntityLiving)entity).playLivingSound();
-/* 55 */     if (!player.isCreative()) {
-/* 56 */       player.getHeldItem(hand).shrink(1);
+/* 53 */     entity.setPosition(pos.getX(), (pos.getY() + 1), pos.getZ());
+/* 54 */     worldIn.spawnEntity(entity);
+/* 55 */     ((EntityLiving)entity).playLivingSound();
+/* 56 */     if (!player.isCreative()) {
+/* 57 */       player.getHeldItem(hand).shrink(1);
 /*    */     }
-/* 58 */     return EnumActionResult.SUCCESS;
+/* 59 */     return EnumActionResult.SUCCESS;
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\items\ItemGenericEgg.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\items\ItemGenericEgg.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

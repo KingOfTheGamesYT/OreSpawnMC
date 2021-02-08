@@ -12,26 +12,25 @@
 /*    */ public class RenderCamarasaurus extends RenderLiving<Camarasaurus> {
 /* 13 */   public static final ResourceLocation TEXTURES = new ResourceLocation("orespawn:textures/entity/camarasaurus.png");
 /*    */ 
-/*    */ 
 /*    */   
 /*    */   public RenderCamarasaurus(RenderManager manager) {
-/* 18 */     super(manager, (ModelBase)new ModelCamarasaurus(1.5F), 0.5F);
+/* 17 */     super(manager, (ModelBase)new ModelCamarasaurus(1.5F), 0.5F);
 /*    */   }
 /*    */ 
 /*    */ 
 /*    */   
 /*    */   protected ResourceLocation getEntityTexture(Camarasaurus entity) {
-/* 24 */     return TEXTURES;
+/* 23 */     return TEXTURES;
 /*    */   }
 /*    */ 
 /*    */   
 /*    */   protected void applyRotations(Camarasaurus entityLiving, float p_77043_2_, float rotationYaw, float partialTicks) {
-/* 29 */     super.applyRotations((EntityLivingBase)entityLiving, p_77043_2_, rotationYaw, partialTicks);
+/* 28 */     super.applyRotations((EntityLivingBase)entityLiving, p_77043_2_, rotationYaw, partialTicks);
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\entity\render\RenderCamarasaurus.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\entity\render\RenderCamarasaurus.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

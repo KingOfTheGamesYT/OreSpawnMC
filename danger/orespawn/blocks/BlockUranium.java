@@ -80,15 +80,16 @@
 /* 80 */       if (var9 < par2 || var9 > (par2 + 1) || var11 < 0.0D || var11 > (par3 + 1) || var13 < par4 || var13 > (par4 + 1)) {
 /* 81 */         int which = var5.nextInt(3);
 /* 82 */         if (which == 0) worldIn.spawnParticle(EnumParticleTypes.FLAME, var9, var11, var13, 0.0D, 0.0D, 0.0D, new int[0]); 
-/* 83 */         if (which == 1) worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, var9, var11, var13, 0.0D, 0.0D, 0.0D, new int[0]); 
-/* 84 */         if (which == 2) worldIn.spawnParticle(EnumParticleTypes.REDSTONE, var9, var11, var13, 0.0D, 0.0D, 0.0D, new int[0]); 
+/* 83 */         if (which == 1)
+/* 84 */           worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, var9, var11, var13, 0.0D, 0.0D, 0.0D, new int[0]); 
+/* 85 */         if (which == 2) worldIn.spawnParticle(EnumParticleTypes.REDSTONE, var9, var11, var13, 0.0D, 0.0D, 0.0D, new int[0]); 
 /*    */       } 
 /*    */     } 
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\blocks\BlockUranium.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\blocks\BlockUranium.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

@@ -34,25 +34,31 @@
 /*    */   
 /*    */   @Nullable
 /*    */   protected ResourceLocation getEntityTexture(Bird entity) {
-/* 37 */     switch (entity.birdType) { case 1:
-/* 38 */         return TEXTURE1;
-/* 39 */       case 2: return TEXTURE2;
-/* 40 */       case 3: return TEXTURE3;
-/* 41 */       case 4: return TEXTURE4;
-/* 42 */       case 5: return TEXTURE5; }
-/* 43 */      return TEXTURE6;
+/* 37 */     switch (entity.birdType) {
+/*    */       case 1:
+/* 39 */         return TEXTURE1;
+/*    */       case 2:
+/* 41 */         return TEXTURE2;
+/*    */       case 3:
+/* 43 */         return TEXTURE3;
+/*    */       case 4:
+/* 45 */         return TEXTURE4;
+/*    */       case 5:
+/* 47 */         return TEXTURE5;
+/*    */     } 
+/* 49 */     return TEXTURE6;
 /*    */   }
 /*    */ 
 /*    */ 
 /*    */   
 /*    */   protected void applyRotations(Bird entityLiving, float p_77043_2_, float rotationYaw, float partialTicks) {
-/* 49 */     GlStateManager.translate(0.0F, MathHelper.cos(p_77043_2_ * 0.3F) * 0.1F, 0.0F);
-/* 50 */     super.applyRotations((EntityLivingBase)entityLiving, p_77043_2_, rotationYaw, partialTicks);
+/* 55 */     GlStateManager.translate(0.0F, MathHelper.cos(p_77043_2_ * 0.3F) * 0.1F, 0.0F);
+/* 56 */     super.applyRotations((EntityLivingBase)entityLiving, p_77043_2_, rotationYaw, partialTicks);
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\entity\render\RenderBird.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\entity\render\RenderBird.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

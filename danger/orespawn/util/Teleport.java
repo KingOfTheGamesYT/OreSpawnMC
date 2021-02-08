@@ -10,29 +10,29 @@
 /*    */ import net.minecraft.world.Teleporter;
 /*    */ import net.minecraft.world.WorldServer;
 /*    */ 
-/*    */ public class Teleport extends Teleporter {
+/*    */ public class Teleport
+/*    */   extends Teleporter {
 /*    */   private final WorldServer world;
 /*    */   private final double x;
 /*    */   private final double y;
 /*    */   private final double z;
 /*    */   
 /*    */   public Teleport(WorldServer world, double x, double y, double z) {
-/* 20 */     super(world);
-/* 21 */     this.world = world;
-/* 22 */     this.x = x;
-/* 23 */     this.y = y;
-/* 24 */     this.z = z;
+/* 21 */     super(world);
+/* 22 */     this.world = world;
+/* 23 */     this.x = x;
+/* 24 */     this.y = y;
+/* 25 */     this.z = z;
 /*    */   }
 /*    */ 
 /*    */   
 /*    */   public void placeInPortal(Entity entityIn, float rotationYaw) {
-/* 29 */     this.world.getBlockState(new BlockPos(this.x, this.y, this.z));
-/* 30 */     entityIn.setPosition(this.x, this.y, this.z);
-/* 31 */     entityIn.motionX = 0.0D;
-/* 32 */     entityIn.motionY = 0.0D;
-/* 33 */     entityIn.motionZ = 0.0D;
+/* 30 */     this.world.getBlockState(new BlockPos(this.x, this.y, this.z));
+/* 31 */     entityIn.setPosition(this.x, this.y, this.z);
+/* 32 */     entityIn.motionX = 0.0D;
+/* 33 */     entityIn.motionY = 0.0D;
+/* 34 */     entityIn.motionZ = 0.0D;
 /*    */   }
-/*    */ 
 /*    */ 
 /*    */   
 /*    */   public static void teleportToDimension(EntityPlayer player, int dimension, double x, double y, double z) {
@@ -47,23 +47,22 @@
 /*    */ 
 /*    */     
 /* 49 */     int i = 0;
-/* 50 */     for (i = 255; i > 0; i--) {
-/*    */       
-/* 52 */       if (newDim.getBlockState(new BlockPos(x, i, z)) != Blocks.AIR.getDefaultState()) {
-/*    */         break;
-/*    */       }
-/*    */     } 
+/* 50 */     for (i = 255; i > 0 && 
+/* 51 */       newDim.getBlockState(new BlockPos(x, i, z)) == Blocks.AIR.getDefaultState(); i--);
+/*    */ 
+/*    */ 
+/*    */ 
 /*    */     
-/* 57 */     i++;
+/* 56 */     i++;
 /*    */     
-/* 59 */     ((MinecraftServer)Objects.<MinecraftServer>requireNonNull(worldServer.getMinecraftServer())).getPlayerList().transferPlayerToDimension((EntityPlayerMP)player, dimension, new Teleport(worldServer, x, i, z));
+/* 58 */     ((MinecraftServer)Objects.<MinecraftServer>requireNonNull(worldServer.getMinecraftServer())).getPlayerList().transferPlayerToDimension((EntityPlayerMP)player, dimension, new Teleport(worldServer, x, i, z));
 /*    */     
-/* 61 */     player.setPositionAndUpdate(x, i, z);
+/* 60 */     player.setPositionAndUpdate(x, i, z);
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespaw\\util\Teleport.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespaw\\util\Teleport.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

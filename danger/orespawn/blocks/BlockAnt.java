@@ -26,42 +26,51 @@
 /*    */ public class BlockAnt
 /*    */   extends Block
 /*    */ {
+/* 29 */   private AntType ANT_TYPE = AntType.RED;
 /*    */   public BlockAnt() {
-/* 30 */     super(Material.GRASS);
-/* 31 */     setUnlocalizedName("ant_block");
-/* 32 */     setRegistryName("ant_block");
-/* 33 */     setTickRandomly(true);
-/* 34 */     setCreativeTab(OreSpawnMain.OreSpawnTab);
-/* 35 */     ModBlocks.BLOCKS.add(this);
-/* 36 */     ModItems.ITEMS.add((new ItemBlock(this)).setRegistryName(Objects.<ResourceLocation>requireNonNull(getRegistryName())));
+/* 31 */     super(Material.GRASS);
+/* 32 */     setUnlocalizedName("ant_block");
+/* 33 */     setRegistryName("ant_block");
+/* 34 */     setTickRandomly(true);
+/* 35 */     setCreativeTab(OreSpawnMain.OreSpawnTab);
+/* 36 */     ModBlocks.BLOCKS.add(this);
+/* 37 */     ModItems.ITEMS.add((new ItemBlock(this)).setRegistryName(Objects.<ResourceLocation>requireNonNull(getRegistryName())));
 /*    */   }
 /*    */ 
 /*    */   
 /*    */   public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-/* 41 */     if (worldIn.isRemote)
-/* 42 */       return;  super.updateTick(worldIn, pos, state, rand);
+/* 42 */     if (worldIn.isRemote)
+/* 43 */       return;  super.updateTick(worldIn, pos, state, rand);
 /*    */     
-/* 44 */     if (worldIn.getBlockState(pos.up(1)).getBlock() == Blocks.AIR && worldIn.isDaytime()) {
-/* 45 */       Chunk chunk = worldIn.getChunkFromBlockCoords(pos);
-/* 46 */       int radius = 16;
-/* 47 */       AxisAlignedBB aabb = new AxisAlignedBB((pos.getX() - radius), 0.0D, (pos.getZ() - radius), (pos.getX() + radius), 200.0D, (pos.getZ() + radius));
-/* 48 */       List<RedAnt> antList = new ArrayList<>();
-/* 49 */       chunk.getEntitiesOfTypeWithinAABB(RedAnt.class, aabb, antList, e -> true);
-/* 50 */       if (antList.size() > 20)
+/* 45 */     if (worldIn.getBlockState(pos.up(1)).getBlock() == Blocks.AIR && worldIn.isDaytime()) {
+/* 46 */       Chunk chunk = worldIn.getChunkFromBlockCoords(pos);
+/* 47 */       int radius = 16;
+/* 48 */       AxisAlignedBB aabb = new AxisAlignedBB((pos.getX() - radius), 0.0D, (pos.getZ() - radius), (pos.getX() + radius), 200.0D, (pos.getZ() + radius));
+/* 49 */       List<RedAnt> antList = new ArrayList<>();
+/* 50 */       chunk.getEntitiesOfTypeWithinAABB(RedAnt.class, aabb, antList, e -> true);
+/* 51 */       if (antList.size() > 20)
 /*    */         return; 
-/* 52 */       int howmany = OreSpawnMain.OreSpawnRand.nextInt(6) + 2;
-/* 53 */       for (int i = 0; i < howmany; i++) {
-/* 54 */         Entity ant = EntityList.newEntity(RedAnt.class, worldIn);
-/* 55 */         ant.setPositionAndRotation(pos.getX(), (pos.getY() + 1), pos.getZ(), rand.nextFloat() * 360.0F, 0.0F);
-/* 56 */         worldIn.spawnEntity(ant);
-/* 57 */         ((EntityLiving)ant).playLivingSound();
+/* 53 */       int howmany = OreSpawnMain.OreSpawnRand.nextInt(6) + 2;
+/* 54 */       for (int i = 0; i < howmany; i++) {
+/* 55 */         Entity ant = EntityList.newEntity(getClassFromAntType(this.ANT_TYPE), worldIn);
+/* 56 */         ant.setPositionAndRotation(pos.getX(), (pos.getY() + 1), pos.getZ(), rand.nextFloat() * 360.0F, 0.0F);
+/* 57 */         worldIn.spawnEntity(ant);
+/* 58 */         ((EntityLiving)ant).playLivingSound();
 /*    */       } 
 /*    */     } 
+/*    */   }
+/*    */   
+/*    */   private Class<? extends Entity> getClassFromAntType(AntType type) {
+/* 64 */     switch (type) {
+/*    */       case RED:
+/* 66 */         return (Class)RedAnt.class;
+/*    */     } 
+/* 68 */     return (Class)RedAnt.class;
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\blocks\BlockAnt.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\blocks\BlockAnt.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

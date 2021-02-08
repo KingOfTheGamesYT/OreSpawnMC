@@ -6,7 +6,6 @@
 /*     */ import danger.orespawn.util.handlers.SoundsHandler;
 /*     */ import java.util.Iterator;
 /*     */ import java.util.List;
-/*     */ import net.minecraft.block.Block;
 /*     */ import net.minecraft.entity.Entity;
 /*     */ import net.minecraft.entity.EntityCreature;
 /*     */ import net.minecraft.entity.EntityLiving;
@@ -19,17 +18,15 @@
 /*     */ import net.minecraft.entity.ai.EntityAIWatchClosest;
 /*     */ import net.minecraft.entity.monster.EntityMob;
 /*     */ import net.minecraft.entity.player.EntityPlayer;
-/*     */ import net.minecraft.init.Blocks;
 /*     */ import net.minecraft.init.Items;
 /*     */ import net.minecraft.item.Item;
 /*     */ import net.minecraft.network.datasync.DataParameter;
 /*     */ import net.minecraft.network.datasync.DataSerializers;
 /*     */ import net.minecraft.network.datasync.EntityDataManager;
-/*     */ import net.minecraft.tileentity.TileEntityMobSpawner;
 /*     */ import net.minecraft.util.DamageSource;
 /*     */ import net.minecraft.util.SoundEvent;
-/*     */ import net.minecraft.util.math.BlockPos;
 /*     */ import net.minecraft.world.World;
+/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
@@ -60,183 +57,185 @@
 /*     */ public class CaveFisher
 /*     */   extends EntityMob
 /*     */ {
-/*  63 */   private float moveSpeed = 0.2F;
-/*  64 */   protected static final DataParameter<Byte> ATTACKING = EntityDataManager.createKey(CaveFisher.class, DataSerializers.BYTE);
-/*     */ 
+/*  60 */   private RenderInfo renderdata = new RenderInfo();
+/*  61 */   private float moveSpeed = 0.2F;
+/*  62 */   protected static final DataParameter<Byte> ATTACKING = EntityDataManager.createKey(CaveFisher.class, DataSerializers.BYTE);
 /*     */ 
 /*     */   
 /*     */   public CaveFisher(World worldIn) {
-/*  69 */     super(worldIn);
-/*  70 */     setSize(1.35F, 0.75F);
+/*  66 */     super(worldIn);
+/*  67 */     setSize(1.35F, 0.75F);
 /*     */     
-/*  72 */     this.experienceValue = 10;
+/*  69 */     this.experienceValue = 10;
 /*     */     
-/*  74 */     this.isImmuneToFire = false;
-/*     */ 
+/*  71 */     this.isImmuneToFire = false;
 /*     */     
-/*  77 */     this.tasks.addTask(0, (EntityAIBase)new EntityAISwimming((EntityLiving)this));
-/*  78 */     this.tasks.addTask(1, (EntityAIBase)new MyEntityAIWanderALot((EntityCreature)this, 14, 1.0D));
-/*  79 */     this.tasks.addTask(2, (EntityAIBase)new EntityAIWatchClosest((EntityLiving)this, EntityPlayer.class, 8.0F));
-/*  80 */     this.tasks.addTask(3, (EntityAIBase)new EntityAILookIdle((EntityLiving)this));
-/*  81 */     this.targetTasks.addTask(1, (EntityAIBase)new EntityAIHurtByTarget((EntityCreature)this, false, new Class[0]));
+/*  73 */     this.renderdata = new RenderInfo();
+/*  74 */     this.tasks.addTask(0, (EntityAIBase)new EntityAISwimming((EntityLiving)this));
+/*  75 */     this.tasks.addTask(1, (EntityAIBase)new MyEntityAIWanderALot((EntityCreature)this, 14, 1.0D));
+/*  76 */     this.tasks.addTask(2, (EntityAIBase)new EntityAIWatchClosest((EntityLiving)this, EntityPlayer.class, 8.0F));
+/*  77 */     this.tasks.addTask(3, (EntityAIBase)new EntityAILookIdle((EntityLiving)this));
+/*  78 */     this.targetTasks.addTask(1, (EntityAIBase)new EntityAIHurtByTarget((EntityCreature)this, false, new Class[0]));
 /*     */   }
-/*     */ 
 /*     */   
 /*     */   protected void applyEntityAttributes() {
-/*  86 */     super.applyEntityAttributes();
-/*  87 */     getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(mygetMaxHealth());
-/*  88 */     getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(this.moveSpeed);
-/*  89 */     getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
+/*  82 */     super.applyEntityAttributes();
+/*  83 */     getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(mygetMaxHealth());
+/*  84 */     getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(this.moveSpeed);
+/*  85 */     getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
 /*     */   }
 /*     */ 
+/*     */   
+/*     */   public RenderInfo getRenderInfo() {
+/*  90 */     return this.renderdata;
+/*     */   }
+/*     */ 
+/*     */   
+/*     */   public void setRenderInfo(RenderInfo r) {
+/*  95 */     this.renderdata.rf1 = r.rf1;
+/*  96 */     this.renderdata.rf2 = r.rf2;
+/*  97 */     this.renderdata.rf3 = r.rf3;
+/*  98 */     this.renderdata.rf4 = r.rf4;
+/*  99 */     this.renderdata.ri1 = r.ri1;
+/* 100 */     this.renderdata.ri2 = r.ri2;
+/* 101 */     this.renderdata.ri3 = r.ri3;
+/* 102 */     this.renderdata.ri4 = r.ri4;
+/*     */   }
 /*     */   
 /*     */   protected void entityInit() {
-/*  94 */     super.entityInit();
-/*  95 */     this.dataManager.register(ATTACKING, Byte.valueOf((byte)0));
+/* 106 */     super.entityInit();
+/* 107 */     this.dataManager.register(ATTACKING, Byte.valueOf((byte)0));
+/*     */     
+/* 109 */     if (this.renderdata == null) {
+/* 110 */       this.renderdata = new RenderInfo();
+/*     */     }
+/* 112 */     this.renderdata.rf1 = 0.0F;
+/* 113 */     this.renderdata.rf2 = 0.0F;
+/* 114 */     this.renderdata.rf3 = 0.0F;
+/* 115 */     this.renderdata.rf4 = 0.0F;
+/* 116 */     this.renderdata.ri1 = 0;
+/* 117 */     this.renderdata.ri2 = 0;
+/* 118 */     this.renderdata.ri3 = 0;
+/* 119 */     this.renderdata.ri4 = 0;
 /*     */   }
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
 /*     */   
 /*     */   protected boolean canDespawn() {
-/* 111 */     return !isNoDespawnRequired();
+/* 123 */     return !isNoDespawnRequired();
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   public void onUpdate() {
-/* 120 */     getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(this.moveSpeed);
-/* 121 */     super.onUpdate();
+/* 131 */     getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(this.moveSpeed);
+/* 132 */     super.onUpdate();
 /*     */   }
-/*     */ 
 /*     */   
 /*     */   public int mygetMaxHealth() {
-/* 126 */     return 20;
+/* 136 */     return 20;
 /*     */   }
-/*     */ 
-/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   public int getTotalArmorValue() {
-/* 136 */     return 10;
+/* 144 */     return 10;
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   protected boolean isAIEnabled() {
-/* 144 */     return true;
+/* 151 */     return true;
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   public void onLivingUpdate() {
-/* 153 */     super.onLivingUpdate();
+/* 159 */     super.onLivingUpdate();
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   protected String getLivingSound() {
-/* 162 */     return null;
+/* 167 */     return null;
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   protected String getHurtSound() {
-/* 170 */     return "orespawn:cryo_hurt";
+/* 174 */     return "orespawn:cryo_hurt";
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   protected SoundEvent getDeathSound() {
-/* 178 */     return SoundsHandler.ENTITY_ALOSAURUS_DEATH;
+/* 181 */     return SoundsHandler.ENTITY_ALOSAURUS_DEATH;
 /*     */   }
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   protected float getSoundVolume() {
-/* 185 */     return 1.5F;
+/* 188 */     return 1.5F;
 /*     */   }
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   protected float getSoundPitch() {
-/* 192 */     return 1.0F;
+/* 195 */     return 1.0F;
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   protected Item getDropItem() {
-/* 201 */     int i = this.world.rand.nextInt(6);
-/* 202 */     if (i == 0) return Items.GOLD_NUGGET; 
-/* 203 */     if (i == 1) return ModItems.URANIUM_NUGGET; 
-/* 204 */     if (i == 2) return ModItems.TITANIUM_NUGGET; 
-/* 205 */     return null;
+/* 203 */     int i = this.world.rand.nextInt(6);
+/* 204 */     if (i == 0) return Items.GOLD_NUGGET; 
+/* 205 */     if (i == 1) return ModItems.URANIUM_NUGGET; 
+/* 206 */     if (i == 2) return ModItems.TITANIUM_NUGGET; 
+/* 207 */     return null;
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
 /*     */   
 /*     */   public boolean interact(EntityPlayer par1EntityPlayer) {
-/* 213 */     return false;
+/* 214 */     return false;
 /*     */   }
-/*     */ 
 /*     */   
 /*     */   public boolean attackEntityAsMob(Entity par1Entity) {
 /* 218 */     return super.attackEntityAsMob(par1Entity);
 /*     */   }
-/*     */ 
 /*     */   
 /*     */   protected void updateAITasks() {
-/* 223 */     if (this.isDead)
-/* 224 */       return;  super.updateAITasks();
-/* 225 */     if (this.world.rand.nextInt(8) == 0) {
-/* 226 */       EntityLivingBase e = findSomethingToAttack();
-/* 227 */       if (e != null) {
-/* 228 */         if (getDistanceSq((Entity)e) < ((4.0F + e.width / 2.0F) * (4.0F + e.width / 2.0F))) {
-/* 229 */           setAttacking(1);
+/* 222 */     if (this.isDead)
+/* 223 */       return;  super.updateAITasks();
+/* 224 */     if (this.world.rand.nextInt(8) == 0) {
+/* 225 */       EntityLivingBase e = findSomethingToAttack();
+/* 226 */       if (e != null) {
+/* 227 */         if (getDistanceSq((Entity)e) < ((4.0F + e.width / 2.0F) * (4.0F + e.width / 2.0F))) {
+/* 228 */           setAttacking(1);
 /*     */           
-/* 231 */           if (this.world.rand.nextInt(7) == 0 || this.world.rand.nextInt(8) == 1)
+/* 230 */           if (this.world.rand.nextInt(7) == 0 || this.world.rand.nextInt(8) == 1)
 /*     */           {
-/* 233 */             attackEntityAsMob((Entity)e);
+/* 232 */             attackEntityAsMob((Entity)e);
 /*     */           }
 /*     */         } else {
-/* 236 */           getNavigator().tryMoveToEntityLiving((Entity)e, 1.2D);
+/* 235 */           getNavigator().tryMoveToEntityLiving((Entity)e, 1.2D);
 /*     */         } 
 /*     */       } else {
-/* 239 */         setAttacking(0);
+/* 238 */         setAttacking(0);
 /*     */       } 
 /*     */     } 
 /*     */   }
@@ -244,16 +243,14 @@
 /*     */ 
 /*     */ 
 /*     */ 
-/*     */ 
 /*     */   
 /*     */   public boolean attackEntityFrom(DamageSource par1DamageSource, float par2) {
-/* 250 */     boolean ret = false;
-/* 251 */     if (!par1DamageSource.getDamageType().equals("cactus")) {
-/* 252 */       ret = super.attackEntityFrom(par1DamageSource, par2);
+/* 248 */     boolean ret = false;
+/* 249 */     if (!par1DamageSource.getDamageType().equals("cactus")) {
+/* 250 */       ret = super.attackEntityFrom(par1DamageSource, par2);
 /*     */     }
-/* 254 */     return ret;
+/* 252 */     return ret;
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
@@ -261,27 +258,22 @@
 /*     */ 
 /*     */   
 /*     */   private boolean isSuitableTarget(EntityLivingBase par1EntityLiving, boolean par2) {
-/* 264 */     if (par1EntityLiving == null)
-/*     */     {
-/* 266 */       return false;
+/* 261 */     if (par1EntityLiving == null) {
+/* 262 */       return false;
 /*     */     }
-/* 268 */     if (par1EntityLiving == this)
-/*     */     {
-/* 270 */       return false;
+/* 264 */     if (par1EntityLiving == this) {
+/* 265 */       return false;
 /*     */     }
-/* 272 */     if (!par1EntityLiving.isEntityAlive())
-/*     */     {
-/* 274 */       return false;
+/* 267 */     if (!par1EntityLiving.isEntityAlive()) {
+/* 268 */       return false;
 /*     */     }
 /*     */     
-/* 277 */     if (!getEntitySenses().canSee((Entity)par1EntityLiving))
+/* 271 */     if (!getEntitySenses().canSee((Entity)par1EntityLiving))
 /*     */     {
-/*     */       
-/* 280 */       return false;
+/* 273 */       return false;
 /*     */     }
-/* 282 */     if (par1EntityLiving instanceof CaveFisher)
-/*     */     {
-/* 284 */       return false;
+/* 275 */     if (par1EntityLiving instanceof CaveFisher) {
+/* 276 */       return false;
 /*     */     }
 /*     */ 
 /*     */ 
@@ -291,55 +283,48 @@
 /*     */ 
 /*     */ 
 /*     */     
-/* 294 */     if (par1EntityLiving instanceof EntityMob)
+/* 286 */     if (par1EntityLiving instanceof EntityMob)
 /*     */     {
-/* 296 */       return false;
+/* 288 */       return false;
 /*     */     }
-/* 298 */     if (par1EntityLiving instanceof EntityPlayer) {
-/*     */       
-/* 300 */       EntityPlayer p = (EntityPlayer)par1EntityLiving;
-/* 301 */       if (p.capabilities.isCreativeMode == true) {
-/* 302 */         return false;
+/* 290 */     if (par1EntityLiving instanceof EntityPlayer) {
+/* 291 */       EntityPlayer p = (EntityPlayer)par1EntityLiving;
+/* 292 */       if (p.capabilities.isCreativeMode == true) {
+/* 293 */         return false;
 /*     */       }
 /*     */     } 
 /*     */     
-/* 306 */     return true;
+/* 297 */     return true;
 /*     */   }
-/*     */ 
 /*     */   
 /*     */   private EntityLivingBase findSomethingToAttack() {
-/* 311 */     if (OreSpawnMain.PlayNicely != 0) return null; 
-/* 312 */     List var5 = this.world.getEntitiesWithinAABB(EntityLivingBase.class, getEntityBoundingBox().expand(10.0D, 3.0D, 10.0D));
+/* 301 */     if (OreSpawnMain.PlayNicely != 0) return null; 
+/* 302 */     List var5 = this.world.getEntitiesWithinAABB(EntityLivingBase.class, getEntityBoundingBox().expand(10.0D, 3.0D, 10.0D));
 /*     */     
-/* 314 */     Iterator<Entity> var2 = var5.iterator();
-/* 315 */     Entity var3 = null;
-/* 316 */     EntityLivingBase var4 = null;
+/* 304 */     Iterator<Entity> var2 = var5.iterator();
+/* 305 */     Entity var3 = null;
+/* 306 */     EntityLivingBase var4 = null;
 /*     */     
-/* 318 */     while (var2.hasNext()) {
+/* 308 */     while (var2.hasNext()) {
+/* 309 */       var3 = var2.next();
+/* 310 */       var4 = (EntityLivingBase)var3;
 /*     */       
-/* 320 */       var3 = var2.next();
-/* 321 */       var4 = (EntityLivingBase)var3;
-/*     */       
-/* 323 */       if (isSuitableTarget(var4, false))
-/*     */       {
-/* 325 */         return var4;
+/* 312 */       if (isSuitableTarget(var4, false)) {
+/* 313 */         return var4;
 /*     */       }
 /*     */     } 
-/* 328 */     return null;
+/* 316 */     return null;
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */   
 /*     */   public final int getAttacking() {
-/* 334 */     return ((Byte)this.dataManager.get(ATTACKING)).byteValue();
+/* 321 */     return ((Byte)this.dataManager.get(ATTACKING)).byteValue();
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */   
 /*     */   public final void setAttacking(int par1) {
-/* 340 */     this.dataManager.set(ATTACKING, Byte.valueOf((byte)par1));
+/* 326 */     this.dataManager.set(ATTACKING, Byte.valueOf((byte)par1));
 /*     */   }
-/*     */ 
 /*     */ 
 /*     */ 
 /*     */ 
@@ -347,34 +332,31 @@
 /*     */ 
 /*     */   
 /*     */   public boolean getCanSpawnHere() {
-/* 350 */     int sc = 0;
+/* 335 */     int sc = 0;
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
 /*     */     
-/* 352 */     for (int k = -2; k < 2; k++) {
-/*     */       
-/* 354 */       for (int j = -2; j < 2; j++) {
-/*     */         
-/* 356 */         for (int i = 0; i < 5; i++) {
-/*     */           
-/* 358 */           Block bid = this.world.getBlockState(new BlockPos((int)this.posX + j, (int)this.posY + i, (int)this.posZ + k)).getBlock();
-/* 359 */           if (bid == Blocks.MOB_SPAWNER) {
-/* 360 */             TileEntityMobSpawner tileentitymobspawner = null;
-/* 361 */             tileentitymobspawner = (TileEntityMobSpawner)this.world.getTileEntity(new BlockPos((int)this.posX + j, (int)this.posY + i, (int)this.posZ + k));
-/* 362 */             String s = tileentitymobspawner.getSpawnerBaseLogic().getSpawnerEntity().getName();
-/* 363 */             if (s != null && 
-/* 364 */               s.equals("CaveFisher")) return true;
-/*     */           
-/*     */           } 
-/*     */         } 
-/*     */       } 
-/*     */     } 
-/* 370 */     if (!isValidLightLevel()) return false; 
-/* 371 */     if (this.posY > 50.0D) return false; 
-/* 372 */     return true;
+/* 352 */     if (!isValidLightLevel()) return false; 
+/* 353 */     if (this.posY > 50.0D) return false; 
+/* 354 */     return true;
 /*     */   }
 /*     */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\entity\CaveFisher.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\entity\CaveFisher.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

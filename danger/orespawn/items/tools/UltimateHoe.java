@@ -74,38 +74,37 @@
 /*  74 */     blockPositions.add(new BlockPos(pos.getX(), pos.getY(), pos.getZ() + 1));
 /*  75 */     blockPositions.add(new BlockPos(pos.getX(), pos.getY(), pos.getZ() - 1));
 /*     */ 
-/*     */ 
 /*     */     
-/*  79 */     for (BlockPos blockPosition : blockPositions) {
-/*  80 */       if (worldIn.getBlockState(blockPosition).getBlock() == Blocks.GRASS || worldIn
-/*  81 */         .getBlockState(blockPosition).getBlock() == Blocks.DIRT) {
-/*  82 */         BlockPos abovePos = new BlockPos(blockPosition.getX(), blockPosition.getY() + 1, blockPosition.getZ());
-/*  83 */         Block blockAbove = worldIn.getBlockState(abovePos).getBlock();
-/*  84 */         if (blockAbove == Blocks.AIR) {
-/*  85 */           worldIn.setBlockState(blockPosition, Blocks.FARMLAND.getDefaultState().withProperty((IProperty)BlockFarmland.MOISTURE, Integer.valueOf(7))); continue;
-/*  86 */         }  if (blockAbove == Blocks.GRASS || blockAbove == Blocks.DIRT) {
-/*  87 */           BlockPos abovePos2 = new BlockPos(abovePos.getX(), abovePos.getY() + 1, abovePos.getZ());
-/*  88 */           Block blockAbove2 = worldIn.getBlockState(abovePos2).getBlock();
-/*  89 */           if (blockAbove2 == Blocks.AIR)
-/*  90 */             worldIn.setBlockState(abovePos, Blocks.FARMLAND.getDefaultState().withProperty((IProperty)BlockFarmland.MOISTURE, Integer.valueOf(7))); 
+/*  78 */     for (BlockPos blockPosition : blockPositions) {
+/*  79 */       if (worldIn.getBlockState(blockPosition).getBlock() == Blocks.GRASS || worldIn
+/*  80 */         .getBlockState(blockPosition).getBlock() == Blocks.DIRT) {
+/*  81 */         BlockPos abovePos = new BlockPos(blockPosition.getX(), blockPosition.getY() + 1, blockPosition.getZ());
+/*  82 */         Block blockAbove = worldIn.getBlockState(abovePos).getBlock();
+/*  83 */         if (blockAbove == Blocks.AIR) {
+/*  84 */           worldIn.setBlockState(blockPosition, Blocks.FARMLAND.getDefaultState().withProperty((IProperty)BlockFarmland.MOISTURE, Integer.valueOf(7))); continue;
+/*  85 */         }  if (blockAbove == Blocks.GRASS || blockAbove == Blocks.DIRT) {
+/*  86 */           BlockPos abovePos2 = new BlockPos(abovePos.getX(), abovePos.getY() + 1, abovePos.getZ());
+/*  87 */           Block blockAbove2 = worldIn.getBlockState(abovePos2).getBlock();
+/*  88 */           if (blockAbove2 == Blocks.AIR)
+/*  89 */             worldIn.setBlockState(abovePos, Blocks.FARMLAND.getDefaultState().withProperty((IProperty)BlockFarmland.MOISTURE, Integer.valueOf(7))); 
 /*     */         }  continue;
 /*     */       } 
-/*  93 */       if (worldIn.getBlockState(blockPosition).getBlock() == Blocks.AIR) {
-/*  94 */         BlockPos underPos = new BlockPos(blockPosition.getX(), blockPosition.getY() - 1, blockPosition.getZ());
-/*  95 */         Block blockUnder = worldIn.getBlockState(underPos).getBlock();
-/*  96 */         if (worldIn.getBlockState(underPos).getBlock() == Blocks.DIRT || worldIn
-/*  97 */           .getBlockState(underPos).getBlock() == Blocks.GRASS) {
-/*  98 */           worldIn.setBlockState(underPos, Blocks.FARMLAND.getDefaultState().withProperty((IProperty)BlockFarmland.MOISTURE, Integer.valueOf(7)));
+/*  92 */       if (worldIn.getBlockState(blockPosition).getBlock() == Blocks.AIR) {
+/*  93 */         BlockPos underPos = new BlockPos(blockPosition.getX(), blockPosition.getY() - 1, blockPosition.getZ());
+/*  94 */         Block blockUnder = worldIn.getBlockState(underPos).getBlock();
+/*  95 */         if (worldIn.getBlockState(underPos).getBlock() == Blocks.DIRT || worldIn
+/*  96 */           .getBlockState(underPos).getBlock() == Blocks.GRASS) {
+/*  97 */           worldIn.setBlockState(underPos, Blocks.FARMLAND.getDefaultState().withProperty((IProperty)BlockFarmland.MOISTURE, Integer.valueOf(7)));
 /*     */         }
 /*     */       } 
 /*     */     } 
-/* 102 */     worldIn.playSound(player, pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
-/* 103 */     return EnumActionResult.SUCCESS;
+/* 101 */     worldIn.playSound(player, pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+/* 102 */     return EnumActionResult.SUCCESS;
 /*     */   }
 /*     */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\items\tools\UltimateHoe.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\items\tools\UltimateHoe.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

@@ -13,26 +13,25 @@
 /*    */   extends RenderLiving<Baryonyx> {
 /* 14 */   public static final ResourceLocation TEXTURES = new ResourceLocation("orespawn:textures/entity/baryonyx.png");
 /*    */ 
-/*    */ 
 /*    */   
 /*    */   public RenderBaryonyx(RenderManager manager) {
-/* 19 */     super(manager, (ModelBase)new ModelBaryonyx(1.5F), 0.8F);
+/* 18 */     super(manager, (ModelBase)new ModelBaryonyx(1.5F), 0.8F);
 /*    */   }
 /*    */ 
 /*    */ 
 /*    */   
 /*    */   protected ResourceLocation getEntityTexture(Baryonyx entity) {
-/* 25 */     return TEXTURES;
+/* 24 */     return TEXTURES;
 /*    */   }
 /*    */ 
 /*    */   
 /*    */   protected void applyRotations(Baryonyx entityLiving, float p_77043_2_, float rotationYaw, float partialTicks) {
-/* 30 */     super.applyRotations((EntityLivingBase)entityLiving, p_77043_2_, rotationYaw, partialTicks);
+/* 29 */     super.applyRotations((EntityLivingBase)entityLiving, p_77043_2_, rotationYaw, partialTicks);
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12.2-public_development_0.5-deobf.jar!\danger\orespawn\entity\render\RenderBaryonyx.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\entity\render\RenderBaryonyx.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */
