@@ -22,11 +22,17 @@ item.firefly_cage.name=Caged firefly
 item.spyro_cage.name=Caged Baby Dragon
 item.dragonfly_cage.name=Caged Dragonfly
 item.gammametroid_cage.name=Caged WTF?
+item.smallworm_cage.name=Caged Small Worm
+item.mediumworm_cage.name=Caged Medium Worm
+item.largeworm_cage.name=Caged Large Worm
+item.worm_tooth.name=Worm Tooth
+item.worm_food.name=Worm Food
 
 item.corn.name=Corn
 item.butterfly_seed.name=Butterfly Plant
 item.mosquito_seed.name=Mosquito Plant
 item.firefly_seed.name=Firefly Plant
+item.moth_seed.name=Moth Plant
 
 category=Tools/Armor
 item.ultimate_sword.name=Ultimate Sword
@@ -58,6 +64,7 @@ tile.corn_plant.name=Corn Plant
 tile.butterfly_plant.name=Butterfly Plant
 tile.firefly_plant.name=Firefly Plant
 tile.mosquito_plant.name=Mosquito Plant
+tile.moth_plant.name=Moth Plant
 tile.ant_block.name=Red Ant Nest
 tile.alosaurus_ore.name=Ancient Dried Alosaurus Spawn Egg
 tile.baryonyx_ore.name=Ancient Dried Baryonyx Spawn Egg
@@ -80,6 +87,11 @@ tile.dragonfly_ore.name=Ancient Dried Dragonfly Spawn Egg
 tile.velocityraptor_ore.name=Ancient Dried Velocity Raptor Spawn Egg
 tile.gammametroid_ore.name=Ancient Dried WTF? Spawn Egg
 tile.extreme_torch.name=Extreme Torch
+tile.smallworm_ore.name=Ancient Dried Small Worm Spawn Egg
+tile.mediumworm_ore.name=Ancient Dried Medium Worm Spawn Egg
+tile.largeworm_ore.name=Ancient Dried Boss Worm Spawn Egg
+tile.doomworm_ore.name=Ancient Dried Doom Worm Spawn Egg
+tile.red_ant_troll_block.name=Red Ant Troll Block
 
 category=Entities
 entity.alosaurus.name=Alosaurus
@@ -101,6 +113,10 @@ entity.dragonfly.name=Dragonfly
 entity.nastysaurus.name=Nastysaurus
 entity.mosquito.name=Mosquito
 entity.alien.name=Alien
+entity.smallworm.name=Small Worm
+entity.mediumworm.name=Medium Worm
+entity.largeworm.name=Boss Worm
+entity.doomworm.name=Doom Worm
 
 category=Entity Eggs
 item.alosaurus_egg.name=Spawn Alosaurus
@@ -121,3 +137,8 @@ item.firefly_egg.name=Spawn Firefly
 item.mosquito_egg.name=Spawn Mosquito
 item.nastysaurus_egg.name=Spawn Nastysaurus
 item.cavefisher_egg.name=Spawn Cavefisher
+item.smallworm_egg.name=Spawn Small Worm
+item.mediumworm_egg.name=Spawn Medium Worm
+item.largeworm_egg.name=Spawn Boss Worm
+item.doomworm_egg.name=Spawn Doom Worm
+

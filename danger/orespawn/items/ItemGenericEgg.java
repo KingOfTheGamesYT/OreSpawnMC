@@ -50,18 +50,19 @@
 /* 50 */     if (worldIn.isRemote) return EnumActionResult.SUCCESS; 
 /* 51 */     Entity entity = EntityList.newEntity(this.entityClass, worldIn);
 /*    */     
-/* 53 */     entity.setPosition(pos.getX(), (pos.getY() + 1), pos.getZ());
-/* 54 */     worldIn.spawnEntity(entity);
-/* 55 */     ((EntityLiving)entity).playLivingSound();
-/* 56 */     if (!player.isCreative()) {
-/* 57 */       player.getHeldItem(hand).shrink(1);
+/* 53 */     assert entity != null;
+/* 54 */     entity.setPosition(pos.getX(), (pos.getY() + 1), pos.getZ());
+/* 55 */     worldIn.spawnEntity(entity);
+/* 56 */     ((EntityLiving)entity).playLivingSound();
+/* 57 */     if (!player.isCreative()) {
+/* 58 */       player.getHeldItem(hand).shrink(1);
 /*    */     }
-/* 59 */     return EnumActionResult.SUCCESS;
+/* 60 */     return EnumActionResult.SUCCESS;
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\items\ItemGenericEgg.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.7-deobf.jar!\danger\orespawn\items\ItemGenericEgg.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

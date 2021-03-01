@@ -39,7 +39,7 @@
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\world\gen\ores\AntHillGenerator.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.7-deobf.jar!\danger\orespawn\world\gen\ores\AntHillGenerator.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

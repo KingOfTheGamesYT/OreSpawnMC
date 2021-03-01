@@ -1,7 +1,6 @@
 /*    */ package danger.orespawn.blocks;
 /*    */ 
 /*    */ import danger.orespawn.OreSpawnMain;
-/*    */ import danger.orespawn.entity.Butterfly;
 /*    */ import danger.orespawn.entity.Mosquito;
 /*    */ import danger.orespawn.init.ModBlocks;
 /*    */ import danger.orespawn.init.ModItems;
@@ -20,7 +19,8 @@
 /*    */ import net.minecraft.world.World;
 /*    */ import net.minecraft.world.chunk.Chunk;
 /*    */ 
-/*    */ public class BlockMosquitoPlant extends BlockCrops {
+/*    */ public class BlockMosquitoPlant
+/*    */   extends BlockCrops {
 /*    */   public BlockMosquitoPlant() {
 /* 25 */     setUnlocalizedName("mosquito_plant");
 /* 26 */     setRegistryName("mosquito_plant");
@@ -38,9 +38,9 @@
 /* 38 */     Chunk chunk = worldIn.getChunkFromBlockCoords(pos);
 /* 39 */     float radius = 50.0F;
 /* 40 */     AxisAlignedBB aabb = new AxisAlignedBB((pos.getX() - radius), 0.0D, (pos.getZ() - radius), (pos.getX() + radius), 200.0D, (pos.getZ() + radius));
-/* 41 */     List<Butterfly> butterflyList = new ArrayList<>();
-/* 42 */     chunk.getEntitiesOfTypeWithinAABB(Butterfly.class, aabb, butterflyList, e -> true);
-/* 43 */     if (butterflyList.size() > 15)
+/* 41 */     List<Mosquito> mosquitoList = new ArrayList<>();
+/* 42 */     chunk.getEntitiesOfTypeWithinAABB(Mosquito.class, aabb, mosquitoList, e -> true);
+/* 43 */     if (mosquitoList.size() > 15)
 /*    */       return; 
 /* 45 */     IBlockState st = worldIn.getBlockState(pos);
 /* 46 */     int rate = st.getBlock().getMetaFromState(st);
@@ -73,7 +73,7 @@
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\blocks\BlockMosquitoPlant.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.7-deobf.jar!\danger\orespawn\blocks\BlockMosquitoPlant.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

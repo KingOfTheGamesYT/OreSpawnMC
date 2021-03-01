@@ -1,7 +1,6 @@
 /*    */ package danger.orespawn.blocks;
 /*    */ 
 /*    */ import danger.orespawn.OreSpawnMain;
-/*    */ import danger.orespawn.entity.Butterfly;
 /*    */ import danger.orespawn.entity.Firefly;
 /*    */ import danger.orespawn.init.ModBlocks;
 /*    */ import danger.orespawn.init.ModItems;
@@ -20,7 +19,8 @@
 /*    */ import net.minecraft.world.World;
 /*    */ import net.minecraft.world.chunk.Chunk;
 /*    */ 
-/*    */ public class BlockFireflyPlant extends BlockCrops {
+/*    */ public class BlockFireflyPlant
+/*    */   extends BlockCrops {
 /*    */   private boolean shouldSpawn = true;
 /*    */   
 /*    */   public BlockFireflyPlant() {
@@ -40,9 +40,9 @@
 /* 40 */     Chunk chunk = worldIn.getChunkFromBlockCoords(pos);
 /* 41 */     float radius = 50.0F;
 /* 42 */     AxisAlignedBB aabb = new AxisAlignedBB((pos.getX() - radius), 0.0D, (pos.getZ() - radius), (pos.getX() + radius), 200.0D, (pos.getZ() + radius));
-/* 43 */     List<Butterfly> butterflyList = new ArrayList<>();
-/* 44 */     chunk.getEntitiesOfTypeWithinAABB(Butterfly.class, aabb, butterflyList, e -> true);
-/* 45 */     if (butterflyList.size() > 15)
+/* 43 */     List<Firefly> fireflyList = new ArrayList<>();
+/* 44 */     chunk.getEntitiesOfTypeWithinAABB(Firefly.class, aabb, fireflyList, e -> true);
+/* 45 */     if (fireflyList.size() > 15)
 /*    */       return; 
 /* 47 */     IBlockState st = worldIn.getBlockState(pos);
 /* 48 */     int rate = st.getBlock().getMetaFromState(st);
@@ -77,7 +77,7 @@
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\blocks\BlockFireflyPlant.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.7-deobf.jar!\danger\orespawn\blocks\BlockFireflyPlant.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

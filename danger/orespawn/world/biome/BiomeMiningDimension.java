@@ -25,14 +25,14 @@
 /* 25 */     this.spawnableCreatureList.add(new Biome.SpawnListEntry(Bird.class, 255, 1, 2));
 /* 26 */     this.spawnableCreatureList.add(new Biome.SpawnListEntry(Butterfly.class, 100, 1, 1));
 /* 27 */     this.spawnableCreatureList.add(new Biome.SpawnListEntry(Spyro.class, 250, 1, 1));
-/* 28 */     this.spawnableCreatureList.add(new Biome.SpawnListEntry(Alien.class, 200, 1, 1));
+/* 28 */     this.spawnableCreatureList.add(new Biome.SpawnListEntry(GammaMetroid.class, 200, 1, 1));
 /* 29 */     this.spawnableCreatureList.add(new Biome.SpawnListEntry(Nastysaurus.class, 200, 1, 1));
 /* 30 */     this.spawnableCreatureList.add(new Biome.SpawnListEntry(VelocityRaptor.class, 200, 1, 1));
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.6-deobf.jar!\danger\orespawn\world\biome\BiomeMiningDimension.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.7-deobf.jar!\danger\orespawn\world\biome\BiomeMiningDimension.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */
