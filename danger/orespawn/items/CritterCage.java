@@ -108,62 +108,61 @@
 /*     */   
 /*     */   private EnumActionResult handleRightClick(World world, EntityPlayer entityPlayer, EnumHand hand, BlockPos position, boolean clickingOnBlock) {
 /* 110 */     if (this.entityClass == null) {
-/* 111 */       System.out.println("Throwing empty cage");
-/* 112 */       if (!world.isRemote) {
-/* 113 */         EntityCage ec = new EntityCage(world, entityPlayer, this.entityClass, null);
-/* 114 */         ec.shoot((Entity)entityPlayer, entityPlayer.rotationPitch, entityPlayer.rotationYaw, 0.0F, 1.5F, 1.0F);
-/* 115 */         world.spawnEntity((Entity)ec);
+/* 111 */       if (!world.isRemote) {
+/* 112 */         EntityCage ec = new EntityCage(world, entityPlayer, this.entityClass, null);
+/* 113 */         ec.shoot((Entity)entityPlayer, entityPlayer.rotationPitch, entityPlayer.rotationYaw, 0.0F, 1.5F, 1.0F);
+/* 114 */         world.spawnEntity((Entity)ec);
 /*     */       } 
 /*     */       
-/* 118 */       world.playSound(entityPlayer, entityPlayer.getPosition(), SoundEvents.ENTITY_EGG_THROW, SoundCategory.PLAYERS, 1.0F, 1.5F);
-/* 119 */       return EnumActionResult.SUCCESS;
+/* 117 */       world.playSound(entityPlayer, entityPlayer.getPosition(), SoundEvents.ENTITY_EGG_THROW, SoundCategory.PLAYERS, 1.0F, 1.5F);
+/* 118 */       return EnumActionResult.SUCCESS;
 /*     */     } 
 /*     */ 
 /*     */     
-/* 123 */     if (world.isRemote) return EnumActionResult.SUCCESS; 
-/* 124 */     if (clickingOnBlock) {
+/* 122 */     if (world.isRemote) return EnumActionResult.SUCCESS; 
+/* 123 */     if (clickingOnBlock) {
 /*     */       
-/* 126 */       for (int i = 0; i < 6; i++) {
-/* 127 */         world.spawnParticle(EnumParticleTypes.SMOKE_LARGE, (position.getX() + 0.5F), (position.getY() + 1.25F), (position.getZ() + 0.5F), 0.0D, 0.0D, 0.0D, new int[] { 0 });
-/* 128 */         world.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, (position.getX() + 0.5F), (position.getY() + 1.25F), (position.getZ() + 0.5F), 0.0D, 0.0D, 0.0D, new int[] { 0 });
-/* 129 */         world.spawnParticle(EnumParticleTypes.REDSTONE, (position.getX() + 0.5F), (position.getY() + 1.25F), (position.getZ() + 0.5F), 0.0D, 0.0D, 0.0D, new int[] { 0 });
+/* 125 */       for (int i = 0; i < 6; i++) {
+/* 126 */         world.spawnParticle(EnumParticleTypes.SMOKE_LARGE, (position.getX() + 0.5F), (position.getY() + 1.25F), (position.getZ() + 0.5F), 0.0D, 0.0D, 0.0D, new int[] { 0 });
+/* 127 */         world.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, (position.getX() + 0.5F), (position.getY() + 1.25F), (position.getZ() + 0.5F), 0.0D, 0.0D, 0.0D, new int[] { 0 });
+/* 128 */         world.spawnParticle(EnumParticleTypes.REDSTONE, (position.getX() + 0.5F), (position.getY() + 1.25F), (position.getZ() + 0.5F), 0.0D, 0.0D, 0.0D, new int[] { 0 });
 /*     */       } 
-/* 131 */       world.playSound(entityPlayer, position, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.PLAYERS, 1.0F, 1.5F);
+/* 130 */       world.playSound(entityPlayer, position, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.PLAYERS, 1.0F, 1.5F);
 /*     */       
-/* 133 */       Entity summon = EntityList.newEntity(this.entityClass, world);
+/* 132 */       Entity summon = EntityList.newEntity(this.entityClass, world);
 /*     */       
-/* 135 */       summon.setPosition((position.getX() + 0.5F), (position.getY() + 1), (position.getZ() + 0.5F));
+/* 134 */       summon.setPosition((position.getX() + 0.5F), (position.getY() + 1), (position.getZ() + 0.5F));
 /*     */       
-/* 137 */       if (this.entityClass == EntityHorse.class) {
-/* 138 */         ((EntityHorse)summon).setHorseVariant(world.rand.nextInt());
+/* 136 */       if (this.entityClass == EntityHorse.class) {
+/* 137 */         ((EntityHorse)summon).setHorseVariant(world.rand.nextInt());
 /*     */       }
 /*     */       
-/* 141 */       world.spawnEntity(summon);
+/* 140 */       world.spawnEntity(summon);
 /*     */ 
 /*     */       
-/* 144 */       EntityItem empty = new EntityItem(world);
-/* 145 */       empty.setItem(new ItemStack(ModItems.EMPTY_CAGE));
-/* 146 */       empty.setPosition(position.getX(), position.getY(), position.getZ());
-/* 147 */       world.spawnEntity((Entity)empty);
+/* 143 */       EntityItem empty = new EntityItem(world);
+/* 144 */       empty.setItem(new ItemStack(ModItems.EMPTY_CAGE));
+/* 145 */       empty.setPosition(position.getX(), position.getY(), position.getZ());
+/* 146 */       world.spawnEntity((Entity)empty);
 /*     */ 
 /*     */       
-/* 150 */       ItemStack stack = entityPlayer.getHeldItem(hand);
+/* 149 */       ItemStack stack = entityPlayer.getHeldItem(hand);
 /*     */       
-/* 152 */       if (summon instanceof net.minecraft.entity.EntityLiving && stack.hasDisplayName())
-/* 153 */         summon.setCustomNameTag(stack.getDisplayName()); 
-/* 154 */       return EnumActionResult.SUCCESS;
+/* 151 */       if (summon instanceof net.minecraft.entity.EntityLiving && stack.hasDisplayName())
+/* 152 */         summon.setCustomNameTag(stack.getDisplayName()); 
+/* 153 */       return EnumActionResult.SUCCESS;
 /*     */     } 
-/* 156 */     if (!world.isRemote) {
-/* 157 */       String name = null;
-/* 158 */       if (entityPlayer.getHeldItem(hand).hasDisplayName())
-/* 159 */         name = entityPlayer.getHeldItem(hand).getDisplayName(); 
-/* 160 */       EntityCage ec = new EntityCage(world, entityPlayer, this.entityClass, name);
-/* 161 */       ec.shoot((Entity)entityPlayer, entityPlayer.rotationPitch, entityPlayer.rotationYaw, 0.0F, 1.5F, 1.0F);
-/* 162 */       world.spawnEntity((Entity)ec);
+/* 155 */     if (!world.isRemote) {
+/* 156 */       String name = null;
+/* 157 */       if (entityPlayer.getHeldItem(hand).hasDisplayName())
+/* 158 */         name = entityPlayer.getHeldItem(hand).getDisplayName(); 
+/* 159 */       EntityCage ec = new EntityCage(world, entityPlayer, this.entityClass, name);
+/* 160 */       ec.shoot((Entity)entityPlayer, entityPlayer.rotationPitch, entityPlayer.rotationYaw, 0.0F, 1.5F, 1.0F);
+/* 161 */       world.spawnEntity((Entity)ec);
 /*     */     } 
 /*     */     
-/* 165 */     world.playSound(entityPlayer, entityPlayer.getPosition(), SoundEvents.ENTITY_EGG_THROW, SoundCategory.PLAYERS, 1.0F, 1.5F);
-/* 166 */     return EnumActionResult.SUCCESS;
+/* 164 */     world.playSound(entityPlayer, entityPlayer.getPosition(), SoundEvents.ENTITY_EGG_THROW, SoundCategory.PLAYERS, 1.0F, 1.5F);
+/* 165 */     return EnumActionResult.SUCCESS;
 /*     */   }
 /*     */ 
 /*     */ 
@@ -176,9 +175,9 @@
 /*     */ 
 /*     */   
 /*     */   public static CritterCage getCageFromEntity(Entity e) {
-/* 179 */     for (CritterCage cc : critterCages) {
-/* 180 */       if (cc.entityClass == e.getClass()) {
-/* 181 */         return cc;
+/* 178 */     for (CritterCage cc : critterCages) {
+/* 179 */       if (cc.entityClass == e.getClass()) {
+/* 180 */         return cc;
 /*     */       }
 /*     */     } 
 /*     */ 
@@ -188,12 +187,12 @@
 /*     */ 
 /*     */ 
 /*     */     
-/* 191 */     return null;
+/* 190 */     return null;
 /*     */   }
 /*     */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.7-deobf.jar!\danger\orespawn\items\CritterCage.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.8-deobf.jar!\danger\orespawn\items\CritterCage.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

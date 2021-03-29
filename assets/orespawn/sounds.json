@@ -378,5 +378,95 @@
         "stream": true
       }
     ]
+  },
+  "entity.stinkbug.fart1": {
+    "category": "entity",
+    "subtitle": "entity.stinkbug.fart1",
+    "sounds": [
+      {
+        "name": "orespawn:entity/stinkbug/fart1",
+        "stream": true
+      }
+    ]
+  },
+  "entity.stinkbug.fart2": {
+    "category": "entity",
+    "subtitle": "entity.stinkbug.fart2",
+    "sounds": [
+      {
+        "name": "orespawn:entity/stinkbug/fart2",
+        "stream": true
+      }
+    ]
+  },
+  "entity.stinkbug.fart3": {
+    "category": "entity",
+    "subtitle": "entity.stinkbug.fart3",
+    "sounds": [
+      {
+        "name": "orespawn:entity/stinkbug/fart3",
+        "stream": true
+      }
+    ]
+  },
+  "entity.stinkbug.fart4": {
+    "category": "entity",
+    "subtitle": "entity.stinkbug.fart4",
+    "sounds": [
+      {
+        "name": "orespawn:entity/stinkbug/fart4",
+        "stream": true
+      }
+    ]
+  },
+  "entity.stinkbug.fart5": {
+    "category": "entity",
+    "subtitle": "entity.stinkbug.fart5",
+    "sounds": [
+      {
+        "name": "orespawn:entity/stinkbug/fart5",
+        "stream": true
+      }
+    ]
+  },
+  "entity.stinkbug.fart6": {
+    "category": "entity",
+    "subtitle": "entity.stinkbug.fart6",
+    "sounds": [
+      {
+        "name": "orespawn:entity/stinkbug/fart6",
+        "stream": true
+      }
+    ]
+  },
+  "entity.stinkbug.fart7": {
+    "category": "entity",
+    "subtitle": "entity.stinkbug.fart7",
+    "sounds": [
+      {
+        "name": "orespawn:entity/stinkbug/fart7",
+        "stream": true
+      }
+    ]
+  },
+  "entity.stinkbug.fart8": {
+    "category": "entity",
+    "subtitle": "entity.stinkbug.fart8",
+    "sounds": [
+      {
+        "name": "orespawn:entity/stinkbug/fart8",
+        "stream": true
+      }
+    ]
+  },
+  "entity.stinkbug.fart9": {
+    "category": "entity",
+    "subtitle": "entity.stinkbug.fart9",
+    "sounds": [
+      {
+        "name": "orespawn:entity/stinkbug/fart9",
+        "stream": true
+      }
+    ]
   }
 }

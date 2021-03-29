@@ -32,7 +32,7 @@
 /* 32 */   private static final ResourceLocation TEXTURE4 = new ResourceLocation("orespawn:textures/entity/butterfly4.png");
 /*    */   
 /*    */   public RenderButterfly(RenderManager manager) {
-/* 35 */     super(manager, (ModelBase)new ModelButterfly(0.6F), 0.0F);
+/* 35 */     super(manager, (ModelBase)new ModelButterfly(0.6F, 1.0F), 0.0F);
 /* 36 */     this.model = (ModelButterfly)this.mainModel;
 /*    */   }
 /*    */ 
@@ -59,7 +59,7 @@
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.7-deobf.jar!\danger\orespawn\entity\render\RenderButterfly.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.8-deobf.jar!\danger\orespawn\entity\render\RenderButterfly.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

@@ -1,10 +1,10 @@
 /*    */ package danger.orespawn.init;
 /*    */ import danger.orespawn.OreSpawnMain;
 /*    */ import danger.orespawn.entity.Alien;
-/*    */ import danger.orespawn.entity.Camarasaurus;
 /*    */ import danger.orespawn.entity.Firefly;
 /*    */ import danger.orespawn.entity.Mosquito;
 /*    */ import danger.orespawn.entity.Nastysaurus;
+/*    */ import danger.orespawn.entity.WormDoom;
 /*    */ import net.minecraft.entity.Entity;
 /*    */ import net.minecraft.util.ResourceLocation;
 /*    */ import net.minecraftforge.fml.common.registry.EntityRegistry;
@@ -35,27 +35,32 @@
 /* 35 */     myRegisterEntity("small_worm", (Class)WormSmall.class, 139);
 /* 36 */     myRegisterEntity("medium_worm", (Class)WormMedium.class, 140);
 /* 37 */     myRegisterEntity("large_worm", (Class)WormLarge.class, 141);
+/* 38 */     EntityRegistry.registerModEntity(new ResourceLocation("orespawn:doom_worm"), WormDoom.class, "doom_worm", 142, OreSpawnMain.instance, 325, 1, true);
+/*    */     
+/* 40 */     myRegisterEntity("moth", (Class)Moth.class, 143);
+/* 41 */     myRegisterEntity("kyuubi", (Class)Kyuubi.class, 144);
+/* 42 */     myRegisterEntity("mantis", (Class)Mantis.class, 145);
+/* 43 */     myRegisterEntity("mothra", (Class)Mothra.class, 146);
+/* 44 */     myRegisterEntity("brutalfly", (Class)Brutalfly.class, 147);
+/* 45 */     myRegisterEntity("beaver", (Class)Beaver.class, 148);
+/*    */     
+/* 47 */     myRegisterEntity("cassowary", (Class)Cassowary.class, 151);
+/* 48 */     myRegisterEntity("termite", (Class)Termite.class, 149);
+/* 49 */     myRegisterEntity("redcow", (Class)RedCow.class, 152);
+/* 50 */     myRegisterEntity("stinkbug", (Class)StinkBug.class, 153);
 /*    */   }
-/*    */ 
-/*    */ 
-/*    */ 
-/*    */ 
-/*    */ 
-/*    */ 
-/*    */ 
-/*    */ 
 /*    */   
 /*    */   public static void myRegisterEntity(String name, Class<? extends Entity> entity, int entity2, int range) {
-/* 49 */     EntityRegistry.registerModEntity(new ResourceLocation("orespawn:" + name), entity, name, entity2, OreSpawnMain.instance, range, 1, true);
+/* 54 */     EntityRegistry.registerModEntity(new ResourceLocation("orespawn:" + name), entity, name, entity2, OreSpawnMain.instance, range, 1, true);
 /*    */   }
 /*    */   
 /*    */   private static void myRegisterEntity(String name, Class<? extends Entity> cls, int id) {
-/* 53 */     EntityRegistry.registerModEntity(new ResourceLocation("orespawn:" + name), cls, name, id, OreSpawnMain.instance, 50, 1, true);
+/* 58 */     EntityRegistry.registerModEntity(new ResourceLocation("orespawn:" + name), cls, name, id, OreSpawnMain.instance, 50, 1, true);
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.7-deobf.jar!\danger\orespawn\init\ModEntities.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.8-deobf.jar!\danger\orespawn\init\ModEntities.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

@@ -1,14 +1,14 @@
 /*    */ package danger.orespawn.init;
-/*    */ import danger.orespawn.entity.Bird;
-/*    */ import danger.orespawn.entity.Butterfly;
+/*    */ import danger.orespawn.entity.Brutalfly;
 /*    */ import danger.orespawn.entity.CaveFisher;
 /*    */ import danger.orespawn.entity.Dragonfly;
 /*    */ import danger.orespawn.entity.Firefly;
+/*    */ import danger.orespawn.entity.Kyuubi;
 /*    */ import danger.orespawn.entity.Mosquito;
+/*    */ import danger.orespawn.entity.StinkBug;
 /*    */ import java.util.Collection;
 /*    */ import java.util.LinkedList;
 /*    */ import net.minecraft.entity.EnumCreatureType;
-/*    */ import net.minecraft.init.Biomes;
 /*    */ import net.minecraft.world.biome.Biome;
 /*    */ import net.minecraftforge.fml.common.registry.EntityRegistry;
 /*    */ import net.minecraftforge.fml.common.registry.ForgeRegistries;
@@ -22,37 +22,79 @@
 /* 22 */     EntityRegistry.addSpawn(CaveFisher.class, 15, 1, 1, EnumCreatureType.MONSTER, biomes);
 /* 23 */     EntityRegistry.addSpawn(Dragonfly.class, 15, 1, 1, EnumCreatureType.CREATURE, swampsAndLakes());
 /* 24 */     EntityRegistry.addSpawn(Mosquito.class, 15, 1, 1, EnumCreatureType.CREATURE, new Biome[] { Biomes.SWAMPLAND });
+/* 25 */     EntityRegistry.addSpawn(Mantis.class, 10, 1, 1, EnumCreatureType.MONSTER, biomes);
+/* 26 */     EntityRegistry.addSpawn(Brutalfly.class, 10, 1, 1, EnumCreatureType.MONSTER, forestsAndJungles());
+/* 27 */     EntityRegistry.addSpawn(Kyuubi.class, 15, 1, 1, EnumCreatureType.MONSTER, nether());
+/* 28 */     EntityRegistry.addSpawn(Mothra.class, 15, 1, 1, EnumCreatureType.MONSTER, extremeHills());
+/* 29 */     EntityRegistry.addSpawn(Beaver.class, 15, 1, 1, EnumCreatureType.CREATURE, forestsAndJungles());
+/*    */     
+/* 31 */     EntityRegistry.addSpawn(Cassowary.class, 15, 1, 1, EnumCreatureType.CREATURE, extremeHills());
+/* 32 */     EntityRegistry.addSpawn(RedCow.class, 15, 1, 1, EnumCreatureType.CREATURE, biomes);
+/* 33 */     EntityRegistry.addSpawn(StinkBug.class, 15, 1, 1, EnumCreatureType.CREATURE, forestsAndJungles());
 /*    */   }
-/*    */ 
 /*    */   
 /*    */   private static Biome[] excludeEndNether() {
-/* 29 */     LinkedList<Biome> list = new LinkedList<>();
-/* 30 */     Collection<Biome> biomes = ForgeRegistries.BIOMES.getValuesCollection();
-/* 31 */     for (Biome biome : biomes) {
-/* 32 */       if (!biome.getRegistryName().toString().toLowerCase().contains("end") && 
-/* 33 */         !biome.getRegistryName().toString().toLowerCase().contains("hell") && 
-/* 34 */         !biome.getRegistryName().toString().toLowerCase().contains("void")) {
-/* 35 */         list.add(biome);
+/* 37 */     LinkedList<Biome> list = new LinkedList<>();
+/* 38 */     Collection<Biome> biomes = ForgeRegistries.BIOMES.getValuesCollection();
+/* 39 */     for (Biome biome : biomes) {
+/* 40 */       if (!biome.getRegistryName().toString().toLowerCase().contains("end") && 
+/* 41 */         !biome.getRegistryName().toString().toLowerCase().contains("hell") && 
+/* 42 */         !biome.getRegistryName().toString().toLowerCase().contains("void")) {
+/* 43 */         list.add(biome);
 /*    */       }
 /*    */     } 
-/* 38 */     return list.<Biome>toArray(new Biome[0]);
+/* 46 */     return list.<Biome>toArray(new Biome[0]);
 /*    */   }
 /*    */   
 /*    */   private static Biome[] swampsAndLakes() {
-/* 42 */     LinkedList<Biome> list = new LinkedList<>();
-/* 43 */     Collection<Biome> biomes = ForgeRegistries.BIOMES.getValuesCollection();
-/* 44 */     for (Biome biome : biomes) {
-/* 45 */       if (biome.getRegistryName().toString().toLowerCase().contains("swamp") || biome
-/* 46 */         .getRegistryName().toString().toLowerCase().contains("lake")) {
-/* 47 */         list.add(biome);
+/* 50 */     LinkedList<Biome> list = new LinkedList<>();
+/* 51 */     Collection<Biome> biomes = ForgeRegistries.BIOMES.getValuesCollection();
+/* 52 */     for (Biome biome : biomes) {
+/* 53 */       if (biome.getRegistryName().toString().toLowerCase().contains("swamp") || biome
+/* 54 */         .getRegistryName().toString().toLowerCase().contains("lake")) {
+/* 55 */         list.add(biome);
 /*    */       }
 /*    */     } 
-/* 50 */     return list.<Biome>toArray(new Biome[0]);
+/* 58 */     return list.<Biome>toArray(new Biome[0]);
+/*    */   }
+/*    */   
+/*    */   private static Biome[] forestsAndJungles() {
+/* 62 */     LinkedList<Biome> list = new LinkedList<>();
+/* 63 */     Collection<Biome> biomes = ForgeRegistries.BIOMES.getValuesCollection();
+/* 64 */     for (Biome biome : biomes) {
+/* 65 */       if (biome.getRegistryName().toString().toLowerCase().contains("forest") || biome
+/* 66 */         .getRegistryName().toString().toLowerCase().contains("jungle")) {
+/* 67 */         list.add(biome);
+/*    */       }
+/*    */     } 
+/* 70 */     return list.<Biome>toArray(new Biome[0]);
+/*    */   }
+/*    */   
+/*    */   private static Biome[] nether() {
+/* 74 */     LinkedList<Biome> list = new LinkedList<>();
+/* 75 */     Collection<Biome> biomes = ForgeRegistries.BIOMES.getValuesCollection();
+/* 76 */     for (Biome biome : biomes) {
+/* 77 */       if (biome.getRegistryName().toString().toLowerCase().contains("hell")) {
+/* 78 */         list.add(biome);
+/*    */       }
+/*    */     } 
+/* 81 */     return list.<Biome>toArray(new Biome[0]);
+/*    */   }
+/*    */   
+/*    */   private static Biome[] extremeHills() {
+/* 85 */     LinkedList<Biome> list = new LinkedList<>();
+/* 86 */     Collection<Biome> biomes = ForgeRegistries.BIOMES.getValuesCollection();
+/* 87 */     for (Biome biome : biomes) {
+/* 88 */       if (biome.getRegistryName().toString().toLowerCase().contains("extreme")) {
+/* 89 */         list.add(biome);
+/*    */       }
+/*    */     } 
+/* 92 */     return list.<Biome>toArray(new Biome[0]);
 /*    */   }
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.7-deobf.jar!\danger\orespawn\init\EntitySpawns.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.8-deobf.jar!\danger\orespawn\init\EntitySpawns.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

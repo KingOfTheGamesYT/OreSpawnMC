@@ -42,11 +42,16 @@
 /*    */   public static final int ENTITY_MANTIS = 145;
 /*    */   public static final int ENTITY_MOTHRA = 146;
 /*    */   public static final int ENTITY_BRUTALFLY = 147;
+/*    */   public static final int ENTITY_BEAVER = 148;
+/*    */   public static final int ENTITY_TERMITE = 149;
 /*    */   public static final int ENTITY_THROWN_CAGE = 150;
+/*    */   public static final int ENTITY_CASSOWARY = 151;
+/*    */   public static final int ENTITY_REDCOW = 152;
+/*    */   public static final int ENTITY_STINKBUG = 153;
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.7-deobf.jar!\danger\orespaw\\util\Reference.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.8-deobf.jar!\danger\orespaw\\util\Reference.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

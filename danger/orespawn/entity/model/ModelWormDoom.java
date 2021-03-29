@@ -119,13 +119,14 @@
 /*     */ 
 /*     */   
 /*     */   public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float scale) {
-/* 122 */     if (!entity.world.isRemote)
-/* 123 */       return;  if (!(entity instanceof WormDoom))
-/* 124 */       return;  WormDoom dw = (WormDoom)entity;
-/* 125 */     float newangle = 0.0F;
-/* 126 */     float newangle2 = 0.0F;
+/* 122 */     GL11.glPushMatrix();
+/* 123 */     if (!entity.world.isRemote)
+/* 124 */       return;  if (!(entity instanceof WormDoom))
+/* 125 */       return;  WormDoom dw = (WormDoom)entity;
+/* 126 */     float newangle = 0.0F;
+/* 127 */     float newangle2 = 0.0F;
 /*     */     
-/* 128 */     double dist = 32.0D;
+/* 129 */     double dist = 32.0D;
 /*     */ 
 /*     */ 
 /*     */ 
@@ -134,153 +135,141 @@
 /*     */ 
 /*     */ 
 /*     */     
-/* 137 */     dist = 6.0D;
-/* 138 */     double d1 = (float)(Math.cos(newangle) * dist);
-/* 139 */     double d2 = (float)(Math.sin(newangle) * dist);
-/* 140 */     this.tooth1.rotationPointZ = (float)(this.head1.rotationPointZ - d1);
-/* 141 */     double d3 = (float)(Math.sin(newangle2) * d1);
+/* 138 */     dist = 6.0D;
+/* 139 */     double d1 = (float)(Math.cos(newangle) * dist);
+/* 140 */     double d2 = (float)(Math.sin(newangle) * dist);
+/* 141 */     this.tooth1.rotationPointZ = (float)(this.head1.rotationPointZ - d1);
+/* 142 */     double d3 = (float)(Math.sin(newangle2) * d1);
 /*     */     
-/* 143 */     this.tooth1.rotationPointX = (float)(this.head1.rotationPointX - d3);
-/* 144 */     this.tooth1.rotationPointY = (float)(this.head1.rotationPointY + d2 - 9.0D);
+/* 144 */     this.tooth1.rotationPointX = (float)(this.head1.rotationPointX - d3);
+/* 145 */     this.tooth1.rotationPointY = (float)(this.head1.rotationPointY + d2 - 9.0D);
 /*     */     
-/* 146 */     this.tooth2.rotationPointZ = this.tooth1.rotationPointZ;
-/* 147 */     this.tooth2.rotationPointX = this.tooth1.rotationPointX;
-/* 148 */     this.tooth1.rotationPointY += 18.0F;
+/* 147 */     this.tooth2.rotationPointZ = this.tooth1.rotationPointZ;
+/* 148 */     this.tooth2.rotationPointX = this.tooth1.rotationPointX;
+/* 149 */     this.tooth1.rotationPointY += 18.0F;
 /*     */     
-/* 150 */     this.tooth3.rotationPointZ = this.tooth1.rotationPointZ;
-/* 151 */     this.tooth1.rotationPointX += 9.0F;
-/* 152 */     this.tooth1.rotationPointY += 9.0F;
+/* 151 */     this.tooth3.rotationPointZ = this.tooth1.rotationPointZ;
+/* 152 */     this.tooth1.rotationPointX += 9.0F;
+/* 153 */     this.tooth1.rotationPointY += 9.0F;
 /*     */     
-/* 154 */     this.tooth4.rotationPointZ = this.tooth1.rotationPointZ;
-/* 155 */     this.tooth1.rotationPointX -= 9.0F;
-/* 156 */     this.tooth1.rotationPointY += 9.0F;
+/* 155 */     this.tooth4.rotationPointZ = this.tooth1.rotationPointZ;
+/* 156 */     this.tooth1.rotationPointX -= 9.0F;
+/* 157 */     this.tooth1.rotationPointY += 9.0F;
 /*     */     
-/* 158 */     this.tooth5.rotationPointZ = this.tooth1.rotationPointZ;
-/* 159 */     this.tooth1.rotationPointX -= 6.0F;
-/* 160 */     this.tooth5.rotationPointY = this.tooth1.rotationPointY + 9.0F - 6.0F;
+/* 159 */     this.tooth5.rotationPointZ = this.tooth1.rotationPointZ;
+/* 160 */     this.tooth1.rotationPointX -= 6.0F;
+/* 161 */     this.tooth5.rotationPointY = this.tooth1.rotationPointY + 9.0F - 6.0F;
 /*     */     
-/* 162 */     this.tooth6.rotationPointZ = this.tooth1.rotationPointZ;
-/* 163 */     this.tooth1.rotationPointX += 6.0F;
-/* 164 */     this.tooth6.rotationPointY = this.tooth1.rotationPointY + 9.0F + 6.0F;
+/* 163 */     this.tooth6.rotationPointZ = this.tooth1.rotationPointZ;
+/* 164 */     this.tooth1.rotationPointX += 6.0F;
+/* 165 */     this.tooth6.rotationPointY = this.tooth1.rotationPointY + 9.0F + 6.0F;
 /*     */     
-/* 166 */     this.tooth7.rotationPointZ = this.tooth1.rotationPointZ;
-/* 167 */     this.tooth1.rotationPointX += 6.0F;
-/* 168 */     this.tooth7.rotationPointY = this.tooth1.rotationPointY + 9.0F - 6.0F;
+/* 167 */     this.tooth7.rotationPointZ = this.tooth1.rotationPointZ;
+/* 168 */     this.tooth1.rotationPointX += 6.0F;
+/* 169 */     this.tooth7.rotationPointY = this.tooth1.rotationPointY + 9.0F - 6.0F;
 /*     */     
-/* 170 */     this.tooth8.rotationPointZ = this.tooth1.rotationPointZ;
-/* 171 */     this.tooth1.rotationPointX -= 6.0F;
-/* 172 */     this.tooth8.rotationPointY = this.tooth1.rotationPointY + 9.0F + 6.0F;
+/* 171 */     this.tooth8.rotationPointZ = this.tooth1.rotationPointZ;
+/* 172 */     this.tooth1.rotationPointX -= 6.0F;
+/* 173 */     this.tooth8.rotationPointY = this.tooth1.rotationPointY + 9.0F + 6.0F;
 /*     */     
-/* 174 */     this.tooth1.rotationPointZ = (float)(this.tooth1.rotationPointZ - Math.sin(this.head1.rotateAngleX) * 9.0D);
-/* 175 */     this.tooth2.rotationPointZ = (float)(this.tooth2.rotationPointZ + Math.sin(this.head1.rotateAngleX) * 9.0D);
+/* 175 */     this.tooth1.rotationPointZ = (float)(this.tooth1.rotationPointZ - Math.sin(this.head1.rotateAngleX) * 9.0D);
+/* 176 */     this.tooth2.rotationPointZ = (float)(this.tooth2.rotationPointZ + Math.sin(this.head1.rotateAngleX) * 9.0D);
 /*     */     
-/* 177 */     this.tooth3.rotationPointZ = (float)(this.tooth3.rotationPointZ - Math.sin(this.head1.rotateAngleY) * 9.0D);
-/* 178 */     this.tooth4.rotationPointZ = (float)(this.tooth4.rotationPointZ + Math.sin(this.head1.rotateAngleY) * 9.0D);
+/* 178 */     this.tooth3.rotationPointZ = (float)(this.tooth3.rotationPointZ - Math.sin(this.head1.rotateAngleY) * 9.0D);
+/* 179 */     this.tooth4.rotationPointZ = (float)(this.tooth4.rotationPointZ + Math.sin(this.head1.rotateAngleY) * 9.0D);
 /*     */     
-/* 180 */     this.tooth7.rotationPointZ = (float)(this.tooth7.rotationPointZ - Math.sin(this.head1.rotateAngleX) * 6.0D);
-/* 181 */     this.tooth7.rotationPointZ = (float)(this.tooth7.rotationPointZ - Math.sin(this.head1.rotateAngleY) * 6.0D);
+/* 181 */     this.tooth7.rotationPointZ = (float)(this.tooth7.rotationPointZ - Math.sin(this.head1.rotateAngleX) * 6.0D);
+/* 182 */     this.tooth7.rotationPointZ = (float)(this.tooth7.rotationPointZ - Math.sin(this.head1.rotateAngleY) * 6.0D);
 /*     */     
-/* 183 */     this.tooth6.rotationPointZ = (float)(this.tooth6.rotationPointZ + Math.sin(this.head1.rotateAngleX) * 6.0D);
-/* 184 */     this.tooth6.rotationPointZ = (float)(this.tooth6.rotationPointZ - Math.sin(this.head1.rotateAngleY) * 6.0D);
+/* 184 */     this.tooth6.rotationPointZ = (float)(this.tooth6.rotationPointZ + Math.sin(this.head1.rotateAngleX) * 6.0D);
+/* 185 */     this.tooth6.rotationPointZ = (float)(this.tooth6.rotationPointZ - Math.sin(this.head1.rotateAngleY) * 6.0D);
 /*     */     
-/* 186 */     this.tooth5.rotationPointZ = (float)(this.tooth5.rotationPointZ - Math.sin(this.head1.rotateAngleX) * 6.0D);
-/* 187 */     this.tooth5.rotationPointZ = (float)(this.tooth5.rotationPointZ + Math.sin(this.head1.rotateAngleY) * 6.0D);
+/* 187 */     this.tooth5.rotationPointZ = (float)(this.tooth5.rotationPointZ - Math.sin(this.head1.rotateAngleX) * 6.0D);
+/* 188 */     this.tooth5.rotationPointZ = (float)(this.tooth5.rotationPointZ + Math.sin(this.head1.rotateAngleY) * 6.0D);
 /*     */     
-/* 189 */     this.tooth8.rotationPointZ = (float)(this.tooth8.rotationPointZ + Math.sin(this.head1.rotateAngleX) * 6.0D);
-/* 190 */     this.tooth8.rotationPointZ = (float)(this.tooth8.rotationPointZ + Math.sin(this.head1.rotateAngleY) * 6.0D);
+/* 190 */     this.tooth8.rotationPointZ = (float)(this.tooth8.rotationPointZ + Math.sin(this.head1.rotateAngleX) * 6.0D);
+/* 191 */     this.tooth8.rotationPointZ = (float)(this.tooth8.rotationPointZ + Math.sin(this.head1.rotateAngleY) * 6.0D);
 /*     */     
-/* 192 */     newangle = (float)Math.cos(Math.toRadians((f * 5.7F))) * 3.1415927F * 0.35F;
+/* 193 */     newangle = (float)Math.cos(Math.toRadians((f * 5.7F))) * 3.1415927F * 0.35F;
 /*     */     
-/* 194 */     this.head1.rotateAngleX += newangle;
-/* 195 */     this.head1.rotateAngleX -= newangle;
-/* 196 */     this.head1.rotateAngleY += newangle;
-/* 197 */     this.head1.rotateAngleY -= newangle;
+/* 195 */     this.head1.rotateAngleX += newangle;
+/* 196 */     this.head1.rotateAngleX -= newangle;
+/* 197 */     this.head1.rotateAngleY += newangle;
+/* 198 */     this.head1.rotateAngleY -= newangle;
 /*     */     
-/* 199 */     this.head1.rotateAngleX += newangle;
 /* 200 */     this.head1.rotateAngleX += newangle;
-/* 201 */     this.head1.rotateAngleX -= newangle;
+/* 201 */     this.head1.rotateAngleX += newangle;
 /* 202 */     this.head1.rotateAngleX -= newangle;
+/* 203 */     this.head1.rotateAngleX -= newangle;
 /*     */     
-/* 204 */     this.head1.rotateAngleY += newangle;
 /* 205 */     this.head1.rotateAngleY += newangle;
-/* 206 */     this.head1.rotateAngleY -= newangle;
+/* 206 */     this.head1.rotateAngleY += newangle;
 /* 207 */     this.head1.rotateAngleY -= newangle;
+/* 208 */     this.head1.rotateAngleY -= newangle;
 /*     */     
-/* 209 */     GL11.glPushMatrix();
+/* 210 */     GL11.glPushMatrix();
 /*     */     
-/* 211 */     GL11.glScalef(this.worm_scale, this.worm_scale, this.worm_scale);
+/* 212 */     GL11.glScalef(this.worm_scale, this.worm_scale, this.worm_scale);
 /*     */     
-/* 213 */     GL11.glRotatef(dw.rotationYaw, 0.0F, 1.0F, 0.0F);
-/* 214 */     GL11.glRotatef(dw.rotationPitch, 1.0F, 0.0F, 0.0F);
-/* 215 */     this.head1.render(scale);
-/* 216 */     this.head2.render(scale);
-/* 217 */     this.tooth1.render(scale);
-/* 218 */     this.tooth2.render(scale);
-/* 219 */     this.tooth3.render(scale);
-/* 220 */     this.tooth4.render(scale);
-/* 221 */     this.tooth5.render(scale);
-/* 222 */     this.tooth6.render(scale);
-/* 223 */     this.tooth7.render(scale);
-/* 224 */     this.tooth8.render(scale);
+/* 214 */     GL11.glRotatef(dw.rotationYaw, 0.0F, 1.0F, 0.0F);
+/* 215 */     GL11.glRotatef(dw.rotationPitch, 1.0F, 0.0F, 0.0F);
+/* 216 */     this.head1.render(scale);
+/* 217 */     this.head2.render(scale);
+/* 218 */     this.tooth1.render(scale);
+/* 219 */     this.tooth2.render(scale);
+/* 220 */     this.tooth3.render(scale);
+/* 221 */     this.tooth4.render(scale);
+/* 222 */     this.tooth5.render(scale);
+/* 223 */     this.tooth6.render(scale);
+/* 224 */     this.tooth7.render(scale);
+/* 225 */     this.tooth8.render(scale);
 /*     */     
-/* 226 */     GL11.glPopMatrix();
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */     
-/* 232 */     for (int i = 0; i < 100; i++) {
-/* 233 */       double dx = dw.posX - dw.lposx[i];
-/* 234 */       double dy = dw.posY - dw.lposy[i];
-/* 235 */       double dz = dw.posZ - dw.lposz[i];
+/* 227 */     GL11.glPopMatrix();
+/* 228 */     for (int i = 0; i < 100; i++) {
+/* 229 */       double dx = dw.lposx[0] - dw.lposx[i];
+/* 230 */       double dy = dw.lposy[0] - dw.lposy[i];
+/* 231 */       double dz = dw.lposz[0] - dw.lposz[i];
 /*     */       
-/* 237 */       GL11.glPushMatrix();
+/* 233 */       GL11.glPushMatrix();
 /*     */       
-/* 239 */       GL11.glTranslated(dx, dy, dz);
+/* 235 */       GL11.glTranslated(dx, dy, dz);
 /*     */       
-/* 241 */       if (dw.rotyaw[i] != 0.0D) GL11.glRotated(dw.rotyaw[i], 0.0D, 1.0D, 0.0D); 
-/* 242 */       if (dw.rotpitch[i] != 0.0D) GL11.glRotated(dw.rotpitch[i], 1.0D, 0.0D, 0.0D);
+/* 237 */       if (dw.rotyaw[i] != 0.0D) GL11.glRotated(dw.rotyaw[i], 0.0D, 1.0D, 0.0D); 
+/* 238 */       if (dw.rotpitch[i] != 0.0D) GL11.glRotated(dw.rotpitch[i], 1.0D, 0.0D, 0.0D);
 /*     */ 
 /*     */       
-/* 245 */       double scale1 = 1.0D;
-/* 246 */       if (i > 25) scale1 = (75.0D - (i - 25)) / 75.0D; 
-/* 247 */       scale1 *= 2.0D - Math.cos(Math.toRadians((i * 3)));
-/* 248 */       if (scale1 < 0.009999999776482582D) scale1 = 0.009999999776482582D; 
-/* 249 */       GL11.glScaled(scale1 * this.worm_scale, scale1 * this.worm_scale, (1.5F * this.worm_scale));
+/* 241 */       double scale1 = 1.0D;
+/* 242 */       if (i > 25) scale1 = (75.0D - (i - 25)) / 75.0D; 
+/* 243 */       scale1 *= 2.0D - Math.cos(Math.toRadians((i * 3)));
+/* 244 */       if (scale1 < 0.009999999776482582D) scale1 = 0.009999999776482582D; 
+/* 245 */       GL11.glScaled(scale1 * this.worm_scale, scale1 * this.worm_scale, (1.5F * this.worm_scale));
 /*     */       
-/* 251 */       this.body1.render(scale);
-/* 252 */       this.body2.render(scale);
+/* 247 */       this.body1.render(scale);
+/* 248 */       this.body2.render(scale);
 /*     */       
-/* 254 */       if (i > 75) {
+/* 250 */       if (i > 75) {
 /*     */ 
 /*     */         
-/* 257 */         GL11.glTranslatef(0.0F, 1.0F / this.worm_scale, 0.0F);
-/* 258 */         this.body1.render(scale);
-/* 259 */         this.body2.render(scale);
+/* 253 */         GL11.glTranslatef(0.0F, 1.0F / this.worm_scale, 0.0F);
+/* 254 */         this.body1.render(scale);
+/* 255 */         this.body2.render(scale);
 /*     */       } 
 /*     */ 
 /*     */       
-/* 263 */       GL11.glPopMatrix();
+/* 259 */       GL11.glPopMatrix();
 /*     */     } 
+/* 261 */     GL11.glPopMatrix();
 /*     */   }
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
-/*     */ 
 /*     */   
 /*     */   private void setRotation(ModelRenderer model, float x, float y, float z) {
-/* 276 */     model.rotateAngleX = x;
-/* 277 */     model.rotateAngleY = y;
-/* 278 */     model.rotateAngleZ = z;
+/* 265 */     model.rotateAngleX = x;
+/* 266 */     model.rotateAngleY = y;
+/* 267 */     model.rotateAngleZ = z;
 /*     */   }
 /*     */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.7-deobf.jar!\danger\orespawn\entity\model\ModelWormDoom.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.8-deobf.jar!\danger\orespawn\entity\model\ModelWormDoom.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

@@ -1,15 +1,15 @@
 /*    */ package danger.orespawn.init;
-/*    */ 
+/*    */ import danger.orespawn.blocks.BlockAmethyst;
 /*    */ import danger.orespawn.blocks.BlockAnt;
 /*    */ import danger.orespawn.blocks.BlockButterflyPlant;
 /*    */ import danger.orespawn.blocks.BlockCornPlant;
 /*    */ import danger.orespawn.blocks.BlockExtremeTorch;
 /*    */ import danger.orespawn.blocks.BlockFireflyPlant;
 /*    */ import danger.orespawn.blocks.BlockMosquitoPlant;
-/*    */ import danger.orespawn.blocks.BlockMothPlant;
 /*    */ import danger.orespawn.blocks.BlockRedAntTroll;
 /*    */ import danger.orespawn.blocks.BlockTitanium;
 /*    */ import danger.orespawn.blocks.BlockUranium;
+/*    */ import danger.orespawn.blocks.OreAmethyst;
 /*    */ import danger.orespawn.blocks.OreGenericEgg;
 /*    */ import danger.orespawn.blocks.OreTitanium;
 /*    */ import danger.orespawn.blocks.OreUranium;
@@ -66,10 +66,23 @@
 /* 66 */   public static final Block DOOMWORM_ORE = (Block)new OreGenericEgg("doomworm_ore");
 /*    */   
 /* 68 */   public static final Block RED_ANT_TROLL_BLOCK = (Block)new BlockRedAntTroll();
+/*    */   
+/* 70 */   public static final Block MANTIS_ORE = (Block)new OreGenericEgg("mantis_ore");
+/* 71 */   public static final Block BEAVER_ORE = (Block)new OreGenericEgg("beaver_ore");
+/* 72 */   public static final Block BRUTALFLY_ORE = (Block)new OreGenericEgg("brutalfly_ore");
+/* 73 */   public static final Block KYUUBI_ORE = (Block)new OreGenericEgg("kyuubi_ore");
+/* 74 */   public static final Block MOTHRA_ORE = (Block)new OreGenericEgg("mothra_ore");
+/*    */   
+/* 76 */   public static final Block AMETHYST_ORE = (Block)new OreAmethyst();
+/* 77 */   public static final Block AMETHYST_BLOCK = (Block)new BlockAmethyst();
+/*    */   
+/* 79 */   public static final Block CASSOWARY_ORE = (Block)new OreGenericEgg("cassowary_ore");
+/* 80 */   public static final Block REDCOW_ORE = (Block)new OreGenericEgg("redcow_ore");
+/* 81 */   public static final Block STINKBUG_ORE = (Block)new OreGenericEgg("stinkbug_ore");
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.7-deobf.jar!\danger\orespawn\init\ModBlocks.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.8-deobf.jar!\danger\orespawn\init\ModBlocks.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

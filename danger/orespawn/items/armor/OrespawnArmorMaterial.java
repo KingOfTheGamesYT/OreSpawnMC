@@ -36,11 +36,17 @@
 /* 36 */       .addEnchantment(Enchantments.FIRE_PROTECTION, 5).addEnchantment(Enchantments.PROJECTILE_PROTECTION, 5).addEnchantment(Enchantments.UNBREAKING, 0)
 /* 37 */       .addEnchantment(Enchantments.FEATHER_FALLING, 3));
 /*    */   
-/* 39 */   public static final OrespawnArmorMaterial EmeraldArmor = new OrespawnArmorMaterial("emerald", 100, new int[] { 6, 12, 10, 6 }, 12, 3.0F, new ItemEnchantments());
+/* 39 */   public static final OrespawnArmorMaterial EmeraldArmor = new OrespawnArmorMaterial("emerald", 100, new int[] { 3, 8, 6, 3 }, 12, 3.0F, new ItemEnchantments());
+/*    */ 
+/*    */   
+/* 42 */   public static final OrespawnArmorMaterial MothArmor = new OrespawnArmorMaterial("moth", 100, new int[] { 2, 7, 5, 2 }, 12, 3.0F, new ItemEnchantments());
+/*    */ 
+/*    */   
+/* 45 */   public static final OrespawnArmorMaterial AmethystArmor = new OrespawnArmorMaterial("amethyst", 100, new int[] { 4, 8, 7, 3 }, 12, 3.0F, new ItemEnchantments());
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.7-deobf.jar!\danger\orespawn\items\armor\OrespawnArmorMaterial.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.8-deobf.jar!\danger\orespawn\items\armor\OrespawnArmorMaterial.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

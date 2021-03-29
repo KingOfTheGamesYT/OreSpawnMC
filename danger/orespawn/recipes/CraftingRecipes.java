@@ -325,11 +325,166 @@
 /* 325 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
 /* 326 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.DRAGONFLY_ORE) })
 /*     */         });
+/* 328 */     GameRegistry.addShapedRecipe(new ResourceLocation("moth_helmet"), new ResourceLocation("orespawn"), new ItemStack(ModItems.MOTH_HELMET, 1), new Object[] { "XXX", "YYY", "YXY", 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */           
+/* 334 */           Character.valueOf('X'), Blocks.AIR, 
+/* 335 */           Character.valueOf('Y'), ModItems.MOTH_SCALE });
+/*     */     
+/* 337 */     GameRegistry.addShapedRecipe(new ResourceLocation("moth_chestplate"), new ResourceLocation("orespawn"), new ItemStack(ModItems.MOTH_CHESTPLATE, 1), new Object[] { "YXY", "YYY", "YYY", 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */           
+/* 343 */           Character.valueOf('X'), Blocks.AIR, 
+/* 344 */           Character.valueOf('Y'), ModItems.MOTH_SCALE });
+/*     */     
+/* 346 */     GameRegistry.addShapedRecipe(new ResourceLocation("moth_leggings"), new ResourceLocation("orespawn"), new ItemStack(ModItems.MOTH_LEGGINGS, 1), new Object[] { "YYY", "YXY", "YXY", 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */           
+/* 352 */           Character.valueOf('X'), Blocks.AIR, 
+/* 353 */           Character.valueOf('Y'), ModItems.MOTH_SCALE });
+/*     */     
+/* 355 */     GameRegistry.addShapedRecipe(new ResourceLocation("moth_boots"), new ResourceLocation("orespawn"), new ItemStack(ModItems.MOTH_BOOTS, 1), new Object[] { "XXX", "YXY", "YXY", 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */           
+/* 361 */           Character.valueOf('X'), Blocks.AIR, 
+/* 362 */           Character.valueOf('Y'), ModItems.MOTH_SCALE });
+/*     */     
+/* 364 */     GameRegistry.addShapelessRecipe(new ResourceLocation("worm_food"), null, new ItemStack(ModItems.WORM_FOOD, 1), new Ingredient[] {
+/* 365 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Blocks.DIRT, 1)
+/* 366 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.FISH) })
+/*     */         });
+/* 368 */     GameRegistry.addShapelessRecipe(new ResourceLocation("kyuubi_egg"), null, new ItemStack(ModItems.KYUUBI_EGG, 1), new Ingredient[] {
+/* 369 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 370 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.KYUUBI_ORE) })
+/*     */         });
+/* 372 */     GameRegistry.addShapelessRecipe(new ResourceLocation("beaver_egg"), null, new ItemStack(ModItems.BEAVER_EGG, 1), new Ingredient[] {
+/* 373 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 374 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.BEAVER_ORE) })
+/*     */         });
+/* 376 */     GameRegistry.addShapelessRecipe(new ResourceLocation("brutalfly_egg"), null, new ItemStack(ModItems.BRUTALFLY_EGG, 1), new Ingredient[] {
+/* 377 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 378 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.BRUTALFLY_ORE) })
+/*     */         });
+/* 380 */     GameRegistry.addShapelessRecipe(new ResourceLocation("mothra_egg"), null, new ItemStack(ModItems.MONTHRA_EGG, 1), new Ingredient[] {
+/* 381 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 382 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.MOTHRA_ORE) })
+/*     */         });
+/* 384 */     GameRegistry.addShapelessRecipe(new ResourceLocation("mantis_egg"), null, new ItemStack(ModItems.MANTIS_EGG, 1), new Ingredient[] {
+/* 385 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 386 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.MANTIS_ORE) })
+/*     */         });
+/* 388 */     GameRegistry.addShapedRecipe(new ResourceLocation("amethyst_sword"), new ResourceLocation("orespawn"), new ItemStack(ModItems.AMETHYST_SWORD, 1), new Object[] { "XYX", "XYX", "XZX", 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */           
+/* 394 */           Character.valueOf('X'), Blocks.AIR, 
+/* 395 */           Character.valueOf('Y'), ModItems.AMETHYST, 
+/* 396 */           Character.valueOf('Z'), Items.STICK });
+/*     */     
+/* 398 */     GameRegistry.addShapedRecipe(new ResourceLocation("amethyst_axe"), new ResourceLocation("orespawn"), new ItemStack(ModItems.AMETHYST_AXE, 1), new Object[] { "YYX", "YZX", "XZX", 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */           
+/* 404 */           Character.valueOf('X'), Blocks.AIR, 
+/* 405 */           Character.valueOf('Y'), ModItems.AMETHYST, 
+/* 406 */           Character.valueOf('Z'), Items.STICK });
+/*     */     
+/* 408 */     GameRegistry.addShapedRecipe(new ResourceLocation("amethyst_pickaxe"), new ResourceLocation("orespawn"), new ItemStack(ModItems.AMETHYST_PICKAXE, 1), new Object[] { "YYY", "XZX", "XZX", 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */           
+/* 414 */           Character.valueOf('X'), Blocks.AIR, 
+/* 415 */           Character.valueOf('Y'), ModItems.AMETHYST, 
+/* 416 */           Character.valueOf('Z'), Items.STICK });
+/*     */     
+/* 418 */     GameRegistry.addShapedRecipe(new ResourceLocation("amethyst_hoe"), new ResourceLocation("orespawn"), new ItemStack(ModItems.AMETHYST_HOE, 1), new Object[] { "YYX", "XZX", "XZX", 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */           
+/* 424 */           Character.valueOf('X'), Blocks.AIR, 
+/* 425 */           Character.valueOf('Y'), ModItems.AMETHYST, 
+/* 426 */           Character.valueOf('Z'), Items.STICK });
+/*     */     
+/* 428 */     GameRegistry.addShapedRecipe(new ResourceLocation("amethyst_helmet"), new ResourceLocation("orespawn"), new ItemStack(ModItems.AMETHYST_HELMET, 1), new Object[] { "XXX", "YYY", "YXY", 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */           
+/* 434 */           Character.valueOf('X'), Blocks.AIR, 
+/* 435 */           Character.valueOf('Y'), ModItems.AMETHYST });
+/*     */     
+/* 437 */     GameRegistry.addShapedRecipe(new ResourceLocation("amethyst_chestplate"), new ResourceLocation("orespawn"), new ItemStack(ModItems.AMETHYST_CHESTPLATE, 1), new Object[] { "YXY", "YYY", "YYY", 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */           
+/* 443 */           Character.valueOf('X'), Blocks.AIR, 
+/* 444 */           Character.valueOf('Y'), ModItems.AMETHYST });
+/*     */     
+/* 446 */     GameRegistry.addShapedRecipe(new ResourceLocation("amethyst_leggings"), new ResourceLocation("orespawn"), new ItemStack(ModItems.AMETHYST_LEGGINGS, 1), new Object[] { "YYY", "YXY", "YXY", 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */           
+/* 452 */           Character.valueOf('X'), Blocks.AIR, 
+/* 453 */           Character.valueOf('Y'), ModItems.AMETHYST });
+/*     */     
+/* 455 */     GameRegistry.addShapedRecipe(new ResourceLocation("amethyst_boots"), new ResourceLocation("orespawn"), new ItemStack(ModItems.AMETHYST_BOOTS, 1), new Object[] { "XXX", "YXY", "YXY", 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */           
+/* 461 */           Character.valueOf('X'), Blocks.AIR, 
+/* 462 */           Character.valueOf('Y'), ModItems.AMETHYST });
+/*     */     
+/* 464 */     GameRegistry.addShapelessRecipe(new ResourceLocation("cassowary_egg"), null, new ItemStack(ModItems.CASSOWARY_EGG, 1), new Ingredient[] {
+/* 465 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 466 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.CASSOWARY_ORE) })
+/*     */         });
+/* 468 */     GameRegistry.addShapelessRecipe(new ResourceLocation("redcow_egg"), null, new ItemStack(ModItems.REDCOW_EGG, 1), new Ingredient[] {
+/* 469 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 470 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.REDCOW_ORE) })
+/*     */         });
+/* 472 */     GameRegistry.addShapelessRecipe(new ResourceLocation("stinkbug_egg"), null, new ItemStack(ModItems.STINKBUG_EGG, 1), new Ingredient[] {
+/* 473 */           Ingredient.fromStacks(new ItemStack[] { new ItemStack(Items.WATER_BUCKET, 1)
+/* 474 */             }), Ingredient.fromStacks(new ItemStack[] { new ItemStack(ModBlocks.STINKBUG_ORE) })
+/*     */         });
+/* 476 */     GameRegistry.addShapedRecipe(new ResourceLocation("amethyst_block"), new ResourceLocation("orespawn"), new ItemStack(ModBlocks.AMETHYST_BLOCK, 1), new Object[] { "XXX", "XXX", "XXX", 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */           
+/* 482 */           Character.valueOf('X'), ModItems.AMETHYST });
 /*     */   }
 /*     */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.7-deobf.jar!\danger\orespawn\recipes\CraftingRecipes.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.8-deobf.jar!\danger\orespawn\recipes\CraftingRecipes.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */

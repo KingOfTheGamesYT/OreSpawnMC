@@ -27,10 +27,11 @@
 /*    */   
 /* 28 */   public static OrespawnToolMaterial UltimateTools = new OrespawnToolMaterial("ultimate", 10, 3000, 15.0F, 36.0F, 100);
 /* 29 */   public static OrespawnToolMaterial EmeraldTools = new OrespawnToolMaterial("emerald", 2, 1000, 6.5F, 3.0F, 12);
+/* 30 */   public static OrespawnToolMaterial AmethystTools = new OrespawnToolMaterial("emerald", 2, 1000, 6.5F, 3.0F, 12);
 /*    */ }
 
 
-/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.7-deobf.jar!\danger\orespawn\items\tools\OrespawnToolMaterial.class
+/* Location:              C:\Users\Admin\Downloads\orespawnmc_1.12-development_0.8-deobf.jar!\danger\orespawn\items\tools\OrespawnToolMaterial.class
  * Java compiler version: 8 (52.0)
  * JD-Core Version:       1.1.3
  */
